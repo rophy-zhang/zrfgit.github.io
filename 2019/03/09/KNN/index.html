@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>KNN（K-Nearest Neighbor） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一、算法理论1.KNN算法剧情介绍​    KNN算法其实是采用以距离为度量单位来进行对待测样本进行分类，那么距离如何测量呢？这个k又是指的是什么呢？采用一个例子来进行讲解或许能够更加清晰。 ​    假如一个电影网站要对当前的一部电影进行评判是爱情片还是动作片，其实我们人看的时候会怎么想呢？其实是这样的，我们可能看到接吻，拥抱等动作较多的时候认为这是爱情片，武打，枪战等动作较多的时候认为这是动作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KNN（K-Nearest Neighbor）">
+<meta property="og:url" content="http://yoursite.com/2019/03/09/KNN/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、算法理论1.KNN算法剧情介绍​    KNN算法其实是采用以距离为度量单位来进行对待测样本进行分类，那么距离如何测量呢？这个k又是指的是什么呢？采用一个例子来进行讲解或许能够更加清晰。 ​    假如一个电影网站要对当前的一部电影进行评判是爱情片还是动作片，其实我们人看的时候会怎么想呢？其实是这样的，我们可能看到接吻，拥抱等动作较多的时候认为这是爱情片，武打，枪战等动作较多的时候认为这是动作">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-22T08:06:58.894Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="KNN（K-Nearest Neighbor）">
+<meta name="twitter:description" content="一、算法理论1.KNN算法剧情介绍​    KNN算法其实是采用以距离为度量单位来进行对待测样本进行分类，那么距离如何测量呢？这个k又是指的是什么呢？采用一个例子来进行讲解或许能够更加清晰。 ​    假如一个电影网站要对当前的一部电影进行评判是爱情片还是动作片，其实我们人看的时候会怎么想呢？其实是这样的，我们可能看到接吻，拥抱等动作较多的时候认为这是爱情片，武打，枪战等动作较多的时候认为这是动作">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,295 +154,262 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-KNN" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      KNN（K-Nearest Neighbor）
+    </h1>
+  
+
+        
+        <a href="/2019/03/09/KNN/" class="archive-article-date">
+  	<time datetime="2019-03-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-KNN算法剧情介绍"><a href="#1-KNN算法剧情介绍" class="headerlink" title="1.KNN算法剧情介绍"></a>1.KNN算法剧情介绍</h4><p>​    KNN算法其实是采用以距离为度量单位来进行对待测样本进行分类，那么距离如何测量呢？这个k又是指的是什么呢？采用一个例子来进行讲解或许能够更加清晰。</p>
+<p>​    假如一个电影网站要对当前的一部电影进行评判是爱情片还是动作片，其实我们人看的时候会怎么想呢？其实是这样的，我们可能看到接吻，拥抱等动作较多的时候认为这是爱情片，武打，枪战等动作较多的时候认为这是动作片。So，电影网站后台的算法会去如何做出判断呢？总该不会用人吧，累死。此时KNN算法就派上用场了，假如我们提取其中的两个特征：接吻次数和武打次数，虽然爱情片和动作片中都会出现接吻和武打，但是爱情片肯定接吻次数多鸭，动作片肯定武打次数多鸭。</p>
+<h4 id="2-获取相关数据"><a href="#2-获取相关数据" class="headerlink" title="2.获取相关数据"></a>2.获取相关数据</h4><p>​    我们确定了这两个特征后，假如我们得到如下数据集，实际中没有接吻、武打没那么多次，这里只是举例。</p>
+<table>
+<thead>
+<tr>
+<th>电影名称</th>
+<th>接吻</th>
+<th>武打</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电影1</td>
+<td>3</td>
+<td>67</td>
+<td>动作片</td>
+</tr>
+<tr>
+<td>电影2</td>
+<td>5</td>
+<td>45</td>
+<td>动作片</td>
+</tr>
+<tr>
+<td>电影3</td>
+<td>55</td>
+<td>2</td>
+<td>爱情片</td>
+</tr>
+<tr>
+<td>电影4</td>
+<td>68</td>
+<td>8</td>
+<td>爱情片</td>
+</tr>
+<tr>
+<td>电影5</td>
+<td>66</td>
+<td>5</td>
+<td>爱情片</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-公式原理"><a href="#3-公式原理" class="headerlink" title="3.公式原理"></a>3.公式原理</h4><p>​    我们该如何计算举例呢？一般我们采用欧氏距离来计算。假如一篇电影要判断是什么类型的，待测电影（接吻：60次，武打：5次）。存在有（x1,y1）与（x2,y2），这里的x与y分别指的是接吻与武打这两个特征。</p>
+<p>欧氏距离公式：<br>$$<br>d=\sqrt{\left ( x1-x2 \right )^{2}+\left ( y1-y2 \right ) ^{2}}<br>$$<br>​    这里待测电影与上边5个电影都计算一下欧氏距离。计算之后分别是：d1=84，d2=68，d3=6，d4=9，d5=6。这样就得出未知电影与样本集中每个电影的距离了。</p>
+<h4 id="4-分析判断"><a href="#4-分析判断" class="headerlink" title="4.分析判断"></a>4.分析判断</h4><p>​    现在我们要判断下这不未知电影属于那种类型了，所以这里我们可以解释一下KNN中的K了，其实我们计算完未知电影与每个样本电影的欧氏距离后，需要进行升序排序，此时为d3，d5，d4，d2，d1。我们选取前三个距离作为参考，其中这里K=3，这就是KNN中的K指代的意思，然后我们判断在这三个钟属于爱情片的个数与属于武打片的个数。此时爱情片的个数为3，所以这部未知电影肯定是爱情片了。就是这样，我们就可以通过KNN分析判断一个电影的类型了。</p>
+<h3 id="二、算法实践"><a href="#二、算法实践" class="headerlink" title="二、算法实践"></a>二、算法实践</h3><p>​    接下来，有两个实践的小demo，分别是约会网站与手写识别系统。</p>
+<h4 id="1-KNN约会网站配对"><a href="#1-KNN约会网站配对" class="headerlink" title="1.KNN约会网站配对"></a>1.KNN约会网站配对</h4><p>​    假如一个人在约会网站上要寻找自己心仪的那个Ta，但是看了好多都不合适，我们的KNN算法可以帮助Ta判断一下，是不喜欢的人、魅力一般的人还是非常有魅力的人。我们的判断特征有三个，分别是每周消费冰激凌的公升数、玩游戏所耗占时间百分比与每年获取的飞行常客旅程数。数据集(大约有1000个标注数据，我们用10%做测试，90%来测距离用，K=3)格式大致如下：</p>
+<table>
+<thead>
+<tr>
+<th>人员</th>
+<th>每周消费冰激凌的公升数</th>
+<th>玩游戏所耗占时间百分比</th>
+<th>每年获取的飞行常客旅程数</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p1</td>
+<td>0.95</td>
+<td>8.32</td>
+<td>40902</td>
+<td>极具魅力</td>
+</tr>
+<tr>
+<td>p2</td>
+<td>1.67</td>
+<td>7.15</td>
+<td>14488</td>
+<td>魅力一般</td>
+</tr>
+<tr>
+<td>p3</td>
+<td>0.80</td>
+<td>1.44</td>
+<td>26052</td>
+<td>不喜欢</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>​    这里要强调下数据归一化，因为飞行旅程数在计算欧氏距离时比重太大，然而三个特征的权重都是等价的，不会说我看Ta时更关注某项特征（实际上是这样的，但是这里一律采用公平对待），所以我们要进行归一化：</p>
+<p>归一化公式：<br>$$<br>newVal = (oldVal - min)\div (max-min)<br>$$<br>oldVal是原始属性值，min是特征列最小值，max是特征列最大值，newVal是归一化后的值。</p>
+<p>下边就是实战的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">近邻分类</span></span><br><span class="line"><span class="string">参数： </span></span><br><span class="line"><span class="string">inX： 要待测的样本</span></span><br><span class="line"><span class="string">dataSet： 获取的样本特征集</span></span><br><span class="line"><span class="string">labels: 样本数据标签</span></span><br><span class="line"><span class="string">K: 要选取前k个与待测样本最近距离且已有标签的样本数据</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">numpy 知识补充：</span></span><br><span class="line"><span class="string">1.shape[0]  指的是读取第一维矩阵的长度</span></span><br><span class="line"><span class="string">例如： np.shape([[1,1],[2,2],[3,3]])  </span></span><br><span class="line"><span class="string">       output: (3L,2L)</span></span><br><span class="line"><span class="string">       其中shape[0] 就是指的矩阵有多少行，即3L</span></span><br><span class="line"><span class="string">2.tile 一般是在列或者行方向上重复复制几次</span></span><br><span class="line"><span class="string">例如：  np.tile([0,0],(2,1))</span></span><br><span class="line"><span class="string">        output: array([[0,0],</span></span><br><span class="line"><span class="string">                       [0,0]])</span></span><br><span class="line"><span class="string">        指的是从行方向上重复复制2次，列1次</span></span><br><span class="line"><span class="string">3.sum 一般是对矩阵一行或者一列求和</span></span><br><span class="line"><span class="string">例如：  np.sum([[0,1,2],[2,1,3]],axis=1)</span></span><br><span class="line"><span class="string">        output:array([3,6])</span></span><br><span class="line"><span class="string">        axis=1指的是对矩阵的行进行求和</span></span><br><span class="line"><span class="string">4.argsort 将数组中的元素从小到大排列，返回对应数值的索引</span></span><br><span class="line"><span class="string">例如：  x = np.array([1,4,3,-1,6,9])</span></span><br><span class="line"><span class="string">        x.argsort()</span></span><br><span class="line"><span class="string">        output: array([3,0,2,1,4,5])</span></span><br><span class="line"><span class="string">        返回对应数值的索引</span></span><br><span class="line"><span class="string">5.operator.itemgetter(1) 获取对象第一个域的值</span></span><br><span class="line"><span class="string">例如：  x = np.array([1,2,3,4,5])</span></span><br><span class="line"><span class="string">        b = operator.itemgetter(1)</span></span><br><span class="line"><span class="string">        b(x)</span></span><br><span class="line"><span class="string">        output: 2</span></span><br><span class="line"><span class="string">        下边用法是按照第二列值进行降序排序</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify0</span><span class="params">(inX,dataSet,labels,K)</span>:</span></span><br><span class="line">    dataSetSize = dataSet.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 距离计算  </span></span><br><span class="line">    diffMat = tile(inX, (dataSetSize,<span class="number">1</span>)) - dataSet</span><br><span class="line">    sqDiffMat = diffMat**<span class="number">2</span></span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=<span class="number">1</span>)</span><br><span class="line">    distances = sqDistances**<span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">    sortedDistIndicies = distances.argsort()</span><br><span class="line">    classCount = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 选择最小距离的k个点</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(K):</span><br><span class="line">        votelabel = labels[sortedDistIndicies[i]]</span><br><span class="line">        classCount[votelabel] = classCount.get(votelabel,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 排序</span></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">读取文本数据，转化为numpy矩阵</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">file2matrix</span><span class="params">(filename)</span>:</span></span><br><span class="line">    fr = open(filename)</span><br><span class="line">    arrayOLines = fr.readlines()</span><br><span class="line">    numberOfLines = len(arrayOLines)    <span class="comment"># 得到文件行数</span></span><br><span class="line">    returnMat = zeros((numberOfLines,<span class="number">3</span>))</span><br><span class="line">    classLabelVector = []</span><br><span class="line">    index = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 解析文件数据到列表</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> arrayOLines:</span><br><span class="line">        line = line.strip()     <span class="comment"># 去掉回车</span></span><br><span class="line">        listFormLine = line.split(<span class="string">'\t'</span>)</span><br><span class="line">        returnMat[index,:] = listFormLine[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">        classLabelVector.append(int(listFormLine[<span class="number">-1</span>]))</span><br><span class="line">        index += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> returnMat,classLabelVector</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">归一化特征值</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">autoNorm</span><span class="params">(dataSet)</span>:</span></span><br><span class="line">        minVals = dataSet.min(<span class="number">0</span>)</span><br><span class="line">        maxVals = dataSet.max(<span class="number">0</span>)</span><br><span class="line">        ranges = maxVals - minVals</span><br><span class="line">        normDataSet = zeros(shape(dataSet))</span><br><span class="line">        m = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">        normDataSet = dataSet - tile(minVals,(m,<span class="number">1</span>))</span><br><span class="line">        normDataSet = normDataSet/tile(ranges,(m,<span class="number">1</span>))</span><br><span class="line">        <span class="keyword">return</span> normDataSet,ranges,minVals</span><br><span class="line">    </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">测试代码</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">datingClassTest</span><span class="params">()</span>:</span></span><br><span class="line">    hoRatio = <span class="number">0.1</span></span><br><span class="line">    datingDataMat,datingLabels = file2matrix(<span class="string">'./data/Ch02/datingTestSet2.txt'</span>)</span><br><span class="line">    normMat,ranges,minVals = autoNorm(datingDataMat)</span><br><span class="line">    m = normMat.shape[<span class="number">0</span>]</span><br><span class="line">    numTestVecs = int(m*hoRatio)</span><br><span class="line">    errorCount = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numTestVecs):</span><br><span class="line">        classifierResult = classify0(normMat[i,:],normMat[numTestVecs:m,:],datingLabels[numTestVecs:m],<span class="number">3</span>)</span><br><span class="line">        print(<span class="string">"返回分类结果是：%d,真正类别是：%d"</span> % (classifierResult , datingLabels[i]))</span><br><span class="line">        <span class="keyword">if</span> (classifierResult != datingLabels[i]):</span><br><span class="line">            errorCount += <span class="number">1</span></span><br><span class="line">    print(<span class="string">"错误率是：%f"</span> % (errorCount/float(numTestVecs)))</span><br><span class="line">    </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">约会网站预测</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classifyPerson</span><span class="params">()</span>:</span></span><br><span class="line">    resultList = [<span class="string">'讨厌'</span>,<span class="string">'一般'</span>,<span class="string">'非常喜欢'</span>]</span><br><span class="line">    percentTats = float(input(<span class="string">"花费玩视频游戏占用的比例？"</span>))</span><br><span class="line">    ffMiles = float(input(<span class="string">"每年飞行里程数？"</span>))</span><br><span class="line">    iceCream = float(input(<span class="string">"每周消费冰激凌的公升数？"</span>))</span><br><span class="line">    datingDataMat,datingLabels = file2matrix(<span class="string">'./data/Ch02/datingTestSet2.txt'</span>)</span><br><span class="line">    normMat,ranges,minVals = autoNorm(datingDataMat)</span><br><span class="line">    inArr = array([ffMiles,percentTats,iceCream])</span><br><span class="line">    classifierResult = classify0((inArr-minVals)/ranges,normMat,datingLabels,<span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"你或许对这种人："</span>,resultList[classifierResult<span class="number">-1</span>])</span><br><span class="line">    </span><br><span class="line">classifyPerson()</span><br></pre></td></tr></table></figure>
+<h4 id="2-KNN判断手写识别"><a href="#2-KNN判断手写识别" class="headerlink" title="2.KNN判断手写识别"></a>2.KNN判断手写识别</h4><p>​    我们有好多张数字图片，然后转化成32x32的灰白格式就是用0与1来表示，可能会想到怎么计算欧氏距离呢，我们就把32x32的矩阵转化为1x1024的向量，然后就可以计算了。这里我们取K=3。</p>
+<p>代码实战：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> listdir</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">分类函数</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify0</span><span class="params">(inX,dataSet,labels,K)</span>:</span></span><br><span class="line">    dataSetSize = dataSet.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 距离计算  </span></span><br><span class="line">    diffMat = tile(inX, (dataSetSize,<span class="number">1</span>)) - dataSet</span><br><span class="line">    sqDiffMat = diffMat**<span class="number">2</span></span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=<span class="number">1</span>)</span><br><span class="line">    distances = sqDistances**<span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">    sortedDistIndicies = distances.argsort()</span><br><span class="line">    classCount = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 选择最小距离的k个点</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(K):</span><br><span class="line">        votelabel = labels[sortedDistIndicies[i]]</span><br><span class="line">        classCount[votelabel] = classCount.get(votelabel,<span class="number">0</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 排序</span></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">手写识别系统图像转向量</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">img2vector</span><span class="params">(filename)</span>:</span></span><br><span class="line">    returnVect = zeros((<span class="number">1</span>,<span class="number">1024</span>))</span><br><span class="line">    fr = open(filename)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">        lineStr = fr.readline()</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">            returnVect[<span class="number">0</span>,<span class="number">32</span>*i+j] = int(lineStr[j])</span><br><span class="line">    <span class="keyword">return</span> returnVect</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">手写数字识别系统测试代码</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">handwritingClassTest</span><span class="params">()</span>:</span></span><br><span class="line">    hwLabels = []</span><br><span class="line">    trainingFileList = listdir(<span class="string">'./data/Ch02/digits/trainingDigits'</span>)     <span class="comment"># 获取目录内容</span></span><br><span class="line">    m = len(trainingFileList)</span><br><span class="line">    trainingMat = zeros((m,<span class="number">1024</span>))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        fileNameStr = trainingFileList[i]</span><br><span class="line">        fileStr = fileNameStr.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        classNumStr = int(fileStr.split(<span class="string">'_'</span>)[<span class="number">0</span>])</span><br><span class="line">        hwLabels.append(classNumStr)</span><br><span class="line">        trainingMat[i:] = img2vector(<span class="string">'./data/Ch02/digits/trainingDigits/%s'</span> % fileNameStr)</span><br><span class="line">    testFileList = listdir(<span class="string">'./data/Ch02/digits/testDigits'</span>)</span><br><span class="line">    errorCount = <span class="number">0</span></span><br><span class="line">    mTest = len(testFileList)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(mTest):</span><br><span class="line">        fileNameStr = testFileList[i]</span><br><span class="line">        fileStr = fileNameStr.split(<span class="string">'.'</span>)[<span class="number">0</span>]</span><br><span class="line">        classNumStr = int(fileStr.split(<span class="string">'_'</span>)[<span class="number">0</span>])</span><br><span class="line">        vectorUnderTest = img2vector(<span class="string">'./data/Ch02/digits/testDigits/%s'</span> % fileNameStr)</span><br><span class="line">        classifierResult = classify0(vectorUnderTest,trainingMat,hwLabels,<span class="number">3</span>)</span><br><span class="line">        print(<span class="string">"分类结果是：%d,真正结果是：%d"</span> % (classifierResult,classNumStr))</span><br><span class="line">        <span class="keyword">if</span> (classifierResult != classNumStr):</span><br><span class="line">            errorCount += <span class="number">1</span></span><br><span class="line">    print(<span class="string">"分类错误数目是:%d"</span> % errorCount)</span><br><span class="line">    print(<span class="string">"错误率：%f"</span> % float(errorCount/mTest))</span><br></pre></td></tr></table></figure>
+<h3 id="三、后记"><a href="#三、后记" class="headerlink" title="三、后记"></a>三、后记</h3><p>​    纸上得来终觉浅，绝知此事要躬行。下边会说以下决策树的故事。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/21/MapReduce/" class="archive-article-date">
-  	<time datetime="2019-04-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/21/MapReduce/">MapReduce</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/09/KNN/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/20/SVD/" class="archive-article-date">
-  	<time datetime="2019-04-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/03/10/DT/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          决策树（Decision Tree）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/07/markdown基本用法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">markdown常用语法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/20/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/18/PCA/" class="archive-article-date">
-  	<time datetime="2019-04-18T15:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2019-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/16/Apriori/" class="archive-article-date">
-  	<time datetime="2019-04-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/16/Apriori/">Apriori</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/kMeans/" class="archive-article-date">
-  	<time datetime="2019-04-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/12/CART/" class="archive-article-date">
-  	<time datetime="2019-04-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/12/CART/">CART（Classification And Regression Trees）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2019-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/27/Regression/" class="archive-article-date">
-  	<time datetime="2019-03-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/Regression/">线性回归（Line Regression）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/26/AdaBoost/" class="archive-article-date">
-  	<time datetime="2019-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/26/AdaBoost/">AdaBoost（adaptive boosting）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +433,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

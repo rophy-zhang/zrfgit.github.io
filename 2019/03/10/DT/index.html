@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>决策树（Decision Tree） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一、算法理论1.DT算法剧情介绍​    决策树，可以简单理解为数据结构中的N叉树，可以有好多个分支，但是决策树又和数据结构中的N叉树有什么不同呢？当然了，不然为什么称之为一个棒棒的算法呢。我们还是以一个例子来讲解，这样的话会更加清晰。 ​    假如你去瓜农那里买西瓜，如何判断西瓜的好坏呢？首先我们考虑下人是如何考虑做出决策挑选出好的西瓜呢。瓜农一般看下色泽是青绿，再看下根蒂是蜷缩，然后又敲了下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="决策树（Decision Tree）">
+<meta property="og:url" content="http://yoursite.com/2019/03/10/DT/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、算法理论1.DT算法剧情介绍​    决策树，可以简单理解为数据结构中的N叉树，可以有好多个分支，但是决策树又和数据结构中的N叉树有什么不同呢？当然了，不然为什么称之为一个棒棒的算法呢。我们还是以一个例子来讲解，这样的话会更加清晰。 ​    假如你去瓜农那里买西瓜，如何判断西瓜的好坏呢？首先我们考虑下人是如何考虑做出决策挑选出好的西瓜呢。瓜农一般看下色泽是青绿，再看下根蒂是蜷缩，然后又敲了下">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:24:40.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="决策树（Decision Tree）">
+<meta name="twitter:description" content="一、算法理论1.DT算法剧情介绍​    决策树，可以简单理解为数据结构中的N叉树，可以有好多个分支，但是决策树又和数据结构中的N叉树有什么不同呢？当然了，不然为什么称之为一个棒棒的算法呢。我们还是以一个例子来讲解，这样的话会更加清晰。 ​    假如你去瓜农那里买西瓜，如何判断西瓜的好坏呢？首先我们考虑下人是如何考虑做出决策挑选出好的西瓜呢。瓜农一般看下色泽是青绿，再看下根蒂是蜷缩，然后又敲了下">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,295 +154,372 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-DT" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      决策树（Decision Tree）
+    </h1>
+  
+
+        
+        <a href="/2019/03/10/DT/" class="archive-article-date">
+  	<time datetime="2019-03-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-10</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-DT算法剧情介绍"><a href="#1-DT算法剧情介绍" class="headerlink" title="1.DT算法剧情介绍"></a>1.DT算法剧情介绍</h4><p>​    决策树，可以简单理解为数据结构中的N叉树，可以有好多个分支，但是决策树又和数据结构中的N叉树有什么不同呢？当然了，不然为什么称之为一个棒棒的算法呢。我们还是以一个例子来讲解，这样的话会更加清晰。</p>
+<p>​    假如你去瓜农那里买西瓜，如何判断西瓜的好坏呢？首先我们考虑下人是如何考虑做出决策挑选出好的西瓜呢。瓜农一般看下色泽是青绿，再看下根蒂是蜷缩，然后又敲了下西瓜敲声沉闷，好像瓜农已经有了眉目，又看了看纹理是清晰，脐部凹陷，又摸了摸西瓜硬滑，点了点头说，这是好瓜。你可能有时还会看到，瓜农看了看色泽，敲了敲西瓜，看看根蒂就说这是好瓜。这些都没有错，瓜农是这样判断的，我们的决策树貌似也可以呀，每次判断就像树的分支一样，然后瓜农可能感觉色泽比较重要，先看了这个，然后下边觉得根蒂次重要，依次看下去，最终得出结论。我们是不是可以把每次判断作为树的分支呢，然后那么多我们到底怎么去做出决定先看那个特征呢？是的决策树引入了信息论里的熵和信息增益，这就是判断标准，好了，一颗树就这样种起来了。</p>
+<h4 id="2-获取相关数据"><a href="#2-获取相关数据" class="headerlink" title="2.获取相关数据"></a>2.获取相关数据</h4><p>​    我们依据瓜农现有的经验获取一些数据，假设这些数据都是判断正确的训练数据。下边是数据集：</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>色泽</th>
+<th>根蒂</th>
+<th>敲声</th>
+<th>纹理</th>
+<th>脐部</th>
+<th>触感</th>
+<th>好瓜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>2</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>3</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>4</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>5</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>6</td>
+<td>青绿</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>是</td>
+</tr>
+<tr>
+<td>7</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>是</td>
+</tr>
+<tr>
+<td>8</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>9</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>10</td>
+<td>青绿</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>清晰</td>
+<td>平坦</td>
+<td>软粘</td>
+<td>否</td>
+</tr>
+<tr>
+<td>11</td>
+<td>浅白</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>12</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>软粘</td>
+<td>否</td>
+</tr>
+<tr>
+<td>13</td>
+<td>青绿</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>稍糊</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>14</td>
+<td>浅白</td>
+<td>稍蜷</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>15</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>否</td>
+</tr>
+<tr>
+<td>16</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>17</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-公式原理"><a href="#3-公式原理" class="headerlink" title="3.公式原理"></a>3.公式原理</h4><p>​    在我们判断之前肯定先要用上边那个特征先来进行划分，我们这就需要用信息熵的计算了，信息熵是衡量当前信息的纯度，我们的目标是将不纯的数据尽快变得更加纯正，所以要找到熵值降低最快的特征进行划分。</p>
+<p>​    假设当前样本集合D的第k类样本所占比例为Pk（k=1,2,3,…,|y|），D的信息熵定义为：<br>$$<br>Ent(D)=-\sum_{k=1}^{|y|}p_{k}\log_{2}p_{k}<br>$$<br>其中Ent（D）越小，纯度越高。</p>
+<p>​    假如离散特征有a个有|V|个可能的取值{a1,a2,…,av},我们按照这个特征进行划分，会划分|V|个子集。得到的信息增益值为：<br>$$<br>Gain(D,a)=Ent(D)-\sum_{v=1}^{|V|}\frac{|D^v|}{|D|}Ent(D^{v})<br>$$<br>其中|Dv|指的是当前第v个分枝接点，包含了所有在特征a上取值为av的样本个数。Gain(D,a)指的是信息增益，我们应该选择信息增益最大特征来进行划分。</p>
+<p>​    接下来我们计算下信息增益，看下到底是如何进行节点划分计算的，没划分前，所有样本都属于根节点，此时的信息熵为好瓜8个，不是好瓜的有9个，并且|y|=2是2分类，所以 p1=8/17，p2=9/17 。代入公式计算根节点的信息熵：<br>$$<br>Ent(D)=-\sum_{k=1}^{2}p_{k}\log_{2}p_{k}=-\left (\frac{8}{17}\log_2\frac{8}{17}+\frac{9}{17}\log_2\frac{9}{17}  \right )=0.998<br>$$<br>​    然后我们就要按照特征划分了，特征集为{色泽，根蒂，敲声，纹理，脐部，触感}，我们要计算每个特征划分的信息增益。假如我们选择了 色泽 这个特征，然后特征值有3个{青绿，乌黑，浅白}，此时按照这个特征划分会得到3个子集：D1={色泽=青绿}，D2={色泽=乌黑}，D3={色泽=浅白}。然后我们可以看下上边的数据集，其中D1={1,4,6,10,13,17}，D2={2,3,7,8,9,15}，D3={5,11,12,14,16}，分别有6，6，5个样例，则在D1中，正例：p1=3/6，反例：p2=3/6。在D2中，正例：p1=4/6，反例：p2=2/6。在D3中，正例：p1=1/5，反例：4/5。我们可以计算出3个分支节点的信息熵：<br>$$<br>Ent(D^{1})=-\left (\frac{3}{6}\log_2\frac{3}{6}+\frac{3}{6}\log_2\frac{3}{6}  \right )=1.000<br>$$</p>
+<p>$$<br>Ent(D^{2})=-\left (\frac{4}{6}\log_2\frac{4}{6}+\frac{2}{6}\log_2\frac{2}{6}  \right )=0.918<br>$$</p>
+<p>$$<br>Ent(D^{3})=-\left (\frac{1}{5}\log_2\frac{1}{5}+\frac{4}{5}\log_2\frac{4}{5}  \right )=0.722<br>$$</p>
+<p>信息增益为：<br>$$<br>Gain(D,色泽)=Ent(D)-\sum_{v=1}^{3}\frac{|D^v|}{|D|}Ent(D^{v})=<br>$$</p>
+<p>$$<br>0.998-\left (\frac{6}{17}\times1.000 +\frac{6}{17}\times0.918 +\frac{6}{17}\times0.722  \right )=0.109<br>$$</p>
+<p>以此类推，我们可以求出其他几个特征的信息增益：<br>$$<br>Gain(D,根蒂)=0.143<br>$$</p>
+<p>$$<br>Gain(D,敲声)=0.141<br>$$</p>
+<p>$$<br>Gain(D,纹理)=0.381<br>$$</p>
+<p>$$<br>Gain(D,脐部)=0.289<br>$$</p>
+<p>$$<br>Gain(D,触感)=0.006<br>$$</p>
+<p>​    此时我们可以看出纹理特征的信息增益最大，所以我们先选择纹理特征进行划分，依次按照这样的方式进行下去，最终我们划分到一个节点子集时，里边的样本全部属于同一类，则此时停止划分，这个节点就是决策树的叶节点。这就是决策树与普通树的区别，节点划分方式不同。这个就是著名的 ID3 决策树算法。</p>
+<h4 id="4-分析预测"><a href="#4-分析预测" class="headerlink" title="4.分析预测"></a>4.分析预测</h4><p>​    通过样本进行训练，我们可以得到一棵树，我们把树存储在本地，然后我们输入一个含有这六个特征的西瓜特征值，就可以判断是好瓜还是不好的瓜了。</p>
+<h3 id="二、算法实践"><a href="#二、算法实践" class="headerlink" title="二、算法实践"></a>二、算法实践</h3><p>​    接下来是一个算法关于预测佩戴隐形眼镜类型的一个案例。</p>
+<h4 id="决策树预测佩戴隐形眼镜类型"><a href="#决策树预测佩戴隐形眼镜类型" class="headerlink" title="决策树预测佩戴隐形眼镜类型"></a>决策树预测佩戴隐形眼镜类型</h4><p>​    医院眼科医生要判断一个人适合带什么类型镜片的隐形眼镜，其中包括硬材质、软材质、不适合佩戴者三个类型。判断一个人适合什么类型需要四个特征，分别是：年纪，处方，散光，流泪比率。</p>
+<p>代码实战：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> log</span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">计算香农熵</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calcShannonEnt</span><span class="params">(dataSet)</span>:</span></span><br><span class="line">    numEntries = len(dataSet)</span><br><span class="line">    labelCounts = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 为所有可能分类创建字典</span></span><br><span class="line">    <span class="keyword">for</span> featVec <span class="keyword">in</span> dataSet:</span><br><span class="line">        currentLabel = featVec[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">if</span> currentLabel <span class="keyword">not</span> <span class="keyword">in</span> labelCounts.keys():</span><br><span class="line">            labelCounts[currentLabel] = <span class="number">0</span></span><br><span class="line">        labelCounts[currentLabel] += <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    shannonEnt = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> labelCounts:</span><br><span class="line">        prob = float(labelCounts[key])/numEntries</span><br><span class="line">        shannonEnt -= prob*log(prob,<span class="number">2</span>)      <span class="comment"># 计算香农熵</span></span><br><span class="line">    <span class="keyword">return</span> shannonEnt</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">给定特征划分数据集</span></span><br><span class="line"><span class="string">dataSet: 待划分数据集</span></span><br><span class="line"><span class="string">axis: 划分数据集的特征</span></span><br><span class="line"><span class="string">value： 特征的返回值</span></span><br><span class="line"><span class="string">知识补充：</span></span><br><span class="line"><span class="string">1.extend</span></span><br><span class="line"><span class="string">例如：a = [1,2,3]</span></span><br><span class="line"><span class="string">      b = [4,5,6]</span></span><br><span class="line"><span class="string">      a.extend(b)</span></span><br><span class="line"><span class="string">      output:[1,2,3,4,5,6]</span></span><br><span class="line"><span class="string">1.append</span></span><br><span class="line"><span class="string">例如：a = [1,2,3]</span></span><br><span class="line"><span class="string">      b = [4,5,6]</span></span><br><span class="line"><span class="string">      a.append(b)</span></span><br><span class="line"><span class="string">      output:[1,2,3,[4,5,6]]    </span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">splitDataSet</span><span class="params">(dataSet,axis,value)</span>:</span></span><br><span class="line">    retDataSet = []</span><br><span class="line">    <span class="keyword">for</span> featVec <span class="keyword">in</span> dataSet:</span><br><span class="line">        <span class="keyword">if</span> featVec[axis] == value:</span><br><span class="line">            reducedFeatVec = featVec[:axis]</span><br><span class="line">            reducedFeatVec.extend(featVec[axis+<span class="number">1</span>:])</span><br><span class="line">            retDataSet.append(reducedFeatVec)</span><br><span class="line">    <span class="keyword">return</span> retDataSet</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">选择最好的数据集划分方式</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">chooseBestFeatureToSplit</span><span class="params">(dataSet)</span>:</span></span><br><span class="line">    numFeatures = len(dataSet[<span class="number">0</span>]) - <span class="number">1</span></span><br><span class="line">    baseEntropy = calcShannonEnt(dataSet)</span><br><span class="line">    bestInfoGain = <span class="number">0.0</span></span><br><span class="line">    bestFeature = <span class="number">-1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numFeatures):</span><br><span class="line">        featList = [example[i] <span class="keyword">for</span> example <span class="keyword">in</span> dataSet]</span><br><span class="line">        uniqueVals = set(featList)  <span class="comment"># 集合数据结构中，每个值互不相同</span></span><br><span class="line">        newEntropy = <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算每种划分的信息熵</span></span><br><span class="line">        <span class="keyword">for</span> value <span class="keyword">in</span> uniqueVals:</span><br><span class="line">            subDataSet = splitDataSet(dataSet,i,value)</span><br><span class="line">            prob = len(subDataSet)/float(len(dataSet))</span><br><span class="line">            newEntropy += prob*calcShannonEnt(subDataSet)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算最好的信息增益</span></span><br><span class="line">        infoGain = baseEntropy - newEntropy</span><br><span class="line">        <span class="keyword">if</span> (infoGain &gt; bestInfoGain):</span><br><span class="line">            bestInfoGain = infoGain</span><br><span class="line">            bestFeature = i</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> bestFeature</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">无法决定分类时采用多数表决法分类</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">majorityCnt</span><span class="params">(classList)</span>:</span></span><br><span class="line">    classCount = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> vote <span class="keyword">in</span> classList:</span><br><span class="line">        <span class="keyword">if</span> vote <span class="keyword">not</span> <span class="keyword">in</span> classCount.keys():</span><br><span class="line">            classCount[vote] = <span class="number">0</span></span><br><span class="line">        classCount[vote] += <span class="number">1</span></span><br><span class="line">    sortedClassCount = sorted(classCount.items(),key=operator.itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">创建树</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createTree</span><span class="params">(dataSet,labels)</span>:</span></span><br><span class="line">    classList = [example[<span class="number">-1</span>] <span class="keyword">for</span> example <span class="keyword">in</span> dataSet]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 类别相同则停止继续划分</span></span><br><span class="line">    <span class="keyword">if</span> classList.count(classList[<span class="number">0</span>]) == len(classList):</span><br><span class="line">        <span class="keyword">return</span> classList[<span class="number">0</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 遍历完所有特征返回时返回出现次数最多的</span></span><br><span class="line">    <span class="keyword">if</span> len(dataSet[<span class="number">0</span>]) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> majorityCnt(classList)</span><br><span class="line">    </span><br><span class="line">    bestFeat = chooseBestFeatureToSplit(dataSet)</span><br><span class="line">    bestFeatLabel = labels[bestFeat]</span><br><span class="line">    myTree = &#123;bestFeatLabel:&#123;&#125;&#125;</span><br><span class="line">    <span class="keyword">del</span>(labels[bestFeat])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 得到列表包含的所有属性值</span></span><br><span class="line">    featValues = [example[bestFeat] <span class="keyword">for</span> example <span class="keyword">in</span> dataSet]</span><br><span class="line">    uniqueVals = set(featValues)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> value <span class="keyword">in</span> uniqueVals:</span><br><span class="line">        subLabels = labels[:]</span><br><span class="line">        myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet,bestFeat,value),subLabels)</span><br><span class="line">    <span class="keyword">return</span> myTree</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">获取叶节点的数目</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNumLeafs</span><span class="params">(myTree)</span>:</span></span><br><span class="line">    numLeafs = <span class="number">0</span></span><br><span class="line">    firstStr = list(myTree.keys())[<span class="number">0</span>]</span><br><span class="line">    secondDict = myTree[firstStr]</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> secondDict.keys():</span><br><span class="line">        <span class="keyword">if</span> type(secondDict[key]).__name__ == <span class="string">'dict'</span>:</span><br><span class="line">            numLeafs += getNumLeafs(secondDict[key])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            numLeafs += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> numLeafs</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">获取树的层数</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getTreeDepth</span><span class="params">(myTree)</span>:</span></span><br><span class="line">    maxDepth = <span class="number">0</span></span><br><span class="line">    firstStr = list(myTree.keys())[<span class="number">0</span>]</span><br><span class="line">    secondDict = myTree[firstStr]</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> secondDict.keys():</span><br><span class="line">        <span class="keyword">if</span> type(secondDict[key]).__name__ == <span class="string">'dict'</span>:</span><br><span class="line">            thisDepth = <span class="number">1</span>+getTreeDepth(secondDict[key])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            thisDepth = <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> thisDepth &gt; maxDepth:maxDepth = thisDepth</span><br><span class="line">    <span class="keyword">return</span> maxDepth</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">绘制树函数</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">decisionNode = dict(boxstyle=<span class="string">"sawtooth"</span>,fc=<span class="string">"0.8"</span>)</span><br><span class="line">leafNode = dict(boxstyle=<span class="string">"round4"</span>,fc=<span class="string">"0.8"</span>)</span><br><span class="line">arrow_args = dict(arrowstyle=<span class="string">"&lt;-"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plotMidText</span><span class="params">(cntrPt,parentPt,txtString)</span>:</span></span><br><span class="line">    xMid = (parentPt[<span class="number">0</span>] - cntrPt[<span class="number">0</span>])/<span class="number">2.0</span> + cntrPt[<span class="number">0</span>]</span><br><span class="line">    yMid = (parentPt[<span class="number">1</span>] - cntrPt[<span class="number">1</span>])/<span class="number">2.0</span> + cntrPt[<span class="number">1</span>]</span><br><span class="line">    createPlot.ax1.text(xMid,yMid,txtString)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plotTree</span><span class="params">(myTree,parentPt,nodeTxt)</span>:</span></span><br><span class="line">    numLeafs = getNumLeafs(myTree)</span><br><span class="line">    depth = getTreeDepth(myTree)</span><br><span class="line">    firstStr = list(myTree.keys())[<span class="number">0</span>]</span><br><span class="line">    cntrPt = (plotTree.xOff + (<span class="number">1.0</span> + float(numLeafs))/<span class="number">2.0</span>/plotTree.totalW,plotTree.yOff)</span><br><span class="line">    plotMidText(cntrPt,parentPt,nodeTxt)</span><br><span class="line">    plotNode(firstStr,cntrPt,parentPt,decisionNode)</span><br><span class="line">    secondDict = myTree[firstStr]</span><br><span class="line">    plotTree.yOff = plotTree.yOff - <span class="number">1.0</span>/plotTree.totalD </span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> secondDict.keys():</span><br><span class="line">        <span class="keyword">if</span> type(secondDict[key]).__name__ == <span class="string">'dict'</span>:</span><br><span class="line">            plotTree(secondDict[key],cntrPt,str(key))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            plotTree.xOff = plotTree.xOff + <span class="number">1.0</span>/plotTree.totalW</span><br><span class="line">            plotNode(secondDict[key],(plotTree.xOff,plotTree.yOff),cntrPt,leafNode)</span><br><span class="line">            plotMidText((plotTree.xOff,plotTree.yOff),cntrPt,str(key))</span><br><span class="line">    plotTree.yOff = plotTree.yOff + <span class="number">1.0</span>/plotTree.totalD</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plotNode</span><span class="params">(nodeTxt,centerPt,parentPt,nodeType)</span>:</span></span><br><span class="line">    createPlot.ax1.annotate(nodeTxt,xy=parentPt,xycoords=<span class="string">'axes fraction'</span>,</span><br><span class="line">        xytext=centerPt,textcoords=<span class="string">'axes fraction'</span>,</span><br><span class="line">        va=<span class="string">"center"</span>,ha=<span class="string">"center"</span>,bbox=nodeType,arrowprops=arrow_args)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createPlot</span><span class="params">(inTree)</span>:</span></span><br><span class="line">    fig = plt.figure(<span class="number">1</span>,facecolor=<span class="string">'white'</span>)</span><br><span class="line">    fig.clf()</span><br><span class="line">    axprops = dict(xticks=[],yticks=[])</span><br><span class="line">    createPlot.ax1 = plt.subplot(<span class="number">111</span>,frameon=<span class="keyword">False</span>,**axprops)</span><br><span class="line">    plotTree.totalW = float(getNumLeafs(inTree))</span><br><span class="line">    plotTree.totalD = float(getTreeDepth(inTree))</span><br><span class="line">    plotTree.xOff = <span class="number">-0.5</span>/plotTree.totalW</span><br><span class="line">    plotTree.yOff = <span class="number">1.0</span></span><br><span class="line">    plotTree(inTree,(<span class="number">0.5</span>,<span class="number">1.0</span>),<span class="string">''</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">决策树分类</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify</span><span class="params">(inputTree,featLabels,testVec)</span>:</span></span><br><span class="line">    firstStr = inputTree.keys()[<span class="number">0</span>]</span><br><span class="line">    secondDict = inputTree[firstStr]</span><br><span class="line">    featIndex = featLabels.index(firstStr)</span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> secondDict.keys():</span><br><span class="line">        <span class="keyword">if</span> testVec[featIndex] == key:</span><br><span class="line">            <span class="keyword">if</span> type(secondDict[key]).__name__ == <span class="string">'dict'</span>:</span><br><span class="line">                classLabel = classify(secondDict[key],featLabels,testVec)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                classLabel = secondDict[key]</span><br><span class="line">    <span class="keyword">return</span> classLabel</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">存储决策树</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">storeTree</span><span class="params">(inputTree,filename)</span>:</span></span><br><span class="line">    fw = open(filename,<span class="string">'w'</span>)</span><br><span class="line">    pickle.dump(inputTree,fw)</span><br><span class="line">    fw.close()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grabTree</span><span class="params">(filename)</span>:</span></span><br><span class="line">    fr = open(filename)</span><br><span class="line">    <span class="keyword">return</span> pickle.load(fr)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 决策树预测隐形眼镜类型案例</span></span><br><span class="line">fr = open(<span class="string">'./data/Ch03/lenses.txt'</span>)</span><br><span class="line">lenses = [inst.strip().split(<span class="string">'\t'</span>) <span class="keyword">for</span> inst <span class="keyword">in</span> fr.readlines()]</span><br><span class="line">lensesLabels = [<span class="string">'age'</span>,<span class="string">'prescript'</span>,<span class="string">'astigmatic'</span>,<span class="string">'tearRate'</span>]</span><br><span class="line">lensesTree = createTree(lenses,lensesLabels)</span><br><span class="line">createPlot(lensesTree)</span><br></pre></td></tr></table></figure>
+<h3 id="三、后记"><a href="#三、后记" class="headerlink" title="三、后记"></a>三、后记</h3><p>​    这里只说了ID3决策树，其实ID3是有BUG的，因为这个算法更偏向先去选择属性值含有量多的，在C4.5中就采用信息增益比来解决这个问题。其实还有过拟合问题，我们也可以采用预剪枝与和后剪枝来处理过拟合问题，这个后续进行补充。下一篇将介绍贝叶斯分类器。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/21/MapReduce/" class="archive-article-date">
-  	<time datetime="2019-04-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/21/MapReduce/">MapReduce</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/10/DT/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/20/SVD/" class="archive-article-date">
-  	<time datetime="2019-04-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/03/13/bayes/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          贝叶斯（Bayes）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/09/KNN/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">KNN（K-Nearest Neighbor）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/20/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/18/PCA/" class="archive-article-date">
-  	<time datetime="2019-04-18T15:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2019-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/16/Apriori/" class="archive-article-date">
-  	<time datetime="2019-04-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/16/Apriori/">Apriori</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/kMeans/" class="archive-article-date">
-  	<time datetime="2019-04-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/12/CART/" class="archive-article-date">
-  	<time datetime="2019-04-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/12/CART/">CART（Classification And Regression Trees）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2019-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/27/Regression/" class="archive-article-date">
-  	<time datetime="2019-03-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/Regression/">线性回归（Line Regression）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/26/AdaBoost/" class="archive-article-date">
-  	<time datetime="2019-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/26/AdaBoost/">AdaBoost（adaptive boosting）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +543,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>奇异值分解（Singular Value Decomposition） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一、算法理论1.SVD算法剧情介绍​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。 ​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算事">
+<meta property="og:type" content="article">
+<meta property="og:title" content="奇异值分解（Singular Value Decomposition）">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/SVD/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、算法理论1.SVD算法剧情介绍​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。 ​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算事">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-21T03:40:56.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="奇异值分解（Singular Value Decomposition）">
+<meta name="twitter:description" content="一、算法理论1.SVD算法剧情介绍​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。 ​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算事">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,295 +154,296 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SVD" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/21/MapReduce/" class="archive-article-date">
-  	<time datetime="2019-04-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/21/MapReduce/">MapReduce</a>
+    <h1 class="article-title" itemprop="name">
+      奇异值分解（Singular Value Decomposition）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/20/SVD/" class="archive-article-date">
+        
+        <a href="/2019/04/20/SVD/" class="archive-article-date">
   	<time datetime="2019-04-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/20/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-SVD算法剧情介绍"><a href="#1-SVD算法剧情介绍" class="headerlink" title="1.SVD算法剧情介绍"></a>1.SVD算法剧情介绍</h4><p>​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。</p>
+<p>​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算事务之间的相似度。假如有一家餐馆的菜由品菜师进行了打分，我们可以对品菜师和菜构成的矩阵进行奇异值分解，得到其中的奇异值，我们可以从中得出这些品菜师对于哪类菜更喜爱。</p>
+<h4 id="2-获取相关数据"><a href="#2-获取相关数据" class="headerlink" title="2.获取相关数据"></a>2.获取相关数据</h4><p>​    这里的数据中的数字表示品菜师对菜的评分，0表示没有评分，1-5为评分。</p>
+<table>
+<thead>
+<tr>
+<th>品菜师\菜类</th>
+<th>鳗鱼饭</th>
+<th>日式炸鸡排</th>
+<th>寿司饭</th>
+<th>烤牛肉</th>
+<th>手撕猪肉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ed</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Peter</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Tracy</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Fan</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Ming</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Pachi</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Jocalyn</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-公式原理"><a href="#3-公式原理" class="headerlink" title="3.公式原理"></a>3.公式原理</h4><p>​    平时我们对矩阵进行分解时都是对方阵进行特征分解，找到特征值和特征向量，但是有时候矩阵并不是方阵，这时候就要用到SVD了。SVD的分解可以表示为：<br>$$<br>Data_{m\times n}=U_{m\times n}\sum.<em>{m\times n}V^{T}</em>{n\times n}<br>$$<br>这里分解会构建出sigma矩阵，这个矩阵是对角元素为奇异值，其余元素为0的对角矩阵，且奇异值从大到小排列。上一节中的PCA技术是得到矩阵的特征值，这里可以得到数据集中的重要特征，其中奇异值是Data数据集矩阵的特征值的平方根。</p>
+<p>​    我们可以举例说明：我们对矩阵A进行奇异值分解。<br>$$<br>A=\begin{pmatrix}<br>0 &amp;1 \<br>1 &amp;1 \<br>1 &amp;0<br>\end{pmatrix}<br>$$<br>我们先计算下边两个式子：<br>$$<br>A^TA=\begin{pmatrix}<br>0 &amp; 1 &amp; 1\<br>1 &amp; 1 &amp; 0<br>\end{pmatrix}\begin{pmatrix}<br>0 &amp;1 \<br>1 &amp;1 \<br>1 &amp;0<br>\end{pmatrix}<br>=\begin{pmatrix}<br>2 &amp;1 \<br>1 &amp;2<br>\end{pmatrix}<br>$$</p>
+<p>$$<br>AA^T=\begin{pmatrix}<br>0 &amp;1 \<br>1 &amp;1 \<br>1 &amp;0<br>\end{pmatrix}\begin{pmatrix}<br>0 &amp; 1 &amp; 1\<br>1 &amp; 1 &amp; 0<br>\end{pmatrix}<br>=\begin{pmatrix}<br>1 &amp;1 &amp;0\<br>1 &amp;2 &amp;1\<br>0 &amp;1 &amp;1<br>\end{pmatrix}<br>$$</p>
+<p>我们可以求出上边两个式子的特征向量，A^T<em>A：<br>$$<br>\lambda <em>{1}=3;v</em>{1}=\begin{pmatrix}<br>\frac{1}{\sqrt{2}}\<br>\frac{1}{\sqrt{2}}<br>\end{pmatrix};<br>\lambda <em>{2}=1;v</em>{2}=\begin{pmatrix}<br>-\frac{1}{\sqrt{2}}\<br>\frac{1}{\sqrt{2}}<br>\end{pmatrix}<br>$$<br>A</em>A^T的特征值与特征向量：<br>$$<br>\lambda <em>{1}=3;u</em>{1}=\begin{pmatrix}<br>\frac{1}{\sqrt{6}}\<br>\frac{2}{\sqrt{6}}\<br>\frac{1}{\sqrt{6}}<br>\end{pmatrix};<br>\lambda <em>{2}=1;u</em>{2}=\begin{pmatrix}<br>\frac{1}{\sqrt{2}}\<br>0\<br>-\frac{1}{\sqrt{2}}<br>\end{pmatrix};<br>\lambda <em>{3}=0;u</em>{3}=\begin{pmatrix}<br>\frac{1}{\sqrt{3}}\<br>-\frac{1}{\sqrt{3}}\<br>\frac{1}{\sqrt{3}}<br>\end{pmatrix};<br>$$<br>我们可以利用Aui=σiui,i=1,2求解奇异值：<br>$$<br>\begin{pmatrix}<br>0 &amp;1 \<br>1 &amp;1 \<br>1 &amp;0<br>\end{pmatrix}\begin{pmatrix}<br>\frac{1}{\sqrt{2}}\<br>\frac{1}{\sqrt{2}}<br>\end{pmatrix}<br>=\sigma _{1}\begin{pmatrix}<br>\frac{1}{\sqrt{6}}\<br>\frac{2}{\sqrt{6}}\<br>\frac{1}{\sqrt{6}}<br>\end{pmatrix}\Rightarrow<br>\sigma _{1}=\sqrt{3}<br>$$</p>
+<p>$$<br>\begin{pmatrix}<br>0 &amp;1 \<br>1 &amp;1 \<br>1 &amp;0<br>\end{pmatrix}\begin{pmatrix}<br>-\frac{1}{\sqrt{2}}\<br>\frac{1}{\sqrt{2}}<br>\end{pmatrix}<br>=\sigma _{2}\begin{pmatrix}<br>\frac{1}{\sqrt{2}}\<br>0\<br>-\frac{1}{\sqrt{2}}<br>\end{pmatrix}\Rightarrow<br>\sigma _{2}=1<br>$$</p>
+<p>我们也可以利用下式求出奇异值：<br>$$<br>\sigma _{i}=\sqrt{\lambda <em>{i}}<br>$$<br>最终的奇异值分解为：<br>$$<br>A=U\sum V^{T}=\begin{pmatrix}<br>\frac{1}{\sqrt{6}} &amp;\frac{1}{\sqrt{2}} &amp;\frac{1}{\sqrt{3}}\<br>\frac{2}{\sqrt{6}} &amp;0 &amp;-\frac{1}{\sqrt{3}}\<br>\frac{1}{\sqrt{6}} &amp;-\frac{1}{\sqrt{2}} &amp;\frac{1}{\sqrt{3}}<br>\end{pmatrix}\begin{pmatrix}<br>\sqrt{3} &amp; 0\<br>0 &amp; 1\<br>0 &amp; 0<br>\end{pmatrix}\begin{pmatrix}<br>\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \<br>-\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}}<br>\end{pmatrix}<br>$$<br>奇异值和特征分解的特征值类似，奇异值按照从大到小排列，而且奇异值减小的很快，一般10%到1%的奇异值就占了全部奇异值之和的99%以上的比例。我们就可以取前k个奇异值和对应的左右奇异向量来近似描述原始矩阵。我们可以表示为：<br>$$<br>A</em>{m\times n}=U_{m\times m}\sum.<em>{m\times n}V</em>{n\times n}^{T}\approx U_{m\times k}\sum .<em>{k\times k}V</em>{k\times n}^{T}<br>$$<br>其中这里的k就是前k个奇异值，可以覆盖90%以上的奇异值之和，而且这里的k很小。这样，PCA就可以运用SVD进行降维，数据压缩去噪。</p>
+<p>​    在PCA中我们降维采用的是求协方差矩阵A^T*A的特征值和特征向量，然后取前k个最大的特征值对应的特征向量构成的矩阵进行降维，但是当样本数目过多的时候，计算这种方法计算量就会很大。我们可以看到SVD中也可以得到协方差矩阵的k个最大特征向量构成的矩阵，但是SVD可以不求协方差矩阵就可以计算出右奇异矩阵V，则此时我们就没有做特征分解，因此在样本量很大的时候PCA采用SVD分解更好。</p>
+<p>​    这里还要注意的是，PCA中仅使用了SVD的右奇异矩阵，没有使用左奇异矩阵，左奇异矩阵有什么用？我们可以对mxn的矩阵X通过协方差矩阵进行特征分解，得出前k个最大特征向量构成的mxk的矩阵U,我们可以进行以下处理：<br>$$<br>X^{‘}<em>{k\times n} = U^{T}</em>{k\times m}X_{m\times n}<br>$$<br>我们可以得到一个kxn的矩阵X’，这个矩阵比原来的矩阵从m行减小到d行，对行数据进行了压缩，则做奇异矩阵是对行矩阵压缩，右奇异矩阵是对列数据压缩，这就是PCA降维。</p>
+<h4 id="4-数据压缩"><a href="#4-数据压缩" class="headerlink" title="4.数据压缩"></a>4.数据压缩</h4><p>​    我们可以对非方阵进行奇异值分解得到三个矩阵其中矩阵U是对原始行数据压缩，V^T矩阵是对列矩阵进行压缩，sigma矩阵是选择其中占有90%奇异值的压缩数目，这样我们就可以对原始数据的行和列进行压缩。</p>
+<h3 id="二、算法实践"><a href="#二、算法实践" class="headerlink" title="二、算法实践"></a>二、算法实践</h3><h4 id="1-基于协同过滤的推荐引擎"><a href="#1-基于协同过滤的推荐引擎" class="headerlink" title="1.基于协同过滤的推荐引擎"></a>1.基于协同过滤的推荐引擎</h4><p>​    通过推荐引擎我们可以推荐购物物品，推荐看的电影和推荐新闻广告等等，这里我们用协同过滤算法来实现推荐功能。</p>
+<p>​    协同过滤是通过将用户和其他用户的数据进行对比来实现推荐。我们可以通过计算两个用户或者两个物品之间的相似度，然后来预测未知用户的喜好。比如，我们可以对某个用户喜欢的电影进行预测，假如推荐引擎发现某部电影该用户还未看，然后推荐引擎就会计算这部电影和该用户看过电影之间的相似度，如果相似度很高，推荐引擎就会推荐这部电影。</p>
+<p>​    我们在推荐引擎中使用的是用户对物品的评价来进行相似度计算推荐的，所以我们获取到三个人对这几道菜的评价信息：</p>
+<table>
+<thead>
+<tr>
+<th>用户\菜</th>
+<th>鳗鱼饭</th>
+<th>日式炸鸡排</th>
+<th>寿司饭</th>
+<th>烤牛肉</th>
+<th>手撕猪肉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jim</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>John</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Sally</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>我们一般计算相似度采用欧氏距离，我们可以计算手撕猪肉和烤牛肉之间距离：<br>$$<br>\sqrt{(4-4)^{2}+(3-3)^{2}+(2-1)^{2}}=1<br>$$<br>手撕猪肉和鳗鱼饭之间的欧氏距离：<br>$$<br>\sqrt{(4-2)^{2}+(3-5)^{2}+(2-2)^{2}}=2.83<br>$$<br>我们这里得出手撕猪肉和烤牛肉之间的距离比手撕猪肉和鳗鱼饭之间的距离更小，所以手撕猪肉与烤牛肉之间更相似。我们可以把值控制到（0,1），然后计算相似度：<br>$$<br>相似度=\frac{1}{1+距离}<br>$$<br>通过皮尔逊相关系数求解相似度，这个方法有一个优势是对用户的评级量级不敏感，比如有的用户评分5分，有的评分1分，皮尔逊相关系数会认为这种情况是等价的。皮尔逊相关系数取值在（-1，1），因此我们计算：<br>$$<br>0.5+0.5\times corrcoef()<br>$$<br>还可以采用余弦相似度来计算相似度，余弦相似度的取值范围也是（-1，1），因此我们可以将它归一化到（0,1）：<br>$$<br>\cos \Theta =\frac{A\cdot B}{\left | A \right |\cdot \left | B \right |}<br>$$<br>一般在推荐引擎中我们要计算两个餐馆菜肴的相似度这是基于物品的相似度，还有就是通过用户的相似度来计算是用户相似度。一帮情况下我们会考虑用户数量和物品数量，如果用户数目多我们就采用物品进行相似度计算。</p>
+<p>​    在推荐引擎评价中，我们用的方法是把已有的部分评分去掉，然后用推荐算法进行预测，然后计算与真实值之间的误差（最小均方根误差）</p>
+<p>​    接下来一个实例就是用推荐引擎推荐餐馆的食物，假如一家人出去旅游，不知道到哪家餐馆和点什么菜，那我们的推荐引擎就可以帮助寻找合适的餐馆并且推荐适当的菜。我们的思路是：</p>
+<p>（1）寻找用户没有评级的菜肴，在用户物品矩阵中值为0。</p>
+<p>（2）我们可以对没有评级的菜肴中预测出一个评分，我们可以利用相似度计算。</p>
+<p>（3）对评分的菜肴从高到低排序，选择前N个进行推荐。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> linalg <span class="keyword">as</span> la</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadExData</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span>[[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">2</span>],</span><br><span class="line">           [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">3</span>],</span><br><span class="line">           [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>],</span><br><span class="line">           [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">           [<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">           [<span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">           [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>]]</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadExData2</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span>[[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">5</span>],</span><br><span class="line">           [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">3</span>],</span><br><span class="line">           [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>],</span><br><span class="line">           [<span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">           [<span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">           [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">0</span>],</span><br><span class="line">           [<span class="number">4</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">           [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">4</span>],</span><br><span class="line">           [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">           [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">4</span>, <span class="number">0</span>],</span><br><span class="line">           [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">0</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 相似度计算</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ecludSim</span><span class="params">(inA,inB)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1.0</span>/(<span class="number">1.0</span> + la.norm(inA - inB))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pearsSim</span><span class="params">(inA,inB)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(inA) &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.5</span>+<span class="number">0.5</span>*corrcoef(inA,inB,rowvar = <span class="number">0</span>)[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cosSim</span><span class="params">(inA,inB)</span>:</span></span><br><span class="line">    num = float(inA.T*inB)</span><br><span class="line">    denom = la.norm(inA)*la.norm(inB)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.5</span>+<span class="number">0.5</span>*(num/denom)</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">用户对物品的估计评分值</span></span><br><span class="line"><span class="string">dataMat:数据矩阵</span></span><br><span class="line"><span class="string">user:用户编号</span></span><br><span class="line"><span class="string">simMeas:相似度计算方法</span></span><br><span class="line"><span class="string">item:物品编号</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">standEst</span><span class="params">(dataMat,user,simMeas,item)</span>:</span></span><br><span class="line">    n = shape(dataMat)[<span class="number">1</span>]</span><br><span class="line">    simTotal = <span class="number">0.0</span></span><br><span class="line">    ratSimTotal = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        userRating = dataMat[user,j]</span><br><span class="line">        <span class="keyword">if</span> userRating == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 寻找两个用户都评级的物品</span></span><br><span class="line">        overLap = nonzero(logical_and(dataMat[:,item].A&gt;<span class="number">0</span>,dataMat[:,j].A&gt;<span class="number">0</span>))[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> len(overLap) == <span class="number">0</span>:</span><br><span class="line">            similarity = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            similarity = simMeas(dataMat[overLap,item],dataMat[overLap,j])</span><br><span class="line">        <span class="comment">#print("the %d and %d similarity is:%f" % (item,j,similarity))</span></span><br><span class="line">        simTotal += similarity</span><br><span class="line">        ratSimTotal += similarity * userRating</span><br><span class="line">    <span class="keyword">if</span> simTotal == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> ratSimTotal/simTotal</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推荐引擎</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recommend</span><span class="params">(dataMat,user,N=<span class="number">3</span>,simMeas=cosSim,estMethod=standEst)</span>:</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 寻找未评级的物品</span></span><br><span class="line">    unratedItems = nonzero(dataMat[user,:].A==<span class="number">0</span>)[<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> len(unratedItems) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"you rated everything"</span></span><br><span class="line">    itemScores = []</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> unratedItems:</span><br><span class="line">        estimatedScore = estMethod(dataMat,user,simMeas,item)</span><br><span class="line">        itemScores.append((item,estimatedScore))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 寻找前N个未评级物品</span></span><br><span class="line">    <span class="keyword">return</span> sorted(itemScores,key=<span class="keyword">lambda</span> jj:jj[<span class="number">1</span>],reverse=<span class="keyword">True</span>)[:N]</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">用于评分估计值</span></span><br><span class="line"><span class="string">dataMat:数据集</span></span><br><span class="line"><span class="string">user:用户</span></span><br><span class="line"><span class="string">simMeas:相似度计算方法</span></span><br><span class="line"><span class="string">item:物品项</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">svdEst</span><span class="params">(dataMat,user,simMeas,item)</span>:</span></span><br><span class="line">    n = shape(dataMat)[<span class="number">1</span>]</span><br><span class="line">    simTotal = <span class="number">0.0</span></span><br><span class="line">    ratSimTotal = <span class="number">0.0</span></span><br><span class="line">    U,Sigma,VT = la.svd(dataMat)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 建立对角矩阵</span></span><br><span class="line">    Sig4 = mat(eye(<span class="number">4</span>)*Sigma[:<span class="number">4</span>])</span><br><span class="line">    <span class="comment"># 构建转换后的物品</span></span><br><span class="line">    xformedItems = dataMat.T * U[:,:<span class="number">4</span>] * Sig4.I</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        userRating = dataMat[user,j]</span><br><span class="line">        <span class="keyword">if</span> userRating == <span class="number">0</span> <span class="keyword">or</span> j == item:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        similarity = simMeas(xformedItems[item,:].T,xformedItems[j,:].T)</span><br><span class="line">        print(<span class="string">"the %d and %d similarity is:%f"</span> % (item,j,similarity))</span><br><span class="line">        simTotal += similarity</span><br><span class="line">        ratSimTotal += similarity*userRating</span><br><span class="line">    <span class="keyword">if</span> simTotal == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> ratSimTotal/simTotal</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(recommend(mat(loadExData2()),<span class="number">1</span>,estMethod=svdEst))</span><br></pre></td></tr></table></figure>
+<h4 id="2-SVD图像压缩"><a href="#2-SVD图像压缩" class="headerlink" title="2.SVD图像压缩"></a>2.SVD图像压缩</h4><p>​    这里我们对手写识别里边的数字5进行压缩。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> linalg <span class="keyword">as</span> la</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">图像压缩</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printMat</span><span class="params">(inMat,thresh=<span class="number">0.8</span>)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">            <span class="keyword">if</span> float(inMat[i,k]) &gt; thresh:</span><br><span class="line">                print(<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                print(<span class="number">0</span>)</span><br><span class="line">        print(<span class="string">" "</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">imgCompress</span><span class="params">(numSV=<span class="number">3</span>,thresh=<span class="number">0.8</span>)</span>:</span></span><br><span class="line">    myl = []</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">'./data/Ch14/0_5.txt'</span>):</span><br><span class="line">        newRow = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">32</span>):</span><br><span class="line">            newRow.append(int(line[i]))</span><br><span class="line">        myl.append(newRow)</span><br><span class="line">    myMat = mat(myl)</span><br><span class="line">    print(<span class="string">"****original matrix******"</span>)</span><br><span class="line">    printMat(myMat,thresh)</span><br><span class="line">    U,Sigma,VT = la.svd(myMat)</span><br><span class="line">    SigRecon = mat(zeros((numSV,numSV)))</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(numSV):</span><br><span class="line">        SigRecon[k,k] = Sigma[k]</span><br><span class="line">    reconMat = U[:,:numSV]*SigRecon*VT[:numSV,:]</span><br><span class="line">    print(<span class="string">"*****reconstructed matrix using %d singular values******"</span> % numSV)</span><br><span class="line">    print(reconMat,thresh)</span><br><span class="line">imgCompress(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="三、后记"><a href="#三、后记" class="headerlink" title="三、后记"></a>三、后记</h3><p>​    通过SVD我们可以进行快速PCA降维，去除数据噪声等，实现数据压缩，我们接下来还可以运用分布式处理前边所学过的算法，就用到了MapReduce，在大量数据中如何去分布式训练。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/20/SVD/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/18/PCA/" class="archive-article-date">
-  	<time datetime="2019-04-18T15:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/04/21/MapReduce/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MapReduce
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/18/PCA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">主成分分析PCA(Principl Component Analysis)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2019-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/16/Apriori/" class="archive-article-date">
-  	<time datetime="2019-04-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/16/Apriori/">Apriori</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/kMeans/" class="archive-article-date">
-  	<time datetime="2019-04-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/12/CART/" class="archive-article-date">
-  	<time datetime="2019-04-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/12/CART/">CART（Classification And Regression Trees）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2019-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/27/Regression/" class="archive-article-date">
-  	<time datetime="2019-03-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/Regression/">线性回归（Line Regression）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/26/AdaBoost/" class="archive-article-date">
-  	<time datetime="2019-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/26/AdaBoost/">AdaBoost（adaptive boosting）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +467,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

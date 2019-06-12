@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>MapReduce | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一、分布式计算思想​    随着大量设备的联网，我们能够获取的数据越来越多，通过数据都是需要进行决策处理，但通常这些数据量太庞大了，超出了我们单台机器所能处理的范围。问题会有的，解决方案也会有的，一个开源项目Hadoop，是用Java编写，支持大量机器上分布式处理数据。 1.分布式计算框架（MapReduce）​    MapReduce是一个软件框架，可以在单台计算机上把任务分配给多台计算机来执">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MapReduce">
+<meta property="og:url" content="http://yoursite.com/2019/04/21/MapReduce/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、分布式计算思想​    随着大量设备的联网，我们能够获取的数据越来越多，通过数据都是需要进行决策处理，但通常这些数据量太庞大了，超出了我们单台机器所能处理的范围。问题会有的，解决方案也会有的，一个开源项目Hadoop，是用Java编写，支持大量机器上分布式处理数据。 1.分布式计算框架（MapReduce）​    MapReduce是一个软件框架，可以在单台计算机上把任务分配给多台计算机来执">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-21T12:56:32.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="MapReduce">
+<meta name="twitter:description" content="一、分布式计算思想​    随着大量设备的联网，我们能够获取的数据越来越多，通过数据都是需要进行决策处理，但通常这些数据量太庞大了，超出了我们单台机器所能处理的范围。问题会有的，解决方案也会有的，一个开源项目Hadoop，是用Java编写，支持大量机器上分布式处理数据。 1.分布式计算框架（MapReduce）​    MapReduce是一个软件框架，可以在单台计算机上把任务分配给多台计算机来执">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,295 +154,163 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-MapReduce" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      MapReduce
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/21/MapReduce/" class="archive-article-date">
+
+        
+        <a href="/2019/04/21/MapReduce/" class="archive-article-date">
   	<time datetime="2019-04-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/21/MapReduce/">MapReduce</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、分布式计算思想"><a href="#一、分布式计算思想" class="headerlink" title="一、分布式计算思想"></a>一、分布式计算思想</h3><p>​    随着大量设备的联网，我们能够获取的数据越来越多，通过数据都是需要进行决策处理，但通常这些数据量太庞大了，超出了我们单台机器所能处理的范围。问题会有的，解决方案也会有的，一个开源项目Hadoop，是用Java编写，支持大量机器上分布式处理数据。</p>
+<h4 id="1-分布式计算框架（MapReduce）"><a href="#1-分布式计算框架（MapReduce）" class="headerlink" title="1.分布式计算框架（MapReduce）"></a>1.分布式计算框架（MapReduce）</h4><p>​    MapReduce是一个软件框架，可以在单台计算机上把任务分配给多台计算机来执行，这样就可以缩短运行时间。它的工作流程是：单个作业被分成很多小份，输入的数据也被切片分发到每个节点，各个节点只在本地数据上做运算，对应的运算代码称为mapper,这个过程是map阶段。每个mapper的输出通过某种方式组合排序，结果再划分成小份分发到各个节点下进行处理，这一步是reduce阶段，被称为reducer，reducer的输出就是最终结果。</p>
+<p>​    MapReduce可以并行执行，本来十个小时的任务分给十台机器后一个多小时就完成了。比如要知道中国过去100年国内最高气温，其中数据格式是<province><date><temp>，我们可以先将数据切分成很多分，每个节点找出本机数据集中最高的气温，这样每个mapper产生一个温度，比如：&lt;”max”&gt;<temp>，也就是所有的mapper都会产生相同的key：“max”字符串。最后通过一个reducer来比较所有mapper的输出就可以得到全局最高气温。</temp></temp></date></province></p>
+<p>​    在MapReduce整个工作中，编配工作由主节点控制，主节点控制整个MapReduce的作业分配，包括每份数据存放节点位置，和map，sort，reduce的时序控制。一般每份mapper的输入数据会同时分发到多个节点，形成多个副本，用于事务失效处理。</p>
+<h4 id="2-MapReduce上的机器学习"><a href="#2-MapReduce上的机器学习" class="headerlink" title="2.MapReduce上的机器学习"></a>2.MapReduce上的机器学习</h4><p>​    在机器学习算法中很多不能直接用MapReduce来实现，一般贝叶斯、k近邻算法、SVM、SVD、k-Means可以用MapReduce直接实现。</p>
+<p>​    在Python中mrjob这个来自动化MapReduce。我们可以利用这个库来实现我们的分布式机器学习算法。</p>
+<h3 id="二、分布式SVM实践"><a href="#二、分布式SVM实践" class="headerlink" title="二、分布式SVM实践"></a>二、分布式SVM实践</h3><p>​    这里我们采用Pegasos算法优化SVM来实现分布式SVM。其中工作流程是：从训练集中随机挑选一些样本点添加到待处理列表，之后判断每个样本点是否分类正确，如果正确则忽略，否则加入到待更新集合。批处理完毕后，权重向量按照这些错分的样本进行更新。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">mport pickle</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MRsvm</span><span class="params">(MRJob)</span>:</span></span><br><span class="line">    DEFAULT_INPUT_PROTOCOL = <span class="string">'json_value'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,*args,**kwargs)</span>:</span></span><br><span class="line">        super(MRsvm,self).__init__(*args,**kwargs)</span><br><span class="line">        self.data = pickle.load(open(<span class="string">'D:\学习资源\机器学习\ML\data\Ch15\svmDat27'</span>))</span><br><span class="line">        self.w = <span class="number">0</span></span><br><span class="line">        self.eta = <span class="number">0.69</span></span><br><span class="line">        self.dataList = []</span><br><span class="line">        self.k = self.options.batchsize</span><br><span class="line">        self.numMappers = <span class="number">1</span></span><br><span class="line">        self.t = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">configure_options</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(MRsvm,self).configure_options()</span><br><span class="line">        self.add_passthrough_option(<span class="string">'--iterations'</span>,dest=<span class="string">'iterations'</span>,default=<span class="number">2</span>,type=<span class="string">'int'</span>,help=<span class="string">'T:number of iterations to run'</span>)</span><br><span class="line">        self.add_passthrough_option(<span class="string">'--batchsize'</span>,dest=<span class="string">'batchsize'</span>,default=<span class="number">100</span>,type=<span class="string">'int'</span>,help=<span class="string">'k:number of data points in a batch'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">steps</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> ([MRStep(mapper=self.map,mapper_final=self.map_fin,reducer=self.reduce)]*self.options.iterations)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">map</span><span class="params">(self,mapperId,inVals)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">False</span>:</span><br><span class="line">            <span class="keyword">yield</span></span><br><span class="line">        <span class="keyword">if</span> inVals[<span class="number">0</span>] == <span class="string">'w'</span>:</span><br><span class="line">            self.w = inVals[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">elif</span> inVals[<span class="number">0</span>] == <span class="string">'x'</span>:</span><br><span class="line">            self.dataList.append(inVals[<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">elif</span> inVals[<span class="number">0</span>] == <span class="string">'t'</span>:</span><br><span class="line">            self.t = inVals[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">map_fin</span><span class="params">(self)</span>:</span></span><br><span class="line">        labels = self.data[:,<span class="number">-1</span>]</span><br><span class="line">        X = self.data[:,<span class="number">0</span>:<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">if</span> self.w == <span class="number">0</span>:</span><br><span class="line">            self.w = [<span class="number">0.001</span>]*shape(X)[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> index <span class="keyword">in</span> self.dataList:</span><br><span class="line">            p = mat(self.w)*X[index,:].T</span><br><span class="line">            <span class="keyword">if</span> labels[index]*p &lt; <span class="number">1.0</span>:</span><br><span class="line">                <span class="keyword">yield</span> (<span class="number">1</span>,[<span class="string">'u'</span>,index])</span><br><span class="line">        <span class="keyword">yield</span> (<span class="number">1</span>,[<span class="string">'w'</span>,self.w])</span><br><span class="line">        <span class="keyword">yield</span> (<span class="number">1</span>,[<span class="string">'t'</span>,self.t])</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reduce</span><span class="params">(self,_,packedVals)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> valArr <span class="keyword">in</span> packedVals:</span><br><span class="line">            <span class="keyword">if</span> valArr[<span class="number">0</span>] == <span class="string">'u'</span>:</span><br><span class="line">                self.dataList.append(valArr[<span class="number">1</span>])</span><br><span class="line">            <span class="keyword">elif</span> valArr[<span class="number">0</span>] == <span class="string">'w'</span>:</span><br><span class="line">                self.w = valArr[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">elif</span> valArr[<span class="number">0</span>] == <span class="string">'t'</span>:</span><br><span class="line">                self.t = valArr[<span class="number">1</span>]</span><br><span class="line">        labels = self.data[:,<span class="number">-1</span>]</span><br><span class="line">        X = self.data[:,<span class="number">0</span>:<span class="number">-1</span>]</span><br><span class="line">        wMat = mat(self.w)</span><br><span class="line">        wDelta = mat(zeros(len(self.w)))</span><br><span class="line">        <span class="keyword">for</span> index <span class="keyword">in</span> self.dataList:</span><br><span class="line">            wDelta += float(labels[index])*X[index,:]</span><br><span class="line">        eta = <span class="number">1.0</span>/(<span class="number">2.0</span>*self.t)</span><br><span class="line">        wMat = (<span class="number">1.0</span> - <span class="number">1.0</span>/self.t)*wMat + (eta/self.k)*wDelta</span><br><span class="line">        <span class="keyword">for</span> mapperNum <span class="keyword">in</span> range(<span class="number">1</span>,self.numMappers+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">yield</span> (mapperNum,[<span class="string">'w'</span>,wMat.tolist()[<span class="number">0</span>]])</span><br><span class="line">            <span class="keyword">if</span> self.t &lt; self.options.iterations:</span><br><span class="line">                <span class="keyword">yield</span> (mapperNum,[<span class="string">'t'</span>,self.t+<span class="number">1</span>])</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> range(self.k/self.numMappers):</span><br><span class="line">                    <span class="keyword">yield</span> (mapperNum,[<span class="string">'x'</span>,random.randint(shape(self.data)[<span class="number">0</span>])])</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    MRsvm.run()</span><br></pre></td></tr></table></figure>
+<h3 id="三、后记"><a href="#三、后记" class="headerlink" title="三、后记"></a>三、后记</h3><p>​    通过分布式方式进行处理，我们可以把大量数据计算分不到各个节点达到并行处理。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/21/MapReduce/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/20/SVD/" class="archive-article-date">
-  	<time datetime="2019-04-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/20/SVD/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">奇异值分解（Singular Value Decomposition）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/20/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/18/PCA/" class="archive-article-date">
-  	<time datetime="2019-04-18T15:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2019-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/16/Apriori/" class="archive-article-date">
-  	<time datetime="2019-04-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/16/Apriori/">Apriori</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/kMeans/" class="archive-article-date">
-  	<time datetime="2019-04-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/12/CART/" class="archive-article-date">
-  	<time datetime="2019-04-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/12/CART/">CART（Classification And Regression Trees）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2019-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/27/Regression/" class="archive-article-date">
-  	<time datetime="2019-03-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/Regression/">线性回归（Line Regression）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/26/AdaBoost/" class="archive-article-date">
-  	<time datetime="2019-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/26/AdaBoost/">AdaBoost（adaptive boosting）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +334,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

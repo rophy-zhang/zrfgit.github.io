@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>python爬取微信公众号内容 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一、背景​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。 二、准备1.微信公众号的用户名，密码​    首先打开微信公众">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬取微信公众号内容">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/爬取微信公众号数据/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、背景​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。 二、准备1.微信公众号的用户名，密码​    首先打开微信公众">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-25T08:00:56.474Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="python爬取微信公众号内容">
+<meta name="twitter:description" content="一、背景​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。 二、准备1.微信公众号的用户名，密码​    首先打开微信公众">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,295 +154,170 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-爬取微信公众号数据" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python爬取微信公众号内容
+    </h1>
+  
+
+        
+        <a href="/2019/03/25/爬取微信公众号数据/" class="archive-article-date">
+  	<time datetime="2019-03-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h3><p>​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。</p>
+<h3 id="二、准备"><a href="#二、准备" class="headerlink" title="二、准备"></a>二、准备</h3><h4 id="1-微信公众号的用户名，密码"><a href="#1-微信公众号的用户名，密码" class="headerlink" title="1.微信公众号的用户名，密码"></a>1.微信公众号的用户名，密码</h4><p>​    首先打开微信公众平台，登录，扫码进入平台。点击”素材管理”—&gt;”新建素材”，然后点击书写内容的上边工具栏的”超链接”标识，按F12点击下边的network项，看有没有”appmsg?=media/appmsg_edit_v2&amp;….“,如果没有按”CTRL+R“刷新试试，查看这个的Headers,找到cookies和User-Agent，保存在一个地方，一会儿要用。然后选择”查找文章“，输入要爬取公众号的名称，点击选中，然后按F12，找到”appmsg?token=182255…“等，点击headers,找到token与fakeid，保存下来，一会儿要用。其实用这些信息就可以获取到公众号的内容了，但是我们这里打开的网页只有文章信息，没有评论与点赞数（好看）与浏览量。</p>
+<h4 id="2-Fiddler抓包工具"><a href="#2-Fiddler抓包工具" class="headerlink" title="2.Fiddler抓包工具"></a>2.Fiddler抓包工具</h4><p>​    为了获取浏览量与点赞数，我们想到在微信PC端是不是有这些数据，因此我们可以用Fiddler来抓取接口数据，打开微信客户端，打开Fiddler，查询出自己想要爬取的公众号，进入，点击“查看历史消息”，然后选择一篇文章，然后查看Fiddler中请求成功的http消息，找到HOST为“mp.weixin.qq.com”，URL为“/mp/getappmsgext?f=….”的url，点击选中，看右侧上部，选择“WebForms”，找到key，pass_ticket，appmsg_token保存起来一会儿要用。</p>
+<p>​    然后选择URL为“/s/_biz=…”的url，看右侧选择“Raw”，获取微信PC端的cookie，和User-Agent保存起来，一会儿用。</p>
+<h3 id="三、代码实战"><a href="#三、代码实战" class="headerlink" title="三、代码实战"></a>三、代码实战</h3><p>​    上边准备了web的User-Agent，cookies，token，fakeid与微信PC端的key，pass_ticket，appmsg_token，cookie,User-Agent这些信息来作为爬取数据的支撑，若爬取过程中中断，试试换一换key值就可以继续爬取了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> openpyxl <span class="keyword">import</span> Workbook</span><br><span class="line"><span class="comment">#from pymongo import MongoClient</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 公众号名称</span></span><br><span class="line">sheetName = <span class="string">""</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 目标url</span></span><br><span class="line">url = <span class="string">"https://mp.weixin.qq.com/cgi-bin/appmsg"</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 填写从web页面获取的cookies</span></span><br><span class="line">Cookie = <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用Cookie，跳过登陆操作</span></span><br><span class="line">headers = &#123;</span><br><span class="line">  <span class="string">"Cookie"</span>: Cookie,</span><br><span class="line">  <span class="string">"User-Agent"</span>: <span class="string">" "</span>,  <span class="comment"># 填写从web页面获取的User-Agent</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">需要提交的data</span></span><br><span class="line"><span class="string">以下个别字段是否一定需要还未验证。</span></span><br><span class="line"><span class="string">注意修改yourtoken,number</span></span><br><span class="line"><span class="string">number表示从第number页开始爬取，为5的倍数，从0开始。如0、5、10……</span></span><br><span class="line"><span class="string">token可以使用Chrome自带的工具进行获取</span></span><br><span class="line"><span class="string">fakeid是公众号独一无二的一个id，等同于后面的__biz</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 填写web上边获取的token与fakeid</span></span><br><span class="line">token = <span class="string">""</span></span><br><span class="line">fakeid =<span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># type在网页中会是10，但是无法取到对应的消息link地址，改为9就可以了</span></span><br><span class="line">type = <span class="string">'9'</span></span><br><span class="line">data1 = &#123;</span><br><span class="line">    <span class="string">"token"</span>: token,</span><br><span class="line">    <span class="string">"lang"</span>: <span class="string">"zh_CN"</span>,</span><br><span class="line">    <span class="string">"f"</span>: <span class="string">"json"</span>,</span><br><span class="line">    <span class="string">"ajax"</span>: <span class="string">"1"</span>,</span><br><span class="line">    <span class="string">"action"</span>: <span class="string">"list_ex"</span>,</span><br><span class="line">    <span class="string">"begin"</span>: <span class="string">"365"</span>,</span><br><span class="line">    <span class="string">"count"</span>: <span class="string">"5"</span>,</span><br><span class="line">    <span class="string">"query"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="string">"fakeid"</span>: fakeid,</span><br><span class="line">    <span class="string">"type"</span>: type,</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment"># 毫秒数转日期</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getDate</span><span class="params">(times)</span>:</span></span><br><span class="line">    <span class="comment"># print(times)</span></span><br><span class="line">    timearr = time.localtime(times)</span><br><span class="line">    date = time.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>, timearr)</span><br><span class="line">    <span class="keyword">return</span> date</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment"># 获取阅读数和点赞数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getMoreInfo</span><span class="params">(link)</span>:</span></span><br><span class="line">    <span class="comment"># 获得mid,_biz,idx,sn 这几个在link中的信息</span></span><br><span class="line">    mid = link.split(<span class="string">"&amp;"</span>)[<span class="number">1</span>].split(<span class="string">"="</span>)[<span class="number">1</span>]</span><br><span class="line">    idx = link.split(<span class="string">"&amp;"</span>)[<span class="number">2</span>].split(<span class="string">"="</span>)[<span class="number">1</span>]</span><br><span class="line">    sn = link.split(<span class="string">"&amp;"</span>)[<span class="number">3</span>].split(<span class="string">"="</span>)[<span class="number">1</span>]</span><br><span class="line">    _biz = link.split(<span class="string">"&amp;"</span>)[<span class="number">0</span>].split(<span class="string">"_biz="</span>)[<span class="number">1</span>]</span><br><span class="line"> </span><br><span class="line">    <span class="comment"># fillder 中取得一些不变得信息</span></span><br><span class="line">    <span class="comment">#req_id = ""</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 填写从PC端微信获取的pass_ticket，appmsg_token,cookie,User-Agent</span></span><br><span class="line">    pass_ticket = <span class="string">""</span></span><br><span class="line">    appmsg_token = <span class="string">""</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 目标url</span></span><br><span class="line">    url = <span class="string">"http://mp.weixin.qq.com/mp/getappmsgext"</span></span><br><span class="line">    <span class="comment"># 添加Cookie避免登陆操作，这里的"User-Agent"最好为手机浏览器的标识</span></span><br><span class="line">    phoneCookie = <span class="string">""</span></span><br><span class="line">    </span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">"Cookie"</span>: phoneCookie,</span><br><span class="line">        <span class="string">"User-Agent"</span>: <span class="string">""</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 添加data，`req_id`、`pass_ticket`分别对应文章的信息，从fiddler复制即可。</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">"is_only_read"</span>: <span class="string">"1"</span>,</span><br><span class="line">        <span class="string">"is_temp_url"</span>: <span class="string">"0"</span>,</span><br><span class="line">        <span class="string">"appmsg_type"</span>: <span class="string">"9"</span>,</span><br><span class="line">        <span class="string">'reward_uin_count'</span>:<span class="string">'0'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    添加请求参数</span></span><br><span class="line"><span class="string">    __biz对应公众号的信息，唯一</span></span><br><span class="line"><span class="string">    mid、sn、idx分别对应每篇文章的url的信息，需要从url中进行提取</span></span><br><span class="line"><span class="string">    key、appmsg_token从fiddler上复制即可</span></span><br><span class="line"><span class="string">    pass_ticket对应的文章的信息，也可以直接从fiddler复制</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    params = &#123;</span><br><span class="line">        <span class="string">"__biz"</span>: _biz,</span><br><span class="line">        <span class="string">"mid"</span>: mid,</span><br><span class="line">        <span class="string">"sn"</span>: sn,</span><br><span class="line">        <span class="string">"idx"</span>: idx,</span><br><span class="line">        <span class="string">"key"</span>: <span class="string">""</span>,</span><br><span class="line">        <span class="string">"pass_ticket"</span>: pass_ticket,</span><br><span class="line">        <span class="string">"appmsg_token"</span>: appmsg_token,</span><br><span class="line">        <span class="string">"uin"</span>: <span class="string">"MjgxOTMwODUzOQ%3D%3D"</span>,</span><br><span class="line">        <span class="string">"wxtoken"</span>: <span class="string">"777"</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment"># 使用post方法进行提交</span></span><br><span class="line">    content = requests.post(url, headers=headers, data=data, params=params).json()</span><br><span class="line">    <span class="comment"># 提取其中的阅读数和点赞数</span></span><br><span class="line">    <span class="comment">#print(content["appmsgstat"]["read_num"], content["appmsgstat"]["like_num"])</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        readNum = content[<span class="string">"appmsgstat"</span>][<span class="string">"read_num"</span>]</span><br><span class="line">        print(readNum)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        readNum=<span class="number">0</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        likeNum = content[<span class="string">"appmsgstat"</span>][<span class="string">"like_num"</span>]</span><br><span class="line">        print(likeNum)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        likeNum=<span class="number">0</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        comment_count = content[<span class="string">'comment_count'</span>]</span><br><span class="line">        print(<span class="string">"true:"</span> + str(comment_count))</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        comment_count=<span class="number">0</span></span><br><span class="line">        print(<span class="string">"error:"</span>+str(comment_count))</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="comment"># 歇3s，防止被封</span></span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> readNum, likeNum,comment_count</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment"># 最大值365，所以range中就应该是73,15表示前3页</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getAllInfo</span><span class="params">(url, begin)</span>:</span></span><br><span class="line">    <span class="comment"># 拿一页，存一页</span></span><br><span class="line">    messageAllInfo = []</span><br><span class="line">    <span class="comment"># begin 从0开始，365结束</span></span><br><span class="line">    data1[<span class="string">"begin"</span>] = begin</span><br><span class="line">    <span class="comment"># 使用get方法进行提交</span></span><br><span class="line">    content_json = requests.get(url, headers=headers, params=data1, verify=<span class="keyword">False</span>).json()</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br><span class="line">    <span class="comment"># 返回了一个json，里面是每一页的数据</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">"app_msg_list"</span> <span class="keyword">in</span> content_json:</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> content_json[<span class="string">"app_msg_list"</span>]:</span><br><span class="line">            <span class="comment"># 提取每页文章的标题及对应的url</span></span><br><span class="line">            url = item[<span class="string">'link'</span>]</span><br><span class="line">            <span class="comment"># print(url)</span></span><br><span class="line">            readNum, likeNum ,comment_count= getMoreInfo(url)</span><br><span class="line">            info = &#123;</span><br><span class="line">                <span class="string">"title"</span>: item[<span class="string">'title'</span>],</span><br><span class="line">                <span class="string">"readNum"</span>: readNum,</span><br><span class="line">                <span class="string">"likeNum"</span>: likeNum,</span><br><span class="line">                <span class="string">'comment_count'</span>:comment_count,</span><br><span class="line">                <span class="string">"digest"</span>: item[<span class="string">'digest'</span>],</span><br><span class="line">                <span class="string">"date"</span>: getDate(item[<span class="string">'update_time'</span>]),</span><br><span class="line">                <span class="string">"url"</span>: item[<span class="string">'link'</span>]</span><br><span class="line">            &#125;</span><br><span class="line">            messageAllInfo.append(info)</span><br><span class="line">        <span class="comment"># print(messageAllInfo)</span></span><br><span class="line">        <span class="keyword">return</span> messageAllInfo</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">写入txt</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">writeTxt</span><span class="params">(text_list)</span>:</span></span><br><span class="line">    fileName=<span class="string">'test.txt'</span></span><br><span class="line">    <span class="keyword">for</span> lists <span class="keyword">in</span> text_list:</span><br><span class="line">        <span class="keyword">with</span> open(fileName,<span class="string">'a'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> fh:</span><br><span class="line">            fh.write(lists[<span class="string">'date'</span>]+<span class="string">"\t"</span>+lists[<span class="string">'title'</span>]+<span class="string">"\t"</span>+str(lists[<span class="string">'readNum'</span>])+<span class="string">"\t"</span>+str(lists[<span class="string">'likeNum'</span>])+<span class="string">"\t"</span>+str(lists[<span class="string">'comment_count'</span>])+<span class="string">"\t"</span>+lists[<span class="string">'digest'</span>]+<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># messageAllInfo = []</span></span><br><span class="line">    <span class="comment"># 爬10页成功，从11页开始</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>,<span class="number">5</span>):</span><br><span class="line">        begin = i * <span class="number">5</span></span><br><span class="line">        messageAllInfo = getAllInfo(url, str(begin))</span><br><span class="line">        print(<span class="string">"第%s页"</span> % i)</span><br><span class="line">        writeTxt(messageAllInfo)</span><br><span class="line">       <span class="comment"># putIntoMogo(messageAllInfo)</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">exportExcel</span><span class="params">(fileName)</span>:</span></span><br><span class="line">    excel_QA = Workbook()  <span class="comment"># 建立一个工作本</span></span><br><span class="line">    sheet = excel_QA.active  <span class="comment"># 激活sheet</span></span><br><span class="line">    </span><br><span class="line">    sheet.title = sheetName  <span class="comment"># 对sheet进行命名</span></span><br><span class="line">    sheet.cell(<span class="number">1</span>, <span class="number">1</span>).value = <span class="string">'推送日期'</span></span><br><span class="line">    sheet.cell(<span class="number">1</span>, <span class="number">2</span>).value = <span class="string">'推送标题'</span></span><br><span class="line">    sheet.cell(<span class="number">1</span>, <span class="number">3</span>).value = <span class="string">'阅读数'</span></span><br><span class="line">    sheet.cell(<span class="number">1</span>, <span class="number">4</span>).value = <span class="string">'点赞数'</span></span><br><span class="line">    sheet.cell(<span class="number">1</span>, <span class="number">5</span>).value = <span class="string">'评论数'</span></span><br><span class="line"></span><br><span class="line">    fr = open(fileName,encoding=<span class="string">'UTF-8-sig'</span>)</span><br><span class="line">    count = <span class="number">2</span></span><br><span class="line">    <span class="keyword">for</span> each <span class="keyword">in</span> fr.readlines():</span><br><span class="line">        sheet.cell(count, <span class="number">1</span>).value = each.strip().split(<span class="string">"\t"</span>)[<span class="number">0</span>]</span><br><span class="line">        sheet.cell(count, <span class="number">2</span>).value = each.strip().split(<span class="string">"\t"</span>)[<span class="number">1</span>]</span><br><span class="line">        sheet.cell(count, <span class="number">3</span>).value = each.strip().split(<span class="string">"\t"</span>)[<span class="number">2</span>]</span><br><span class="line">        sheet.cell(count, <span class="number">4</span>).value = each.strip().split(<span class="string">"\t"</span>)[<span class="number">3</span>]</span><br><span class="line">        sheet.cell(count, <span class="number">5</span>).value = each.strip().split(<span class="string">"\t"</span>)[<span class="number">4</span>]</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    excel_QA.save(sheetName + <span class="string">".xlsx"</span>)<span class="comment">#保存</span></span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br><span class="line">    exportExcel(<span class="string">"./test.txt"</span>)</span><br></pre></td></tr></table></figure>
+<p>其实爬虫涉及到好多内容，分布式爬虫，多线程，多进程等。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/21/MapReduce/" class="archive-article-date">
-  	<time datetime="2019-04-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/21/MapReduce/">MapReduce</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/25/爬取微信公众号数据/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/20/SVD/" class="archive-article-date">
-  	<time datetime="2019-04-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/03/26/AdaBoost/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          AdaBoost（adaptive boosting）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/19/SVM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">支持向量机（Support Vector Machines）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/20/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/18/PCA/" class="archive-article-date">
-  	<time datetime="2019-04-18T15:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2019-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/16/Apriori/" class="archive-article-date">
-  	<time datetime="2019-04-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/16/Apriori/">Apriori</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/kMeans/" class="archive-article-date">
-  	<time datetime="2019-04-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/12/CART/" class="archive-article-date">
-  	<time datetime="2019-04-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/12/CART/">CART（Classification And Regression Trees）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2019-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/27/Regression/" class="archive-article-date">
-  	<time datetime="2019-03-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/Regression/">线性回归（Line Regression）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/26/AdaBoost/" class="archive-article-date">
-  	<time datetime="2019-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/26/AdaBoost/">AdaBoost（adaptive boosting）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

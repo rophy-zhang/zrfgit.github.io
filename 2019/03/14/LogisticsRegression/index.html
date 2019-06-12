@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>逻辑回归（Logistics Regression） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一、算法理论1.逻辑回归算法剧情介绍​    逻辑回归看上去貌似是解决的回归问题，其实不是的，它主要解决的是分类问题。其中这里的回归就是指的拟合出的对数据点进行分类的曲线。那么如何进行分类呢？我们就用到了阶跃函数sigmoid()，这个函数很特殊，值的范围在（0,1），通过0.5这个值来分割，那么就得到了分类效果。举一个例子来说明： ​    假如，有一匹马得了氙气病症，要预测下马的死亡率。假设我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="逻辑回归（Logistics Regression）">
+<meta property="og:url" content="http://yoursite.com/2019/03/14/LogisticsRegression/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、算法理论1.逻辑回归算法剧情介绍​    逻辑回归看上去貌似是解决的回归问题，其实不是的，它主要解决的是分类问题。其中这里的回归就是指的拟合出的对数据点进行分类的曲线。那么如何进行分类呢？我们就用到了阶跃函数sigmoid()，这个函数很特殊，值的范围在（0,1），通过0.5这个值来分割，那么就得到了分类效果。举一个例子来说明： ​    假如，有一匹马得了氙气病症，要预测下马的死亡率。假设我">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-15T03:22:08.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="逻辑回归（Logistics Regression）">
+<meta name="twitter:description" content="一、算法理论1.逻辑回归算法剧情介绍​    逻辑回归看上去貌似是解决的回归问题，其实不是的，它主要解决的是分类问题。其中这里的回归就是指的拟合出的对数据点进行分类的曲线。那么如何进行分类呢？我们就用到了阶跃函数sigmoid()，这个函数很特殊，值的范围在（0,1），通过0.5这个值来分割，那么就得到了分类效果。举一个例子来说明： ​    假如，有一匹马得了氙气病症，要预测下马的死亡率。假设我">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,295 +154,282 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-LogisticsRegression" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      逻辑回归（Logistics Regression）
+    </h1>
+  
+
+        
+        <a href="/2019/03/14/LogisticsRegression/" class="archive-article-date">
+  	<time datetime="2019-03-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-逻辑回归算法剧情介绍"><a href="#1-逻辑回归算法剧情介绍" class="headerlink" title="1.逻辑回归算法剧情介绍"></a>1.逻辑回归算法剧情介绍</h4><p>​    逻辑回归看上去貌似是解决的回归问题，其实不是的，它主要解决的是分类问题。其中这里的回归就是指的拟合出的对数据点进行分类的曲线。那么如何进行分类呢？我们就用到了阶跃函数sigmoid()，这个函数很特殊，值的范围在（0,1），通过0.5这个值来分割，那么就得到了分类效果。举一个例子来说明：</p>
+<p>​    假如，有一匹马得了氙气病症，要预测下马的死亡率。假设我们得到了以往的这种病症的好多匹马的病史，其中含有21个特征X1,…,X21，结果只有两个就是是存活与死亡。从医生的角度，我们就会知道，医生会看这匹马的各个特征，然后根据这些指标的情况，根据自己历史经验最后的出一个结论。逻辑回归算法就可以做到，通过训练样本学习权重参数，然后通过阶跃函数sigmoid（）把值缩小到（0,1）这个范围，然后设定一个阈值，把值给划分为两类，最终与测试马匹是否会死亡。</p>
+<p>​    这里学习权重参数不像贝叶斯算法的那个概率了，我们需要用到梯度上升优化算法，和梯度下降一样，只不过一个是加一个是减。通过不断更新权重，最后获得最佳分割曲线进行分类。</p>
+<h4 id="2-获取相关数据"><a href="#2-获取相关数据" class="headerlink" title="2.获取相关数据"></a>2.获取相关数据</h4><p>​    假如我们获得了马匹的病症数据集，特征为X1,…,X20，类别为存活0，死亡1。如下：</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>X1</th>
+<th>X2</th>
+<th>X3</th>
+<th>…</th>
+<th>X20</th>
+<th>X21</th>
+<th>类别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2.0</td>
+<td>38.5</td>
+<td>66.0</td>
+<td>…</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>39.2</td>
+<td>…</td>
+<td>2.0</td>
+<td>2.0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.0</td>
+<td>1.0</td>
+<td>38.3</td>
+<td>…</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.0</td>
+<td>9.0</td>
+<td>39.1</td>
+<td>…</td>
+<td>3.0</td>
+<td>5.3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>297</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>37.5</td>
+<td>…</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>298</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>36.5</td>
+<td>…</td>
+<td>3.0</td>
+<td>3.4</td>
+<td>1</td>
+</tr>
+<tr>
+<td>299</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>37.2</td>
+<td>…</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-公式原理"><a href="#3-公式原理" class="headerlink" title="3.公式原理"></a>3.公式原理</h4><h5 id="sigmoid函数"><a href="#sigmoid函数" class="headerlink" title="sigmoid函数"></a>sigmoid函数</h5><p>​    首先我们要根据特征建立sigmoid的输入函数:<br>$$<br>z = w_{0}x_{0}+w_{1}x_{1}+w_{2}x_{2}+…+w_{n}x_{n}<br>$$<br>其中X0=1，接下来是阶跃函数sigmoid()函数：<br>$$<br>\sigma \left ( z \right )=\frac{1}{1+e^{-z}}<br>$$<br>这个函数的值域是(0,1),在Z=0时，值取0.5。那么我们如何更新权重参数呢？那就是梯度上升算法。</p>
+<h5 id="梯度上升算法"><a href="#梯度上升算法" class="headerlink" title="梯度上升算法"></a>梯度上升算法</h5><p>​    梯度上升的思想就是，找到某函数的最大值，最好的方法就是沿着梯度方向去探索。用▽表示梯度，对于f(x,y)的梯度计算可以表示为：<br>$$<br>\triangledown f(x,y) = \begin{bmatrix}<br>\frac{\partial f(x,y)}{\partial x}\<br>\frac{\partial f(x,y)}{\partial y}<br>\end{bmatrix}<br>$$<br>其中，对x，y求偏导，分别是向x和y方向移动，函数只要在计算点有定义，可微即可。那么我们的权重迭代公式为:<br>$$<br>w: = w+\alpha \triangledown _{w}f(w)<br>$$<br>其中，这里的alpha指的是移动步长（学习率）。这里把加号变为减号就是梯度下降算法。一般我们把每个权重参数在最开始全部初始化为1，然后重复训练，找到决策边界最佳曲线参数就可以了。</p>
+<h5 id="随机梯度上升算法"><a href="#随机梯度上升算法" class="headerlink" title="随机梯度上升算法"></a>随机梯度上升算法</h5><p>​    我们可以看到上边采用梯度上升算法进行权重更新，这样更新效率是不是特别慢，更新一次权重的值我们要遍历整个数据集，当数据集庞大的时候，权重的更新会很慢，收敛很慢。因此我们采用随机梯度上升算法来进行对权重快速更新。</p>
+<p>​    随机梯度上升思想是：一次仅用数据集中的一个点来更新权重参数，而且这个数据点是在样本集中随机抽取，抽取后下次更新权重排除上次随机抽取到的样本。</p>
+<p>​    一个很直观的方面可以比较效率，假如有100个样本，有两个特征（加上X0为三个）和三个权重参数。随机梯度上升算法要做300次乘法计算，然而随机梯度上升算法每次只需计算3次乘法，很明显提高了效率。</p>
+<h4 id="4-分析预测"><a href="#4-分析预测" class="headerlink" title="4.分析预测"></a>4.分析预测</h4><p>​    我们就需要通过样本集来进行训练，然后训练得到权重参数后，我们就可以把新的样本集带入进来求得一个在，通过sigmoid()函数求解一个在（0,1）内的值，这个值可以通过0.5这个阈值进行区分，就预测到这个样本的类别了。</p>
+<h3 id="二、算法实践"><a href="#二、算法实践" class="headerlink" title="二、算法实践"></a>二、算法实践</h3><p>​    这里我们实现了一个案例，是从氙气病症预测病马的死亡率。其中我们得到的原始数据集中存在空值，这里我们全补为0,特征值补为0的时候不影响权重参数的更新。我们这里采用的误差方案是真实值减去预测值。并且更新权重采用 新权重=旧权重x学习率x（真实值-预测值）x特征值，并且学习率我们进行动态更新，收敛更快。我们这里采用的是随机梯度上升算法进行优化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">定义sigmoid函数</span></span><br><span class="line"><span class="string">inX: 关系式的结果</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(inX)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1.0</span>/(<span class="number">1</span>+np.exp(-inX))</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">梯度上升</span></span><br><span class="line"><span class="string">dataMatIn: 数据矩阵</span></span><br><span class="line"><span class="string">classLabels: 标签矩阵</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradAscent</span><span class="params">(dataMatIn,classLabels)</span>:</span></span><br><span class="line">    dataMatrix = np.mat(dataMatIn)</span><br><span class="line">    labelMat = np.mat(classLabels).transpose() <span class="comment"># 转置操作</span></span><br><span class="line">    m,n = np.shape(dataMatrix)</span><br><span class="line">    alpha = <span class="number">0.001</span></span><br><span class="line">    maxCycles = <span class="number">500</span></span><br><span class="line">    weights = np.ones((n,<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(maxCycles):</span><br><span class="line">        h = sigmoid(dataMatrix*weights)</span><br><span class="line">        error = (labelMat - h)</span><br><span class="line">        weights = weights + alpha * dataMatrix.transpose()*error</span><br><span class="line">    <span class="keyword">return</span> weights</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">画出拟合直线</span></span><br><span class="line"><span class="string">wei: 权重</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plotBestFit</span><span class="params">(weights)</span>:</span></span><br><span class="line">    dataMat,labelMat = loadDataSet()</span><br><span class="line">    dataArr = np.array(dataMat)</span><br><span class="line">    n = np.shape(dataArr)[<span class="number">0</span>]</span><br><span class="line">    xcord1 = []</span><br><span class="line">    ycord1 = []</span><br><span class="line">    xcord2 = []</span><br><span class="line">    ycord2 = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">if</span> int(labelMat[i]) == <span class="number">1</span>:</span><br><span class="line">            xcord1.append(dataArr[i,<span class="number">1</span>])</span><br><span class="line">            ycord1.append(dataArr[i,<span class="number">2</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            xcord2.append(dataArr[i,<span class="number">1</span>])</span><br><span class="line">            ycord2.append(dataArr[i,<span class="number">2</span>])</span><br><span class="line">    fig = plt.figure()</span><br><span class="line">    ax = fig.add_subplot(<span class="number">111</span>)</span><br><span class="line">    ax.scatter(xcord1,ycord1,s=<span class="number">30</span>,c=<span class="string">'red'</span>,marker=<span class="string">'s'</span>)</span><br><span class="line">    ax.scatter(xcord2,ycord2,s=<span class="number">30</span>,c=<span class="string">'green'</span>)</span><br><span class="line">    x = np.arange(<span class="number">-3.0</span>,<span class="number">3.0</span>,<span class="number">0.1</span>)</span><br><span class="line">    y = (-weights[<span class="number">0</span>]-weights[<span class="number">1</span>]*x)/weights[<span class="number">2</span>]  <span class="comment"># W0X0+W1X1+W2X2 = 0的变形，X0=1</span></span><br><span class="line">    ax.plot(x,y)</span><br><span class="line">    plt.xlabel(<span class="string">'X1'</span>)</span><br><span class="line">    plt.ylabel(<span class="string">'X2'</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 随机梯度上升算法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stocGradAscent0</span><span class="params">(dataMatrix,classLabels)</span>:</span></span><br><span class="line">    m,n = np.shape(dataMatrix)</span><br><span class="line">    alpha = <span class="number">0.01</span></span><br><span class="line">    weights = np.ones(n)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2000</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            h = sigmoid(np.sum(dataMatrix[i]*weights))</span><br><span class="line">            error = classLabels[i] - h</span><br><span class="line">            weights = weights + alpha * error * dataMatrix[i]</span><br><span class="line">    <span class="keyword">return</span> weights</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改进随机梯度上升算法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stocGradAscent1</span><span class="params">(dataMatrix,classLabels,numIter = <span class="number">150</span>)</span>:</span></span><br><span class="line">    m,n = np.shape(dataMatrix)</span><br><span class="line">    weights = np.ones(n)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(numIter):</span><br><span class="line">        dataIndex = list(range(m))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">            alpha = <span class="number">4</span>/(<span class="number">1.0</span>+j+i) + <span class="number">0.001</span>      <span class="comment"># 每次迭代调整alpha</span></span><br><span class="line">            <span class="comment"># 随机选取样本更新权重</span></span><br><span class="line">            randIndex = int(np.random.uniform(<span class="number">0</span>,len(dataIndex)))</span><br><span class="line">            h = sigmoid(sum(dataMatrix[randIndex]*weights))</span><br><span class="line">            error = classLabels[randIndex] - h</span><br><span class="line">            weights = weights + alpha * error * dataMatrix[randIndex]</span><br><span class="line">            <span class="keyword">del</span>(dataIndex[randIndex])</span><br><span class="line">    <span class="keyword">return</span> weights</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">Logistic回归分类函数</span></span><br><span class="line"><span class="string">inX: 待测样本</span></span><br><span class="line"><span class="string">weights: 训练后的权重</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classifyVector</span><span class="params">(inX,weights)</span>:</span></span><br><span class="line">    prob = sigmoid(sum(inX*weights))</span><br><span class="line">    <span class="keyword">if</span> prob &gt; <span class="number">0.5</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1.0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0.0</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">训练测试函数</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">colicTest</span><span class="params">()</span>:</span></span><br><span class="line">    frTrain = open(<span class="string">'horseColicTraining.txt'</span>) </span><br><span class="line">    frTest = open(<span class="string">'horseColicTest.txt'</span>)</span><br><span class="line">    trainingSet = []</span><br><span class="line">    trainingLabels = []</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> frTrain.readlines():</span><br><span class="line">        currLine = line.strip().split(<span class="string">'\t'</span>)</span><br><span class="line">        lineArr = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">21</span>):</span><br><span class="line">            lineArr.append(float(currLine[i]))</span><br><span class="line">        trainingSet.append(lineArr)</span><br><span class="line">        trainingLabels.append(float(currLine[<span class="number">21</span>]))</span><br><span class="line">    trainWeights = stocGradAscent1(np.array(trainingSet),trainingLabels,<span class="number">500</span>)</span><br><span class="line">    errorCount = <span class="number">0</span></span><br><span class="line">    numTetsVec = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> frTest.readlines():</span><br><span class="line">        numTetsVec += <span class="number">1.0</span></span><br><span class="line">        currLine = line.strip().split(<span class="string">'\t'</span>)</span><br><span class="line">        lineArr = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">21</span>):</span><br><span class="line">            lineArr.append(float(currLine[i]))</span><br><span class="line">        <span class="keyword">if</span> int(classifyVector(np.array(lineArr),trainWeights)) != int(currLine[<span class="number">21</span>]):</span><br><span class="line">            errorCount += <span class="number">1</span></span><br><span class="line">    errorRate = (float(errorCount)/numTetsVec)</span><br><span class="line">    print(<span class="string">"错误率是:%f"</span> % errorRate)</span><br><span class="line">    <span class="keyword">return</span> errorRate</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multiTest</span><span class="params">()</span>:</span></span><br><span class="line">    numTests = <span class="number">10</span></span><br><span class="line">    errorSum = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(numTests):</span><br><span class="line">        errorSum += colicTest()</span><br><span class="line">    print(<span class="string">"这%d次的平均错误率是:%f"</span> % (numTests,errorSum/float(numTests)))</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 从氙气病症预测病马的死亡率</span></span><br><span class="line">multiTest()</span><br></pre></td></tr></table></figure>
+<h3 id="三、后记"><a href="#三、后记" class="headerlink" title="三、后记"></a>三、后记</h3><p>​    这里说了逻辑回归的一些内容，其中包含了梯度上升（下降）的优化算法，之后会有单独的章节来讨论梯度优化算法。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/21/MapReduce/" class="archive-article-date">
-  	<time datetime="2019-04-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/21/MapReduce/">MapReduce</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/14/LogisticsRegression/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/20/SVD/" class="archive-article-date">
-  	<time datetime="2019-04-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/03/19/SVM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          支持向量机（Support Vector Machines）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/13/bayes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">贝叶斯（Bayes）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/20/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/18/PCA/" class="archive-article-date">
-  	<time datetime="2019-04-18T15:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2019-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/16/Apriori/" class="archive-article-date">
-  	<time datetime="2019-04-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/16/Apriori/">Apriori</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/kMeans/" class="archive-article-date">
-  	<time datetime="2019-04-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/12/CART/" class="archive-article-date">
-  	<time datetime="2019-04-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/12/CART/">CART（Classification And Regression Trees）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2019-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/27/Regression/" class="archive-article-date">
-  	<time datetime="2019-03-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/Regression/">线性回归（Line Regression）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/26/AdaBoost/" class="archive-article-date">
-  	<time datetime="2019-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/26/AdaBoost/">AdaBoost（adaptive boosting）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +453,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

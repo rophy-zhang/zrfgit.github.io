@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>贝叶斯（Bayes） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="一、算法理论1.贝叶斯算法剧情介绍​    贝叶斯分类器其实就是通过已知的数据得出先验概率和条件概率，然后来求解后验概率的过程。什么是先验概率？什么是条件概率？什么是后验概率？我们在下边例子中来进行解答。 ​    假如，这里有10个球，里边分别有3个白球，7个黑球。如果我们把这十个球随机分成两份并且放进两个袋子里边，分别是bag1与bag2，假如我们的分配结果是：bag1（黑：3，白：2），ba">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贝叶斯（Bayes）">
+<meta property="og:url" content="http://yoursite.com/2019/03/13/bayes/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、算法理论1.贝叶斯算法剧情介绍​    贝叶斯分类器其实就是通过已知的数据得出先验概率和条件概率，然后来求解后验概率的过程。什么是先验概率？什么是条件概率？什么是后验概率？我们在下边例子中来进行解答。 ​    假如，这里有10个球，里边分别有3个白球，7个黑球。如果我们把这十个球随机分成两份并且放进两个袋子里边，分别是bag1与bag2，假如我们的分配结果是：bag1（黑：3，白：2），ba">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-15T03:28:29.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="贝叶斯（Bayes）">
+<meta name="twitter:description" content="一、算法理论1.贝叶斯算法剧情介绍​    贝叶斯分类器其实就是通过已知的数据得出先验概率和条件概率，然后来求解后验概率的过程。什么是先验概率？什么是条件概率？什么是后验概率？我们在下边例子中来进行解答。 ​    假如，这里有10个球，里边分别有3个白球，7个黑球。如果我们把这十个球随机分成两份并且放进两个袋子里边，分别是bag1与bag2，假如我们的分配结果是：bag1（黑：3，白：2），ba">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,295 +154,269 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-bayes" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      贝叶斯（Bayes）
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/bayes/" class="archive-article-date">
+  	<time datetime="2019-03-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-贝叶斯算法剧情介绍"><a href="#1-贝叶斯算法剧情介绍" class="headerlink" title="1.贝叶斯算法剧情介绍"></a>1.贝叶斯算法剧情介绍</h4><p>​    贝叶斯分类器其实就是通过已知的数据得出先验概率和条件概率，然后来求解后验概率的过程。什么是先验概率？什么是条件概率？什么是后验概率？我们在下边例子中来进行解答。</p>
+<p>​    假如，这里有10个球，里边分别有3个白球，7个黑球。如果我们把这十个球随机分成两份并且放进两个袋子里边，分别是bag1与bag2，假如我们的分配结果是：bag1（黑：3，白：2），bag2：（黑：4，白：1），我们要从中随机挑一个球在bag1的概率是5/10，bag2的概率是5/10，这些就是先验概率，我们可以通过已知数据的频率来求得的。我们在bag1中挑一个白球的概率是多少呢？是2/5，这个就是条件概率，我们可以记为：p（W|bag1）=2/5，p（B|bag1）=3/5，p（W|bag2）=4/5，p（B|bag2）=1/5，这里W代表白球，B代表黑球。假如一个人从那里边挑一个白球，你知道这个球属于bag1与bag2的概率吗？我们要求的这个概率就是后验概率。贝叶斯理论就是为了推测出最大后验概率，来预测当前样本属于哪一类。下边解答下吧：<br>$$<br>p(bag1|W) = \frac{p(W|bag1)<em>p(bag1)}{p(W)}=\frac{\frac{2}{5}</em>\frac{1}{2}}{\frac{3}{10}}=\frac{2}{3}<br>$$</p>
+<p>$$<br>p(bag2|W) = \frac{p(W|bag2)<em>p(bag2)}{p(W)}=\frac{\frac{1}{5}</em>\frac{1}{2}}{\frac{3}{10}}=\frac{1}{3}<br>$$</p>
+<p>因为2/3 &gt; 1/3，因此这个球更大可能是属于bag1。</p>
+<h4 id="2-获取相关数据"><a href="#2-获取相关数据" class="headerlink" title="2.获取相关数据"></a>2.获取相关数据</h4><p>​    从上边的例子大概知道如何利用贝叶斯来预测当前数据样本的概率了吧，我们还以小球为例建立数据集，这次我们再给小球添加一个属性特征，空心或者实心。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>类型</th>
+<th>颜色</th>
+<th>类别（袋子）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>空</td>
+<td>黑</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>空</td>
+<td>黑</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>实</td>
+<td>黑</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>空</td>
+<td>白</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>实</td>
+<td>白</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>空</td>
+<td>黑</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>空</td>
+<td>黑</td>
+<td>2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>实</td>
+<td>黑</td>
+<td>2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>实</td>
+<td>黑</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>实</td>
+<td>白</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3-公式原理"><a href="#3-公式原理" class="headerlink" title="3.公式原理"></a>3.公式原理</h4><h5 id="假如有两个事件：事件A与事件B"><a href="#假如有两个事件：事件A与事件B" class="headerlink" title="假如有两个事件：事件A与事件B"></a>假如有两个事件：事件A与事件B</h5><h5 id="先验概率：其实就是每个类别或属性在全体样本中所占的概率，通过观察已知样本数据我们就可以得到。"><a href="#先验概率：其实就是每个类别或属性在全体样本中所占的概率，通过观察已知样本数据我们就可以得到。" class="headerlink" title="先验概率：其实就是每个类别或属性在全体样本中所占的概率，通过观察已知样本数据我们就可以得到。"></a>先验概率：其实就是每个类别或属性在全体样本中所占的概率，通过观察已知样本数据我们就可以得到。</h5><p>比如：p(bag1)=1/2      p(W) = 3/10</p>
+<h5 id="条件概率：在B发生条件下A发生的概率。"><a href="#条件概率：在B发生条件下A发生的概率。" class="headerlink" title="条件概率：在B发生条件下A发生的概率。"></a>条件概率：在B发生条件下A发生的概率。</h5><p>$$<br>p(A|B) = \frac{p(AB))}{p(B)}<br>$$</p>
+<p>比如：p(W|bag1)= 2/5</p>
+<h5 id="后验概率：在A发生条件下B发生的概率，这里就是通过贝叶斯法则来进行预测。"><a href="#后验概率：在A发生条件下B发生的概率，这里就是通过贝叶斯法则来进行预测。" class="headerlink" title="后验概率：在A发生条件下B发生的概率，这里就是通过贝叶斯法则来进行预测。"></a>后验概率：在A发生条件下B发生的概率，这里就是通过贝叶斯法则来进行预测。</h5><p>$$<br>p(B|A) = \frac{p(A|B)*p(B)}{p(A)}=\frac{p(AB)}{p(A)}<br>$$</p>
+<p>比如：贝叶斯算法剧情介绍中求解p(bag1|W)就是利用贝叶斯来求解。</p>
+<h5 id="全概率：假如（A1-A2-A3-…-An）构成完备事件组，对于事件B来说："><a href="#全概率：假如（A1-A2-A3-…-An）构成完备事件组，对于事件B来说：" class="headerlink" title="全概率：假如（A1,A2,A3,…,An）构成完备事件组，对于事件B来说："></a>全概率：假如（A1,A2,A3,…,An）构成完备事件组，对于事件B来说：</h5><p>$$<br>p(B) = \sum_{i=1}^{n}p(A_{i})p(B|A_{i})=p(A_{1}B)+p(A_{2}B)+p(A_{3}B)+…+p(A_{n}B)<br>$$</p>
+<p>​    接下来我们将以以上数据集计算，如果有个人这两个袋子中随机选取一个空心白色的小球，应该属于哪个袋子的可能性最大呢？</p>
+<p>我们可以先计算出概率分布：<br>$$<br>p(bag1) = \frac{1}{2}<br>$$</p>
+<p>$$<br>p(bag2) = \frac{1}{2}<br>$$</p>
+<p>$$<br>p(黑|bag1) = \frac{3}{5}<br>$$</p>
+<p>$$<br>p(黑|bag2) = \frac{3}{5}<br>$$</p>
+<p>$$<br>p(白|bag1) = \frac{2}{5}<br>$$</p>
+<p>$$<br>p(白|bag2) = \frac{1}{5}<br>$$</p>
+<p>$$<br>p(空|bag1) = \frac{3}{5}<br>$$</p>
+<p>$$<br>p(空|bag2) = \frac{2}{5}<br>$$</p>
+<p>$$<br>p(实|bag1) = \frac{2}{5}<br>$$</p>
+<p>$$<br>p(实|bag2) = \frac{3}{5}<br>$$</p>
+<p>这里求得是，这个空心白球来自哪个袋子的概率：<br>$$<br>p(bag1|空,白) = p(空,白|bag1)<em>p(bag1) = \frac{1}{2}</em>\frac{3}{5}*\frac{2}{5}=\frac{3}{25}<br>$$</p>
+<p>$$<br>p(bag2|空,白) = p(空,白|bag2)<em>p(bag2) = \frac{1}{2}</em>\frac{2}{5}*\frac{1}{5}=\frac{1}{25}<br>$$</p>
+<p>可以看出在bag1中的概率大，则贝叶斯规则就判定这个球属于bag1。需要注意的是，我们这里没有求解p(空,白)是因为两个概率的低都一样，贝叶斯中就不去求解了，其实结果是一样的。</p>
+<p>​    我们这里所用的是朴素贝叶斯理论，为什么称为朴素呢？是因为我们用了条件独立性假设这个概念。就是样本属性间相互独立，互不关联，这样就会使得样本空间得以减小。举个例子，假如一个数据集有1000个特征，我们要得到很好的概率分布，就要有足够的样本，样本数为N，那么我们要得到N的1000次方个样本才能涵盖所有的可能性。所以我们假设各个属性独立，那么我们就会得到1000N个样本，此时样本数目减小了很多。</p>
+<h4 id="4-分析判断"><a href="#4-分析判断" class="headerlink" title="4.分析判断"></a>4.分析判断</h4><p>​    我们通过数据集进行训练得到，先验概率与条件概率，我们就可以通过贝叶斯法则求出待预测样本的概率，然后比较不同类别概率的大小，最后选择最大的概率预测的类别就是该样本的类别。</p>
+<h3 id="二、算法实践"><a href="#二、算法实践" class="headerlink" title="二、算法实践"></a>二、算法实践</h3><p>​    下边的算法实践实现了两个小例子，分别是朴素贝叶斯垃圾邮件过滤与朴素贝叶斯分类器从个人广告中获取区域倾向。</p>
+<h4 id="1-朴素贝叶斯垃圾邮件过滤"><a href="#1-朴素贝叶斯垃圾邮件过滤" class="headerlink" title="1.朴素贝叶斯垃圾邮件过滤"></a>1.朴素贝叶斯垃圾邮件过滤</h4><p>​    这个例子主要是通过提取邮件文本词向量作为特征，垃圾与非垃圾邮件作为类别进行分类，然后通过贝叶斯法则训练样本数据集得到先验概率P(垃圾)与P(非垃圾)与条件概率P(W|垃圾)P(W|非垃圾)，然后根据新收到的邮件分解为词向量w，来计算P(垃圾|w)与P(非垃圾|w)进行比较。选择最大的就是该邮件的类别，判断时候进行过滤。</p>
+<p>​    其中代码中需要注意的是，在求解完每个词对应的条件概率后，会出现很多极小的值，如果我们采用乘法就会导致下溢出这个问题，乘法最后的结果特别小可以约等于0，因此我们这里取对数相加和乘法效果是一样的，因为对于f(x)，其中x属于(0,1)，这里f(x)与log(f(x))的单调性是一致的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">获取文档中的词汇表</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createVocabList</span><span class="params">(dataSet)</span>:</span></span><br><span class="line">    vocabSet = set([])      <span class="comment"># 创建一个空集</span></span><br><span class="line">    <span class="keyword">for</span> document <span class="keyword">in</span> dataSet:</span><br><span class="line">        vocabSet = vocabSet | set(document)     <span class="comment"># 创建两个集合的并集</span></span><br><span class="line">    <span class="keyword">return</span> list(vocabSet)</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">文档转化为向量</span></span><br><span class="line"><span class="string">vocabList： 词汇列表</span></span><br><span class="line"><span class="string">inputSet： 输入文档集</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setOfWords2Vec</span><span class="params">(vocabList,inputSet)</span>:</span></span><br><span class="line">    returnVec = [<span class="number">0</span>]*len(vocabList)</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> inputSet:</span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> vocabList:</span><br><span class="line">            returnVec[vocabList.index(word)] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"词： %s 不在我的词汇表！"</span> % word)</span><br><span class="line">    <span class="keyword">return</span> returnVec</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">朴素贝叶斯分类器训练函数</span></span><br><span class="line"><span class="string">trainMatrix: 文档矩阵</span></span><br><span class="line"><span class="string">trainCategory： 每篇文档类别标签向量</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">trainNB0</span><span class="params">(trainMatrix,trainCategory)</span>:</span></span><br><span class="line">    numTrainDocs = len(trainMatrix)</span><br><span class="line">    numWords = len(trainMatrix[<span class="number">0</span>])</span><br><span class="line">    pAbusive = sum(trainCategory)/float(numTrainDocs)  <span class="comment">#3/6=0.5</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 初始化概率</span></span><br><span class="line">    p0Num = np.ones(numWords)</span><br><span class="line">    p1Num = np.ones(numWords)</span><br><span class="line">    p0Denom = <span class="number">2.0</span></span><br><span class="line">    p1Denom = <span class="number">2.0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numTrainDocs):</span><br><span class="line">        <span class="keyword">if</span> trainCategory[i] == <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 向量相加</span></span><br><span class="line">            p1Num += trainMatrix[i]</span><br><span class="line">            p1Denom += sum(trainMatrix[i])</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            p0Num += trainMatrix[i]</span><br><span class="line">            p0Denom += sum(trainMatrix[i])</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 对每个元素做除法</span></span><br><span class="line">    p1Vect = np.log(p1Num/p1Denom)</span><br><span class="line">    p0Vect = np.log(p0Num/p0Denom)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> p0Vect,p1Vect,pAbusive</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">朴素贝叶斯分类函数</span></span><br><span class="line"><span class="string">vec2Classify: 要分类的向量</span></span><br><span class="line"><span class="string">p0Vec: 0标签条件概率</span></span><br><span class="line"><span class="string">p1Vec： 1标签条件概率</span></span><br><span class="line"><span class="string">pClass1: 类别1概率</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classifyNB</span><span class="params">(vec2Classify,p0Vec,p1Vec,pClass1)</span>:</span></span><br><span class="line">    p1 = sum(vec2Classify * p1Vec) + np.log(pClass1)</span><br><span class="line">    p0 = sum(vec2Classify * p0Vec) + np.log(<span class="number">1.0</span> - pClass1)</span><br><span class="line">    <span class="keyword">if</span> p1 &gt; p0:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">testingNB</span><span class="params">()</span>:</span></span><br><span class="line">    listOPosts,listClasses = loadDataSet()</span><br><span class="line">    myVocabList = createVocabList(listOPosts)</span><br><span class="line">    trainMat = []</span><br><span class="line">    <span class="keyword">for</span> postinDoc <span class="keyword">in</span> listOPosts:</span><br><span class="line">        trainMat.append(setOfWords2Vec(myVocabList,postinDoc))</span><br><span class="line">    p0V,p1V,pAb = trainNB0(np.array(trainMat),np.array(listClasses))</span><br><span class="line">    testEntry = [<span class="string">'love'</span>,<span class="string">'my'</span>,<span class="string">'dalmation'</span>]</span><br><span class="line">    thisDoc = np.array(setOfWords2Vec(myVocabList,testEntry))</span><br><span class="line">    print(testEntry,<span class="string">'classified as:'</span>,classifyNB(thisDoc,p0V,p1V,pAb))</span><br><span class="line">    testEntry = [<span class="string">'stupid'</span>,<span class="string">'garbage'</span>]</span><br><span class="line">    thisDoc = np.array(setOfWords2Vec(myVocabList,testEntry))</span><br><span class="line">    print(testEntry,<span class="string">'classified as:'</span>,classifyNB(thisDoc,p0V,p1V,pAb))</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">文本解析</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">textParse</span><span class="params">(bigString)</span>:</span></span><br><span class="line">    listOfTokens = re.split(<span class="string">r'\W+'</span>, bigString)</span><br><span class="line">    <span class="keyword">return</span> [tok.lower() <span class="keyword">for</span> tok <span class="keyword">in</span> listOfTokens <span class="keyword">if</span> len(tok) &gt; <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">垃圾邮件测试文件</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spamTest</span><span class="params">()</span>:</span></span><br><span class="line">    docList = []</span><br><span class="line">    classList = []</span><br><span class="line">    fullText = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">26</span>):</span><br><span class="line">        wordList = textParse(open(<span class="string">'./data/Ch04/email/spam/%d.txt'</span> % i).read())</span><br><span class="line">        docList.append(wordList)</span><br><span class="line">        fullText.extend(wordList)</span><br><span class="line">        classList.append(<span class="number">1</span>)</span><br><span class="line">        wordList = textParse(open(<span class="string">'./data/Ch04/email/ham/%d.txt'</span> % i).read())</span><br><span class="line">        docList.append(wordList)</span><br><span class="line">        fullText.extend(wordList)</span><br><span class="line">        classList.append(<span class="number">0</span>)</span><br><span class="line">    vocabList = createVocabList(docList)</span><br><span class="line">    trainingSet = list(range(<span class="number">50</span>))</span><br><span class="line">    testSet = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        randIndex = int(np.random.uniform(<span class="number">0</span>,len(trainingSet)))</span><br><span class="line">        testSet.append(trainingSet[randIndex])</span><br><span class="line">        <span class="keyword">del</span>(trainingSet[randIndex])</span><br><span class="line">    trainMat = []</span><br><span class="line">    trainClasses = []</span><br><span class="line">    <span class="keyword">for</span> docIndex <span class="keyword">in</span> trainingSet:</span><br><span class="line">        trainMat.append(setOfWords2Vec(vocabList,docList[docIndex]))</span><br><span class="line">        trainClasses.append(classList[docIndex])</span><br><span class="line">    p0V,p1V,pSpam = trainNB0(np.array(trainMat),np.array(trainClasses))</span><br><span class="line">    errorCount = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> docIndex <span class="keyword">in</span> testSet:</span><br><span class="line">        wordVector = setOfWords2Vec(vocabList,docList[docIndex])</span><br><span class="line">        <span class="keyword">if</span> classifyNB(np.array(wordVector),p0V,p1V,pSpam) != classList[docIndex]:</span><br><span class="line">            errorCount += <span class="number">1</span></span><br><span class="line">            print(<span class="string">'分类错误的测试集：'</span>,docList[docIndex])</span><br><span class="line">    print(<span class="string">"错误率："</span>,float(errorCount)/len(testSet))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 垃圾邮件过滤测试</span></span><br><span class="line">spamTest()</span><br></pre></td></tr></table></figure>
+<h4 id="2-朴素贝叶斯分类器从个人广告中获取区域倾向"><a href="#2-朴素贝叶斯分类器从个人广告中获取区域倾向" class="headerlink" title="2.朴素贝叶斯分类器从个人广告中获取区域倾向"></a>2.朴素贝叶斯分类器从个人广告中获取区域倾向</h4><p>​    本案例是分析在美国两个城市发布征婚信息的时候用词是否有所不同，我们获取这些征婚数据集，然后解析为相应的词向量和对应的类别，这样我们就可以训练出相应的分为训练集与测试机，训练集用来训练出先验概率和条件概率，测试集我们来测试预测准确率。最后我们把这些这两个类型的词大于一定概率阈值的词汇输出，观察个人用词在不同区域的倾向。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> feedparser</span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">获取文档中的词汇表</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createVocabList</span><span class="params">(dataSet)</span>:</span></span><br><span class="line">    vocabSet = set([])      <span class="comment"># 创建一个空集</span></span><br><span class="line">    <span class="keyword">for</span> document <span class="keyword">in</span> dataSet:</span><br><span class="line">        vocabSet = vocabSet | set(document)     <span class="comment"># 创建两个集合的并集</span></span><br><span class="line">    <span class="keyword">return</span> list(vocabSet)</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">朴素贝叶斯词袋模型</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bagOfWords2VecMN</span><span class="params">(vocabList,inputSet)</span>:</span></span><br><span class="line">    returnVec = [<span class="number">0</span>]*len(vocabList)</span><br><span class="line">    <span class="keyword">for</span> word <span class="keyword">in</span> inputSet:</span><br><span class="line">        <span class="keyword">if</span> word <span class="keyword">in</span> vocabList:</span><br><span class="line">            returnVec[vocabList.index(word)] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> returnVec</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">朴素贝叶斯分类器训练函数</span></span><br><span class="line"><span class="string">trainMatrix: 文档矩阵</span></span><br><span class="line"><span class="string">trainCategory： 每篇文档类别标签向量</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">trainNB0</span><span class="params">(trainMatrix,trainCategory)</span>:</span></span><br><span class="line">    numTrainDocs = len(trainMatrix)</span><br><span class="line">    numWords = len(trainMatrix[<span class="number">0</span>])</span><br><span class="line">    pAbusive = sum(trainCategory)/float(numTrainDocs)  <span class="comment">#3/6=0.5</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 初始化概率</span></span><br><span class="line">    p0Num = np.ones(numWords)</span><br><span class="line">    p1Num = np.ones(numWords)</span><br><span class="line">    p0Denom = <span class="number">2.0</span></span><br><span class="line">    p1Denom = <span class="number">2.0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numTrainDocs):</span><br><span class="line">        <span class="keyword">if</span> trainCategory[i] == <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 向量相加</span></span><br><span class="line">            p1Num += trainMatrix[i]</span><br><span class="line">            p1Denom += sum(trainMatrix[i])</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            p0Num += trainMatrix[i]</span><br><span class="line">            p0Denom += sum(trainMatrix[i])</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 对每个元素做除法</span></span><br><span class="line">    p1Vect = np.log(p1Num/p1Denom)</span><br><span class="line">    p0Vect = np.log(p0Num/p0Denom)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> p0Vect,p1Vect,pAbusive</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">朴素贝叶斯分类函数</span></span><br><span class="line"><span class="string">vec2Classify: 要分类的向量</span></span><br><span class="line"><span class="string">p0Vec: 0标签条件概率</span></span><br><span class="line"><span class="string">p1Vec： 1标签条件概率</span></span><br><span class="line"><span class="string">pClass1: 类别1概率</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classifyNB</span><span class="params">(vec2Classify,p0Vec,p1Vec,pClass1)</span>:</span></span><br><span class="line">    p1 = sum(vec2Classify * p1Vec) + np.log(pClass1)</span><br><span class="line">    p0 = sum(vec2Classify * p0Vec) + np.log(<span class="number">1.0</span> - pClass1)</span><br><span class="line">    <span class="keyword">if</span> p1 &gt; p0:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    </span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">RSS源分类器</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calcMostFreq</span><span class="params">(vocabList,fullText)</span>:</span></span><br><span class="line">    <span class="comment"># 计算出现频率</span></span><br><span class="line">    freqDict = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> token <span class="keyword">in</span> vocabList:</span><br><span class="line">        freqDict[token]=fullText.count(token)</span><br><span class="line"></span><br><span class="line">    sortedFreq = sorted(freqDict.items(),key=operator.itemgetter(<span class="number">1</span>),reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span> sortedFreq[:<span class="number">30</span>]</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">高频词去除函数</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">localWords</span><span class="params">(feed1,feed0)</span>:</span></span><br><span class="line">    docList = []</span><br><span class="line">    classList = []</span><br><span class="line">    fullText = []</span><br><span class="line">    minLen = min(len(feed1[<span class="string">'entries'</span>]),len(feed0[<span class="string">'entries'</span>]))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(minLen):</span><br><span class="line">        wordList = textParse(feed1[<span class="string">'entries'</span>][i][<span class="string">'summary'</span>])</span><br><span class="line">        docList.append(wordList)</span><br><span class="line">        fullText.extend(wordList)</span><br><span class="line">        classList.append(<span class="number">1</span>)</span><br><span class="line">        wordList = textParse(feed0[<span class="string">'entries'</span>][i][<span class="string">'summary'</span>])</span><br><span class="line">        docList.append(wordList)</span><br><span class="line">        fullText.extend(wordList)</span><br><span class="line">        classList.append(<span class="number">0</span>)</span><br><span class="line">    vocabList = createVocabList(docList)</span><br><span class="line">    top30Words = calcMostFreq(vocabList,fullText)</span><br><span class="line">    <span class="keyword">for</span> pairW <span class="keyword">in</span> top30Words:</span><br><span class="line">        <span class="keyword">if</span> pairW[<span class="number">0</span>] <span class="keyword">in</span> vocabList:vocabList.remove(pairW[<span class="number">0</span>])</span><br><span class="line">    trainingSet = list(range(<span class="number">2</span>*minLen))</span><br><span class="line">    testSet = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>):</span><br><span class="line">        randIndex = int(np.random.uniform(<span class="number">0</span>,len(trainingSet)))</span><br><span class="line">        testSet.append(trainingSet[randIndex])</span><br><span class="line">        <span class="keyword">del</span>(trainingSet[randIndex])</span><br><span class="line">    trainMat = []</span><br><span class="line">    trainClasses = []</span><br><span class="line">    <span class="keyword">for</span> docIndex <span class="keyword">in</span> trainingSet:</span><br><span class="line">        trainMat.append(bagOfWords2VecMN(vocabList,docList[docIndex]))</span><br><span class="line">        trainClasses.append(classList[docIndex])</span><br><span class="line">    p0V,p1V,pSpam = trainNB0(np.array(trainMat),np.array(trainClasses))</span><br><span class="line">    errorCount = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> docIndex <span class="keyword">in</span> testSet:</span><br><span class="line">        wordVector = bagOfWords2VecMN(vocabList,docList[docIndex])</span><br><span class="line">        <span class="keyword">if</span> classifyNB(np.array(wordVector),p0V,p1V,pSpam) != classList[docIndex]:</span><br><span class="line">            errorCount += <span class="number">1</span></span><br><span class="line">    print(<span class="string">"错误率是："</span>,float(errorCount)/len(testSet))</span><br><span class="line">    print(<span class="string">'分类错误的测试集：'</span>,docList[docIndex])</span><br><span class="line">    <span class="keyword">return</span> vocabList,p0V,p1V</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">最具有表征性的词汇显示</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getTopWords</span><span class="params">(ny,sf)</span>:</span></span><br><span class="line">    vocabList,p0V,p1V = localWords(ny,sf)</span><br><span class="line">    topNY = []</span><br><span class="line">    topSF = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(p0V)):</span><br><span class="line">        <span class="keyword">if</span> p0V[i] &gt; <span class="number">-0.6</span> :</span><br><span class="line">            topSF.append((vocabList[i]),p0V[i])</span><br><span class="line">        <span class="keyword">if</span> p1V[i] &gt; <span class="number">-0.6</span> :</span><br><span class="line">            topNY.append(vocabList[i],p1V)</span><br><span class="line">    sortedSF = sorted(topSF,key=<span class="keyword">lambda</span> pair:pair[<span class="number">1</span>],reverse=<span class="keyword">True</span>)</span><br><span class="line">    print(<span class="string">"SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**SF**"</span>)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> sortedSF:</span><br><span class="line">        print(item[<span class="number">0</span>])</span><br><span class="line">    sortedNY = sorted(topNY,key=<span class="keyword">lambda</span> pair:pair[<span class="number">1</span>],reverse=<span class="keyword">True</span>)</span><br><span class="line">    print(<span class="string">"NF*NF*NF*NF*NF*NF*NF*NF*NF*NF*NF*NF*NF*NF*NF*NF*"</span>)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> sortedNY:</span><br><span class="line">        print(item[<span class="number">0</span>])</span><br><span class="line">   </span><br><span class="line"><span class="comment"># 从个人广告中获取区域倾向</span></span><br><span class="line">ny = feedparser.parse(<span class="string">'http://www.nasa.gov/rss/dyn/image_of_the_day.rss'</span>)</span><br><span class="line">sf = feedparser.parse(<span class="string">'http://rss.tom.com/happy/happy.xml'</span>)</span><br><span class="line">vocabList,pSF,pNY = localWords(ny,sf)</span><br><span class="line">getTopWords(ny,sf)</span><br></pre></td></tr></table></figure>
+<h3 id="三、后记"><a href="#三、后记" class="headerlink" title="三、后记"></a>三、后记</h3><p>​    这里我们主要说了朴素贝叶斯理论，其实还有好多，半朴素贝叶斯理论等，下一篇主要介绍些逻辑回归。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/21/MapReduce/" class="archive-article-date">
-  	<time datetime="2019-04-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/21/MapReduce/">MapReduce</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/13/bayes/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/20/SVD/" class="archive-article-date">
-  	<time datetime="2019-04-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-20</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/03/14/LogisticsRegression/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          逻辑回归（Logistics Regression）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/10/DT/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">决策树（Decision Tree）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/20/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/18/PCA/" class="archive-article-date">
-  	<time datetime="2019-04-18T15:39:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2019-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/16/Apriori/" class="archive-article-date">
-  	<time datetime="2019-04-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/16/Apriori/">Apriori</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/kMeans/" class="archive-article-date">
-  	<time datetime="2019-04-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/12/CART/" class="archive-article-date">
-  	<time datetime="2019-04-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/12/CART/">CART（Classification And Regression Trees）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2019-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/27/Regression/" class="archive-article-date">
-  	<time datetime="2019-03-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/Regression/">线性回归（Line Regression）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/26/AdaBoost/" class="archive-article-date">
-  	<time datetime="2019-03-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/26/AdaBoost/">AdaBoost（adaptive boosting）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +440,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
