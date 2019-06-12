@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>AdaBoost（adaptive boosting） | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、算法理论1.AdaBoost算法剧情介绍​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。 ​    假如你要结婚了，人家给你介绍了两个对象a和b，去约会后，">
+  <meta name="description" content="一、算法理论1.AdaBoost算法剧情介绍​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。 ​    假如你要结婚了，人家给你介绍了两个对象a和b，去约会后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AdaBoost（adaptive boosting）">
 <meta property="og:url" content="http://yoursite.com/2019/03/26/AdaBoost/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="一、算法理论1.AdaBoost算法剧情介绍​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。 ​    假如你要结婚了，人家给你介绍了两个对象a和b，去约会后，">
+<meta property="og:description" content="一、算法理论1.AdaBoost算法剧情介绍​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。 ​    假如你要结婚了，人家给你介绍了两个对象a和b，去约会后">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-27T02:59:04.081Z">
+<meta property="og:updated_time" content="2019-06-12T06:14:39.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AdaBoost（adaptive boosting）">
-<meta name="twitter:description" content="一、算法理论1.AdaBoost算法剧情介绍​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。 ​    假如你要结婚了，人家给你介绍了两个对象a和b，去约会后，">
+<meta name="twitter:description" content="一、算法理论1.AdaBoost算法剧情介绍​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。 ​    假如你要结婚了，人家给你介绍了两个对象a和b，去约会后">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/assets/img/head.jpg">
+    <link rel="icon" href="/assets/head.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/img/head.jpg" class="js-avatar">
+			<img src="/assets/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">飞</a></h1>
@@ -105,7 +105,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/head.jpg" class="js-avatar">
+				<img src="/assets/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">飞</h1>
@@ -174,7 +174,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-AdaBoost算法剧情介绍"><a href="#1-AdaBoost算法剧情介绍" class="headerlink" title="1.AdaBoost算法剧情介绍"></a>1.AdaBoost算法剧情介绍</h4><p>​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。</p>
+        <a id="more"></a>
+<h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-AdaBoost算法剧情介绍"><a href="#1-AdaBoost算法剧情介绍" class="headerlink" title="1.AdaBoost算法剧情介绍"></a>1.AdaBoost算法剧情介绍</h4><p>​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。</p>
 <p>​    假如你要结婚了，人家给你介绍了两个对象a和b，去约会后，回到家中，亲戚朋友和家人都会问，女孩漂亮吗？性格怎么样？你喜欢吗？等等这些问题，你回答说，a很漂亮，性格有小脾气，很喜欢。b长相一般，脾气很好，不喜欢。结果这其中每个大姑，三姨，爸爸妈妈都给出了各自的意见，其中肯定爸爸妈妈的意见更重要了，所以听取他们意见之后最后选择一个对象作为伴侣。其中这里边大姑，三姨，爸爸妈妈就是各个弱分类器，因为每个人的亲近程度不同，导致不同分类器的分配权重不同，最后我们根据计算出最后的值进行比较选择哪个。</p>
 <h4 id="2-获取相关数据"><a href="#2-获取相关数据" class="headerlink" title="2.获取相关数据"></a>2.获取相关数据</h4><p>​    这里的数据是逻辑回归算法那节对马获得氙气病后是否死亡的数据集。</p>
 <table>

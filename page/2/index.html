@@ -22,7 +22,7 @@
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/assets/img/head.jpg">
+    <link rel="icon" href="/assets/head.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -46,7 +46,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/img/head.jpg" class="js-avatar">
+			<img src="/assets/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">飞</a></h1>
@@ -104,7 +104,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/head.jpg" class="js-avatar">
+				<img src="/assets/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">飞</h1>
@@ -175,7 +175,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h3><p>​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。</p>
+        <a id="more"></a>
+<h3 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h3><p>​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。</p>
 <h3 id="二、准备"><a href="#二、准备" class="headerlink" title="二、准备"></a>二、准备</h3><h4 id="1-微信公众号的用户名，密码"><a href="#1-微信公众号的用户名，密码" class="headerlink" title="1.微信公众号的用户名，密码"></a>1.微信公众号的用户名，密码</h4><p>​    首先打开微信公众平台，登录，扫码进入平台。点击”素材管理”—&gt;”新建素材”，然后点击书写内容的上边工具栏的”超链接”标识，按F12点击下边的network项，看有没有”appmsg?=media/appmsg_edit_v2&amp;….“,如果没有按”CTRL+R“刷新试试，查看这个的Headers,找到cookies和User-Agent，保存在一个地方，一会儿要用。然后选择”查找文章“，输入要爬取公众号的名称，点击选中，然后按F12，找到”appmsg?token=182255…“等，点击headers,找到token与fakeid，保存下来，一会儿要用。其实用这些信息就可以获取到公众号的内容了，但是我们这里打开的网页只有文章信息，没有评论与点赞数（好看）与浏览量。</p>
 <h4 id="2-Fiddler抓包工具"><a href="#2-Fiddler抓包工具" class="headerlink" title="2.Fiddler抓包工具"></a>2.Fiddler抓包工具</h4><p>​    为了获取浏览量与点赞数，我们想到在微信PC端是不是有这些数据，因此我们可以用Fiddler来抓取接口数据，打开微信客户端，打开Fiddler，查询出自己想要爬取的公众号，进入，点击“查看历史消息”，然后选择一篇文章，然后查看Fiddler中请求成功的http消息，找到HOST为“mp.weixin.qq.com”，URL为“/mp/getappmsgext?f=….”的url，点击选中，看右侧上部，选择“WebForms”，找到key，pass_ticket，appmsg_token保存起来一会儿要用。</p>
 <p>​    然后选择URL为“/s/_biz=…”的url，看右侧选择“Raw”，获取微信PC端的cookie，和User-Agent保存起来，一会儿用。</p>

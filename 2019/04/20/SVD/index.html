@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>奇异值分解（Singular Value Decomposition） | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、算法理论1.SVD算法剧情介绍​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。 ​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算事">
+  <meta name="description" content="一、算法理论1.SVD算法剧情介绍​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。 ​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算">
 <meta property="og:type" content="article">
 <meta property="og:title" content="奇异值分解（Singular Value Decomposition）">
 <meta property="og:url" content="http://yoursite.com/2019/04/20/SVD/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="一、算法理论1.SVD算法剧情介绍​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。 ​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算事">
+<meta property="og:description" content="一、算法理论1.SVD算法剧情介绍​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。 ​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-12T06:05:11.544Z">
+<meta property="og:updated_time" content="2019-06-12T06:14:33.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="奇异值分解（Singular Value Decomposition）">
-<meta name="twitter:description" content="一、算法理论1.SVD算法剧情介绍​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。 ​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算事">
+<meta name="twitter:description" content="一、算法理论1.SVD算法剧情介绍​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。 ​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/assets/img/head.jpg">
+    <link rel="icon" href="/assets/head.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -47,7 +47,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/assets/img/head.jpg" class="js-avatar">
+			<img src="/assets/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">飞</a></h1>
@@ -105,7 +105,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/assets/img/head.jpg" class="js-avatar">
+				<img src="/assets/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">飞</h1>
@@ -174,7 +174,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-SVD算法剧情介绍"><a href="#1-SVD算法剧情介绍" class="headerlink" title="1.SVD算法剧情介绍"></a>1.SVD算法剧情介绍</h4><p>​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。</p>
+        <a id="more"></a>
+<h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-SVD算法剧情介绍"><a href="#1-SVD算法剧情介绍" class="headerlink" title="1.SVD算法剧情介绍"></a>1.SVD算法剧情介绍</h4><p>​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。</p>
 <p>​    其中在隐性语义索引中，SVD可以把文档词语矩阵进行分解，找出其中的奇异值，这些奇异值就代表了文档的概念和主题，运用这一点可以提高搜索效率。比如在推荐系统中通过SVD可以构造出一个主题空间，然后再计算事务之间的相似度。假如有一家餐馆的菜由品菜师进行了打分，我们可以对品菜师和菜构成的矩阵进行奇异值分解，得到其中的奇异值，我们可以从中得出这些品菜师对于哪类菜更喜爱。</p>
 <h4 id="2-获取相关数据"><a href="#2-获取相关数据" class="headerlink" title="2.获取相关数据"></a>2.获取相关数据</h4><p>​    这里的数据中的数字表示品菜师对菜的评分，0表示没有评分，1-5为评分。</p>
 <table>
