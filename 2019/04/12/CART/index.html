@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>CART（Classification And Regression Trees） | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、算法理论1.CART算法剧情介绍​    当我们用一个线性模型去拟合所有样本的时候有时候效果并不好，因为数据的特征之间存在着十分复杂的关系，构建一个全局模型是就很困难，大多数我们遇到的问题都是非线性的，不可能用全局模型来拟合任何数据，因此我们可以将数据进行切分多份进行然后来进行建模。这里我们就可以结合树的划分优势与回归结合来拟合这些非线性的数据。 ​    在之前的决策树算法中我们通过信息增益">
+  <meta name="description" content="一、算法理论1.CART算法剧情介绍​    当我们用一个线性模型去拟合所有样本的时候有时候效果并不好，因为数据的特征之间存在着十分复杂的关系，构建一个全局模型是就很困难，大多数我们遇到的问题都是非线性的，不可能用全局模型来拟合任何数据，因此我们可以将数据进行切分多份进行然后来进行建模。这里我们就可以结合树的划分优势与回归结合来拟合这些非线性的数据。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CART（Classification And Regression Trees）">
 <meta property="og:url" content="http://yoursite.com/2019/04/12/CART/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="一、算法理论1.CART算法剧情介绍​    当我们用一个线性模型去拟合所有样本的时候有时候效果并不好，因为数据的特征之间存在着十分复杂的关系，构建一个全局模型是就很困难，大多数我们遇到的问题都是非线性的，不可能用全局模型来拟合任何数据，因此我们可以将数据进行切分多份进行然后来进行建模。这里我们就可以结合树的划分优势与回归结合来拟合这些非线性的数据。 ​    在之前的决策树算法中我们通过信息增益">
+<meta property="og:description" content="一、算法理论1.CART算法剧情介绍​    当我们用一个线性模型去拟合所有样本的时候有时候效果并不好，因为数据的特征之间存在着十分复杂的关系，构建一个全局模型是就很困难，大多数我们遇到的问题都是非线性的，不可能用全局模型来拟合任何数据，因此我们可以将数据进行切分多份进行然后来进行建模。这里我们就可以结合树的划分优势与回归结合来拟合这些非线性的数据。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-13T07:44:26.741Z">
+<meta property="og:updated_time" content="2019-06-12T07:26:10.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CART（Classification And Regression Trees）">
-<meta name="twitter:description" content="一、算法理论1.CART算法剧情介绍​    当我们用一个线性模型去拟合所有样本的时候有时候效果并不好，因为数据的特征之间存在着十分复杂的关系，构建一个全局模型是就很困难，大多数我们遇到的问题都是非线性的，不可能用全局模型来拟合任何数据，因此我们可以将数据进行切分多份进行然后来进行建模。这里我们就可以结合树的划分优势与回归结合来拟合这些非线性的数据。 ​    在之前的决策树算法中我们通过信息增益">
+<meta name="twitter:description" content="一、算法理论1.CART算法剧情介绍​    当我们用一个线性模型去拟合所有样本的时候有时候效果并不好，因为数据的特征之间存在着十分复杂的关系，构建一个全局模型是就很困难，大多数我们遇到的问题都是非线性的，不可能用全局模型来拟合任何数据，因此我们可以将数据进行切分多份进行然后来进行建模。这里我们就可以结合树的划分优势与回归结合来拟合这些非线性的数据。">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
@@ -59,7 +59,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -70,10 +70,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -81,37 +77,13 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="github" target="_blank" href="https://github.com/zrfgit" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
-		        
-					<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
-		        
-					<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
-		        
-					<a class="douban" target="_blank" href="#" title="douban"><i class="icon-douban"></i></a>
-		        
-					<a class="segmentfault" target="_blank" href="#" title="segmentfault"><i class="icon-segmentfault"></i></a>
-		        
 					<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
-					<a class="acfun" target="_blank" href="#" title="acfun"><i class="icon-acfun"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
-		        
-					<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
-		        
-					<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
-		        
-					<a class="twitter" target="_blank" href="#" title="twitter"><i class="icon-twitter"></i></a>
-		        
-					<a class="linkedin" target="_blank" href="#" title="linkedin"><i class="icon-linkedin"></i></a>
+					<a class="mail" target="_blank" href="/zrf_hk@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -146,37 +118,13 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="github" target="_blank" href="https://github.com/zrfgit" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
-			        
-						<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
-			        
-						<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
-			        
-						<a class="douban" target="_blank" href="#" title="douban"><i class="icon-douban"></i></a>
-			        
-						<a class="segmentfault" target="_blank" href="#" title="segmentfault"><i class="icon-segmentfault"></i></a>
-			        
 						<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
-						<a class="acfun" target="_blank" href="#" title="acfun"><i class="icon-acfun"></i></a>
-			        
-						<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
-			        
-						<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
-			        
-						<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
-			        
-						<a class="twitter" target="_blank" href="#" title="twitter"><i class="icon-twitter"></i></a>
-			        
-						<a class="linkedin" target="_blank" href="#" title="linkedin"><i class="icon-linkedin"></i></a>
+						<a class="mail" target="_blank" href="/zrf_hk@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -187,7 +135,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -218,11 +166,17 @@
   	<time datetime="2019-04-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-12</time>
 </a>
         
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-CART算法剧情介绍"><a href="#1-CART算法剧情介绍" class="headerlink" title="1.CART算法剧情介绍"></a>1.CART算法剧情介绍</h4><p>​    当我们用一个线性模型去拟合所有样本的时候有时候效果并不好，因为数据的特征之间存在着十分复杂的关系，构建一个全局模型是就很困难，大多数我们遇到的问题都是非线性的，不可能用全局模型来拟合任何数据，因此我们可以将数据进行切分多份进行然后来进行建模。这里我们就可以结合树的划分优势与回归结合来拟合这些非线性的数据。</p>
+<a id="more"></a>
 <p>​    在之前的决策树算法中我们通过信息增益来进行划分，在CART算法中，我们采用二元划分来处理连续数据，对划分后的数据来计算平方误差差，找到最优的划分点。</p>
 <h4 id="2-获取相关数据"><a href="#2-获取相关数据" class="headerlink" title="2.获取相关数据"></a>2.获取相关数据</h4><p>​    我们可以得到一组看电视时间与年龄的举例数据，如下：</p>
 <table>
@@ -277,7 +231,10 @@
 <h3 id="三、后记"><a href="#三、后记" class="headerlink" title="三、后记"></a>三、后记</h3><p>​    CART算法这里只介绍了连续型变量，其实现实生活中还会遇到离散型变量，我们也要划分成两份，然后计算基尼指数通过基尼指数来表示样本纯度，接下来介绍无监督学习。</p>
 
       
-
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      
       
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
@@ -288,14 +245,20 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechart.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
               </span>
             </span>
+
           </div>
           </a>
         </div>
@@ -399,6 +362,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、算法理论"><span class="toc-number">1.</span> <span class="toc-text">一、算法理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-CART算法剧情介绍"><span class="toc-number">1.1.</span> <span class="toc-text">1.CART算法剧情介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-获取相关数据"><span class="toc-number">1.2.</span> <span class="toc-text">2.获取相关数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-公式原理"><span class="toc-number">1.3.</span> <span class="toc-text">3.公式原理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#回归树"><span class="toc-number">1.3.1.</span> <span class="toc-text">回归树</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#树剪枝"><span class="toc-number">1.3.2.</span> <span class="toc-text">树剪枝</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-预剪枝"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">1.预剪枝</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-后剪枝"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">2.后剪枝</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#模型树"><span class="toc-number">1.3.3.</span> <span class="toc-text">模型树</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#模型之间比较"><span class="toc-number">1.3.4.</span> <span class="toc-text">模型之间比较</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-分析判断"><span class="toc-number">1.4.</span> <span class="toc-text">4.分析判断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、算法实践"><span class="toc-number">2.</span> <span class="toc-text">二、算法实践</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、后记"><span class="toc-number">3.</span> <span class="toc-text">三、后记</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -427,9 +403,12 @@
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
+        <span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+        <span id="busuanzi_container_site_uv">  本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
     </div>
   </div>
 </footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -466,25 +445,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -503,10 +474,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">生成头部，快捷键，标题创建</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -552,43 +519,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">渺小的我，有大大的梦</div>
   	  	
     	</section>
     

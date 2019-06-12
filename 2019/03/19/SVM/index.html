@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>支持向量机（Support Vector Machines） | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、算法理论1.支持向量机算法剧情介绍​    支持向量机算法为什么叫这个呢？是因为其中的支撑向量，之所以叫“机”是因为它进行了分类。举一个例子来解释或许会更加清晰。 ​    假如我们有一堆数据，这堆数据有两个特征X1,X2，我们把这一堆特征绘制到二维坐标系下，我们一看，这堆数据被分成了两波，我们可以用中间一条直线把这两波数据分开，其实支持向量机就是要找到一条直线把这一堆数据分开成两类。那还不简">
+  <meta name="description" content="一、算法理论1.支持向量机算法剧情介绍​    支持向量机算法为什么叫这个呢？是因为其中的支撑向量，之所以叫“机”是因为它进行了分类。举一个例子来解释或许会更加清晰。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="支持向量机（Support Vector Machines）">
 <meta property="og:url" content="http://yoursite.com/2019/03/19/SVM/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="一、算法理论1.支持向量机算法剧情介绍​    支持向量机算法为什么叫这个呢？是因为其中的支撑向量，之所以叫“机”是因为它进行了分类。举一个例子来解释或许会更加清晰。 ​    假如我们有一堆数据，这堆数据有两个特征X1,X2，我们把这一堆特征绘制到二维坐标系下，我们一看，这堆数据被分成了两波，我们可以用中间一条直线把这两波数据分开，其实支持向量机就是要找到一条直线把这一堆数据分开成两类。那还不简">
+<meta property="og:description" content="一、算法理论1.支持向量机算法剧情介绍​    支持向量机算法为什么叫这个呢？是因为其中的支撑向量，之所以叫“机”是因为它进行了分类。举一个例子来解释或许会更加清晰。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-25T07:03:40.998Z">
+<meta property="og:updated_time" content="2019-06-12T07:27:01.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支持向量机（Support Vector Machines）">
-<meta name="twitter:description" content="一、算法理论1.支持向量机算法剧情介绍​    支持向量机算法为什么叫这个呢？是因为其中的支撑向量，之所以叫“机”是因为它进行了分类。举一个例子来解释或许会更加清晰。 ​    假如我们有一堆数据，这堆数据有两个特征X1,X2，我们把这一堆特征绘制到二维坐标系下，我们一看，这堆数据被分成了两波，我们可以用中间一条直线把这两波数据分开，其实支持向量机就是要找到一条直线把这一堆数据分开成两类。那还不简">
+<meta name="twitter:description" content="一、算法理论1.支持向量机算法剧情介绍​    支持向量机算法为什么叫这个呢？是因为其中的支撑向量，之所以叫“机”是因为它进行了分类。举一个例子来解释或许会更加清晰。">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
@@ -59,7 +59,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -70,10 +70,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -81,37 +77,13 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="github" target="_blank" href="https://github.com/zrfgit" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
-		        
-					<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
-		        
-					<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
-		        
-					<a class="douban" target="_blank" href="#" title="douban"><i class="icon-douban"></i></a>
-		        
-					<a class="segmentfault" target="_blank" href="#" title="segmentfault"><i class="icon-segmentfault"></i></a>
-		        
 					<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
-					<a class="acfun" target="_blank" href="#" title="acfun"><i class="icon-acfun"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
-		        
-					<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
-		        
-					<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
-		        
-					<a class="twitter" target="_blank" href="#" title="twitter"><i class="icon-twitter"></i></a>
-		        
-					<a class="linkedin" target="_blank" href="#" title="linkedin"><i class="icon-linkedin"></i></a>
+					<a class="mail" target="_blank" href="/zrf_hk@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -146,37 +118,13 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="github" target="_blank" href="https://github.com/zrfgit" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
-			        
-						<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
-			        
-						<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
-			        
-						<a class="douban" target="_blank" href="#" title="douban"><i class="icon-douban"></i></a>
-			        
-						<a class="segmentfault" target="_blank" href="#" title="segmentfault"><i class="icon-segmentfault"></i></a>
-			        
 						<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
-						<a class="acfun" target="_blank" href="#" title="acfun"><i class="icon-acfun"></i></a>
-			        
-						<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
-			        
-						<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
-			        
-						<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
-			        
-						<a class="twitter" target="_blank" href="#" title="twitter"><i class="icon-twitter"></i></a>
-			        
-						<a class="linkedin" target="_blank" href="#" title="linkedin"><i class="icon-linkedin"></i></a>
+						<a class="mail" target="_blank" href="/zrf_hk@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -187,7 +135,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -218,11 +166,17 @@
   	<time datetime="2019-03-18T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
 </a>
         
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-支持向量机算法剧情介绍"><a href="#1-支持向量机算法剧情介绍" class="headerlink" title="1.支持向量机算法剧情介绍"></a>1.支持向量机算法剧情介绍</h4><p>​    支持向量机算法为什么叫这个呢？是因为其中的支撑向量，之所以叫“机”是因为它进行了分类。举一个例子来解释或许会更加清晰。</p>
+<a id="more"></a>
 <p>​    假如我们有一堆数据，这堆数据有两个特征X1,X2，我们把这一堆特征绘制到二维坐标系下，我们一看，这堆数据被分成了两波，我们可以用中间一条直线把这两波数据分开，其实支持向量机就是要找到一条直线把这一堆数据分开成两类。那还不简单，就是求一条直线划分这两个类嘛。但是支持向量机还有其他事情要做，就是提高泛化能力，我们怎样才能保证用一条线分割开，来了新数据进行预测类别，会更加精确呢，所以我们要求出一条最优的直线，那么我们应该对两组数据用最大间隔来分开，其中在最大间隔边上的向量称之为支撑向量。恰好在最大间隔最中间的位置把两波数据分离开，使得新的数据来尽可能分类正确。这个就是<strong>硬间隔分类器</strong>。</p>
 <p>​    有了硬间隔分类器，那么与之对应的还有软间隔分类器，那么什么是软间隔分类器呢？因为在现实的数据中集中肯定含有噪声数据落最大间隔里边，数据激励分类线的较近地方，我们来添加松弛变量来允许部分数据可以在分类间隔内，这就是<strong>软间隔分类器</strong>。</p>
 <p>​    其中还有一类是<strong>核函数分类器</strong>，假如我们有一组数据，分类间隔应该是圆形的曲线才行，我们用线性间隔分类的支持向量机肯定是不行的，所以我们就采用带有核函数的非线性分类器。其实采用核方法分类器是把处于低维空间的数据升到更高的维度，结果呈现出来的就是线性可分的了。</p>
@@ -329,7 +283,10 @@
 <h3 id="三、后记"><a href="#三、后记" class="headerlink" title="三、后记"></a>三、后记</h3><p>​    SVM算法是一个比较复杂的算法，其实还有好多推到，后期再进行部分细节补充。下一章介绍adaBoost算法。</p>
 
       
-
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      
       
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
@@ -340,14 +297,20 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechart.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
               </span>
             </span>
+
           </div>
           </a>
         </div>
@@ -451,6 +414,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、算法理论"><span class="toc-number">1.</span> <span class="toc-text">一、算法理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-支持向量机算法剧情介绍"><span class="toc-number">1.1.</span> <span class="toc-text">1.支持向量机算法剧情介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-获取相关数据"><span class="toc-number">1.2.</span> <span class="toc-text">2.获取相关数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-公式原理"><span class="toc-number">1.3.</span> <span class="toc-text">3.公式原理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#超平面"><span class="toc-number">1.3.1.</span> <span class="toc-text">超平面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分类决策函数"><span class="toc-number">1.3.2.</span> <span class="toc-text">分类决策函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数间隔"><span class="toc-number">1.3.3.</span> <span class="toc-text">函数间隔</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#几何间隔"><span class="toc-number">1.3.4.</span> <span class="toc-text">几何间隔</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最大间隔"><span class="toc-number">1.3.5.</span> <span class="toc-text">最大间隔</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#凸二次规划"><span class="toc-number">1.3.6.</span> <span class="toc-text">凸二次规划</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#支持向量"><span class="toc-number">1.3.7.</span> <span class="toc-text">支持向量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#间隔边界"><span class="toc-number">1.3.8.</span> <span class="toc-text">间隔边界</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#对偶算法"><span class="toc-number">1.3.9.</span> <span class="toc-text">对偶算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#KTT条件"><span class="toc-number">1.3.10.</span> <span class="toc-text">KTT条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#松弛变量"><span class="toc-number">1.3.11.</span> <span class="toc-text">松弛变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#核技巧"><span class="toc-number">1.3.12.</span> <span class="toc-text">核技巧</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SMO"><span class="toc-number">1.3.13.</span> <span class="toc-text">SMO</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-分析判断"><span class="toc-number">1.4.</span> <span class="toc-text">4.分析判断</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、算法实践"><span class="toc-number">2.</span> <span class="toc-text">二、算法实践</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、后记"><span class="toc-number">3.</span> <span class="toc-text">三、后记</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -479,9 +455,12 @@
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
+        <span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+        <span id="busuanzi_container_site_uv">  本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
     </div>
   </div>
 </footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -518,25 +497,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -555,10 +526,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">生成头部，快捷键，标题创建</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -604,43 +571,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">渺小的我，有大大的梦</div>
   	  	
     	</section>
     

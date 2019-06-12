@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Python 进程和线程 | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、进程与线程简介​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。 ​    现在我们的CPU处理器都是多核心的，可以执行多任务，在过去的时候CPU都是单核的，CPU上执行代码都是顺序执行的，我们也可以执行多任务，为何？这是因为操作系统的管控，它让每个任务">
+  <meta name="description" content="一、进程与线程简介​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 进程和线程">
 <meta property="og:url" content="http://yoursite.com/2019/03/28/python进程和线程/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="一、进程与线程简介​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。 ​    现在我们的CPU处理器都是多核心的，可以执行多任务，在过去的时候CPU都是单核的，CPU上执行代码都是顺序执行的，我们也可以执行多任务，为何？这是因为操作系统的管控，它让每个任务">
+<meta property="og:description" content="一、进程与线程简介​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-30T13:54:39.749Z">
+<meta property="og:updated_time" content="2019-06-12T07:26:43.499Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 进程和线程">
-<meta name="twitter:description" content="一、进程与线程简介​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。 ​    现在我们的CPU处理器都是多核心的，可以执行多任务，在过去的时候CPU都是单核的，CPU上执行代码都是顺序执行的，我们也可以执行多任务，为何？这是因为操作系统的管控，它让每个任务">
+<meta name="twitter:description" content="一、进程与线程简介​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
@@ -59,7 +59,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -70,10 +70,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -81,37 +77,13 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="github" target="_blank" href="https://github.com/zrfgit" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
-		        
-					<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
-		        
-					<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
-		        
-					<a class="douban" target="_blank" href="#" title="douban"><i class="icon-douban"></i></a>
-		        
-					<a class="segmentfault" target="_blank" href="#" title="segmentfault"><i class="icon-segmentfault"></i></a>
-		        
 					<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
-					<a class="acfun" target="_blank" href="#" title="acfun"><i class="icon-acfun"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
-		        
-					<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
-		        
-					<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
-		        
-					<a class="twitter" target="_blank" href="#" title="twitter"><i class="icon-twitter"></i></a>
-		        
-					<a class="linkedin" target="_blank" href="#" title="linkedin"><i class="icon-linkedin"></i></a>
+					<a class="mail" target="_blank" href="/zrf_hk@163.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -146,37 +118,13 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="github" target="_blank" href="https://github.com/zrfgit" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="qq" target="_blank" href="#" title="qq"><i class="icon-qq"></i></a>
-			        
-						<a class="weixin" target="_blank" href="#" title="weixin"><i class="icon-weixin"></i></a>
-			        
-						<a class="jianshu" target="_blank" href="#" title="jianshu"><i class="icon-jianshu"></i></a>
-			        
-						<a class="douban" target="_blank" href="#" title="douban"><i class="icon-douban"></i></a>
-			        
-						<a class="segmentfault" target="_blank" href="#" title="segmentfault"><i class="icon-segmentfault"></i></a>
-			        
 						<a class="bilibili" target="_blank" href="#" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
-						<a class="acfun" target="_blank" href="#" title="acfun"><i class="icon-acfun"></i></a>
-			        
-						<a class="mail" target="_blank" href="mailto:litten225@qq.com" title="mail"><i class="icon-mail"></i></a>
-			        
-						<a class="facebook" target="_blank" href="#" title="facebook"><i class="icon-facebook"></i></a>
-			        
-						<a class="google" target="_blank" href="#" title="google"><i class="icon-google"></i></a>
-			        
-						<a class="twitter" target="_blank" href="#" title="twitter"><i class="icon-twitter"></i></a>
-			        
-						<a class="linkedin" target="_blank" href="#" title="linkedin"><i class="icon-linkedin"></i></a>
+						<a class="mail" target="_blank" href="/zrf_hk@163.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -187,7 +135,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -218,11 +166,17 @@
   	<time datetime="2019-03-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
 </a>
         
+        
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="一、进程与线程简介"><a href="#一、进程与线程简介" class="headerlink" title="一、进程与线程简介"></a>一、进程与线程简介</h3><p>​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。</p>
+<a id="more"></a>
 <p>​    现在我们的CPU处理器都是多核心的，可以执行多任务，在过去的时候CPU都是单核的，CPU上执行代码都是顺序执行的，我们也可以执行多任务，为何？这是因为操作系统的管控，它让每个任务分成了很多细小的片段，每个任务都在交替执行，任务1执行0.01秒，切换到任务2执行0.01秒，一直切换下去，由于CPU的执行速度太快了，让我们感觉就像多个任务同时执行一样。</p>
 <p>​    其实真正的并行运行多任务只能在多核CPU上执行，但是任务的数目太多了，远远大于CPU核心数，因此操作系统会轮流调度多个任务在多个核心上执行。</p>
 <p>​    对于操作系统来说呢，一个任务就是一个进程，我们打开了word就是开启了一个进程，但是进入word里边我们可以进行好多事情，打字，拼写检查，排版等多个子任务执行，这些子任务就是线程。由于每个进程都要至少干一件事情，因此一个进程至少有一个线程，像word这样的软件有多个线程来执行，多个线程可以同时执行，其中多线程执行方式和多进程执行方式一样，由操作系统在多个线程之间快速切换，让每个线程都在短暂的交替执行，让我们感觉就像同时执行一样。要实现真正的多线程要在多核CPU上才可以实现。</p>
@@ -306,7 +260,10 @@
 <p>​    其中Queue之所以能够通过网络访问是因为通过QueueManager实现的。因为QueueManager不止管理一个Queue，所以要给每个调用接口起一个名字，比如get_task_queue。authkey有什么用？这是为了保证两台机器正常通信，不被其他机器恶意干扰。如果Master和Worker的Queue不一致，那么就会连接不上。</p>
 
       
-
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      
       
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
@@ -317,14 +274,20 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechart.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
               </span>
             </span>
+
           </div>
           </a>
         </div>
@@ -428,6 +391,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、进程与线程简介"><span class="toc-number">1.</span> <span class="toc-text">一、进程与线程简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，多进程"><span class="toc-number">2.</span> <span class="toc-text">二，多进程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Unix-Linux-Mac下创建进程"><span class="toc-number">2.1.</span> <span class="toc-text">Unix/Linux/Mac下创建进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows下创建进程"><span class="toc-number">2.2.</span> <span class="toc-text">Windows下创建进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进程池"><span class="toc-number">2.3.</span> <span class="toc-text">进程池</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#子进程"><span class="toc-number">2.4.</span> <span class="toc-text">子进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进程间通信"><span class="toc-number">2.5.</span> <span class="toc-text">进程间通信</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、多线程"><span class="toc-number">3.</span> <span class="toc-text">三、多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#多线程实例"><span class="toc-number">3.1.</span> <span class="toc-text">多线程实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多线程Lock-锁"><span class="toc-number">3.2.</span> <span class="toc-text">多线程Lock(锁)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多核CPU"><span class="toc-number">3.3.</span> <span class="toc-text">多核CPU</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、ThreadLocal"><span class="toc-number">4.</span> <span class="toc-text">四、ThreadLocal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、进程VS线程"><span class="toc-number">5.</span> <span class="toc-text">五、进程VS线程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#进程线程优缺点"><span class="toc-number">5.1.</span> <span class="toc-text">进程线程优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线程切换"><span class="toc-number">5.2.</span> <span class="toc-text">线程切换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#计算密集型-vs-IO密集型"><span class="toc-number">5.3.</span> <span class="toc-text">计算密集型 vs IO密集型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异步IO"><span class="toc-number">5.4.</span> <span class="toc-text">异步IO</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、分布式进程"><span class="toc-number">6.</span> <span class="toc-text">六、分布式进程</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -456,9 +432,12 @@
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
+        <span id="busuanzi_container_site_pv">    本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+        <span id="busuanzi_container_site_uv">  本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
     </div>
   </div>
 </footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -495,25 +474,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -532,10 +503,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">生成头部，快捷键，标题创建</a>
-              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -581,43 +548,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">渺小的我，有大大的梦</div>
   	  	
     	</section>
     
