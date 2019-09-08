@@ -6,18 +6,32 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>飞的博客</title>
+  <title>词向量 | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="知识的积累，随心笔记。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞的博客">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="一、word2vec​    ⾃然语⾔是⼀套⽤来表达含义的复杂系统。在这套系统中，词是表义的基本单元。顾名思义，词向量是⽤来表⽰词的向量，也可被认为是词的特征向量。这通常需要把维数为词典⼤小的⾼维空间嵌⼊到⼀个更低维数的连续向量空间。把词映射为实数域上向量的技术也叫词嵌⼊（word embedding）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="词向量">
+<meta property="og:url" content="http://yoursite.com/2019/08/01/词向量/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="知识的积累，随心笔记。">
+<meta property="og:description" content="一、word2vec​    ⾃然语⾔是⼀套⽤来表达含义的复杂系统。在这套系统中，词是表义的基本单元。顾名思义，词向量是⽤来表⽰词的向量，也可被认为是词的特征向量。这通常需要把维数为词典⼤小的⾼维空间嵌⼊到⼀个更低维数的连续向量空间。把词映射为实数域上向量的技术也叫词嵌⼊（word embedding）。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-1.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-2.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-3.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-4.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-5.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-6.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-7.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-8.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-9.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-10.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-11.jpg">
+<meta property="og:image" content="http://yoursite.com/img/word2vec-12.jpg">
+<meta property="og:updated_time" content="2019-09-08T01:30:02.434Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞的博客">
-<meta name="twitter:description" content="知识的积累，随心笔记。">
+<meta name="twitter:title" content="词向量">
+<meta name="twitter:description" content="一、word2vec​    ⾃然语⾔是⼀套⽤来表达含义的复杂系统。在这套系统中，词是表义的基本单元。顾名思义，词向量是⽤来表⽰词的向量，也可被认为是词的特征向量。这通常需要把维数为词典⼤小的⾼维空间嵌⼊到⼀个更低维数的连续向量空间。把词映射为实数域上向量的技术也叫词嵌⼊（word embedding）。">
+<meta name="twitter:image" content="http://yoursite.com/img/word2vec-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
@@ -149,36 +163,94 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-MapReduce" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-词向量" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/MapReduce/">MapReduce</a>
+    <h1 class="article-title" itemprop="name">
+      词向量
     </h1>
   
 
         
-        <a href="/2018/10/02/MapReduce/" class="archive-article-date">
-  	<time datetime="2018-10-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-02</time>
+        <a href="/2019/08/01/词向量/" class="archive-article-date">
+  	<time datetime="2019-07-31T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
 </a>
         
         
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、分布式计算思想"><a href="#一、分布式计算思想" class="headerlink" title="一、分布式计算思想"></a>一、分布式计算思想</h3><p>​    随着大量设备的联网，我们能够获取的数据越来越多，通过数据都是需要进行决策处理，但通常这些数据量太庞大了，超出了我们单台机器所能处理的范围。问题会有的，解决方案也会有的，一个开源项目Hadoop，是用Java编写，支持大量机器上分布式处理数据。</p>
-        
+        <h2 id="一、word2vec"><a href="#一、word2vec" class="headerlink" title="一、word2vec"></a>一、word2vec</h2><p>​    ⾃然语⾔是⼀套⽤来表达含义的复杂系统。在这套系统中，词是表义的基本单元。顾名思义，词向量是⽤来表⽰词的向量，也可被认为是词的特征向量。这通常需要把维数为词典⼤小的⾼维空间嵌⼊到⼀个更低维数的连续向量空间。把词映射为实数域上向量的技术也叫<strong>词嵌⼊（word embedding）</strong>。</p>
+<a id="more"></a>
+<p>​    2013 年，Google 团队发表了 word2vec ⼯具。word2vec ⼯具主要包含两个模型：<strong>跳字模型</strong>（skip-gram）和<strong>连续词袋模型</strong>（continuous bag of words，简称 CBOW），以及两种近似训练法：<strong>负采样</strong>（negative sampling）和<strong>层序 softmax</strong>（hierarchical softmax）。值得⼀提的是，word2vec的词向量可以较好地表达不同词之间的相似和类⽐关系。</p>
+<h4 id="1-1为什么不用one-hot"><a href="#1-1为什么不用one-hot" class="headerlink" title="1.1为什么不用one-hot"></a>1.1为什么不用one-hot</h4><p>​    首先解释one-hot是什么？假设词典中不同词的数量（词典⼤小）为 <em>N</em>，每个词可以和从 0 到 <em>N</em> <em>N</em> 1 的连续整数⼀⼀对应。这些与词对应的整数也叫词的索引。假设⼀个词的索引为 i，为了得到该词的 one-hot 向量表⽰，我们创建⼀个全 0 的⻓为 <em>N</em> 的向量，并将其第 i 位设成 1。然而one-hot并不太友好，因为one-hot 词向量⽆法表达不同词之间的相似度，例如余弦相似度。任何⼀对词的 one-hot 向量的余弦相似度都为 0。</p>
+<h4 id="1-2跳字模型（skip-gram）"><a href="#1-2跳字模型（skip-gram）" class="headerlink" title="1.2跳字模型（skip-gram）"></a>1.2跳字模型（skip-gram）</h4><p>​    在跳字模型中，我们⽤⼀个词来预测它在⽂本序列周围的词。举个例⼦，假设⽂本序列是“the”、“man”、“loves”、“his”和“son”。以“loves”作为中⼼词，设时间窗口⼤小为 2。跳字模型所关⼼的是，给定中⼼词“loves”⽣成与它距离不超过 2 个词的背景词“the”、“man”、“his”和“son”的条件概率。</p>
+<p><img src="/img/word2vec-1.jpg" alt="word2vec-1"></p>
+<p><img src="/img/word2vec-2.jpg" alt="word2vec-2"></p>
+<p>当序列⻓度 T 较⼤时，我们通常在每次迭代时随机采样⼀个较短的⼦序列来计算有关该⼦序列的损失。然后，根据该损失计算词向量的梯度并迭代词向量。下⾯计算随机采样的⼦序列的损失有关中⼼词向量的梯度。和上⾯提到的⻓度为 T 的⽂本序列的损失函数类似，随机采样的⼦序列的损失实际上是对⼦序列中给定中⼼词⽣成背景词的条件概率的对数求平均。通过微分，我们可以得到上式中条件概率的对数有关中⼼词向量 v<em>c</em> 的梯度。</p>
+<p><img src="/img/word2vec-3.jpg" alt="word2vec-3"></p>
+<p>随机采样的⼦序列有关其他词向量的梯度同理可得。训练模型时，每⼀次迭代实际上是⽤这些梯度来迭代⼦序列中出现过的中⼼词和背景词的向量。训练结束后，对于词典中的任⼀索引为 i 的词，我们均得到该词作为中⼼词和背景词的两组词向量 vi 和 ui。在⾃然语⾔处理应⽤中，我们会使⽤跳字模型的中⼼词向量。</p>
+<h4 id="1-3连续词袋模型（CBOW）"><a href="#1-3连续词袋模型（CBOW）" class="headerlink" title="1.3连续词袋模型（CBOW）"></a>1.3连续词袋模型（CBOW）</h4><p>​    连续词袋模型与跳字模型类似。与跳字模型最⼤的不同是，连续词袋模型⽤⼀个中⼼词在⽂本序列前后的背景词来预测该中⼼词。举个例⼦，假设⽂本序列为“the”、“man”、“loves”、“his”和“son”。以“loves”作为中⼼词，设时间窗口⼤小为 2。连续词袋模型所关⼼的是，给定与中⼼词距离不超过 2 个词的背景词“the”、“man”、“his”和“son”⽣成中⼼词“loves”的条件概率。</p>
+<p><img src="/img/word2vec-4.jpg" alt="word2vec-4"></p>
+<p>随机采样的⼦序列有关其他词向量的梯度同理可得。和跳字模型⼀样，训练结束后，对于词典中的任⼀索引为 <em>i</em> 的词，我们均得到该词作为背景词和中⼼词的两组词向量 vi 和 ui。在⾃然语⾔处理应⽤中，我们会使⽤连续词袋模型的背景词向量。</p>
+<h4 id="1-4近似训练法"><a href="#1-4近似训练法" class="headerlink" title="1.4近似训练法"></a>1.4近似训练法</h4><p>​    我们可以看到，⽆论是跳字模型还是连续词袋模型，每⼀步梯度计算的开销与词典 <em>V</em> 的⼤小相关。当词典较⼤时，例如⼏⼗万到上百万，这种训练⽅法的计算开销会较⼤。因此，我们将使⽤近似的⽅法来计算这些梯度，从而减小计算开销。常⽤的近似训练法包括<strong>负采样</strong>和<strong>层序 softmax</strong>。</p>
+<h5 id="1-4-1负采样"><a href="#1-4-1负采样" class="headerlink" title="1.4.1负采样"></a>1.4.1负采样</h5><p><img src="/img/word2vec-5.jpg" alt="word2vec-5"></p>
+<h5 id="1-4-2层序-softmax"><a href="#1-4-2层序-softmax" class="headerlink" title="1.4.2层序 softmax"></a>1.4.2层序 softmax</h5><p>​    层序 softmax 是另⼀种常⽤的近似训练法。它利⽤了⼆叉树这⼀数据结构。树的每个叶⼦节点代表着词典 <em>V</em> 中的每个词。</p>
+<p><img src="/img/word2vec-6.jpg" alt="word2vec-6"></p>
+<h2 id="二、GloVe"><a href="#二、GloVe" class="headerlink" title="二、GloVe"></a>二、GloVe</h2><pre><code> GloVe 是由斯坦福团队发表的。
+</code></pre><p><img src="/img/word2vec-7.jpg" alt="word2vec-7"></p>
+<p><strong>共现概率⽐值</strong></p>
+<p>GloVe 论⽂⾥展⽰了以下词对的共现概率与⽐值：</p>
+<p><img src="/img/word2vec-8.jpg" alt="word2vec-8"></p>
+<p>由此可⻅，共现概率⽐值能⽐较直观地表达词与词之间的关系。GloVe 试图⽤有关词向量的函数来表达共现概率⽐值。</p>
+<p><strong>⽤词向量表达共现概率⽐值</strong></p>
+<p><img src="/img/word2vec-9.jpg" alt="word2vec-9"></p>
+<p><img src="/img/word2vec-10.jpg" alt="word2vec-10"></p>
+<h2 id="三、fastText"><a href="#三、fastText" class="headerlink" title="三、fastText"></a>三、fastText</h2><p>​    fastText 以跳字模型为基础，将每个中⼼词视为⼦词（subword）的集合，并使⽤负采样学习⼦词的词向量。因此，fastText 是⼀个⼦词嵌⼊模型。</p>
+<p><img src="/img/word2vec-11.jpg" alt="word2vec-11"></p>
+<p><img src="/img/word2vec-12.jpg" alt="word2vec-12"></p>
+<h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p>【1】《动手深度学习》——MXNet Community</p>
+
       
       
       
         <div class="declare" hidden="hidden"></div>
       
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechart.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -187,16 +259,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/02/MapReduce/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/01/词向量/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/15/Transformer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Transformer
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/28/偏差与方差的权衡/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">方差与偏差的权衡</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -211,620 +351,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GDBT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/15/GDBT/">GDBT（Gradient Boosting Decision Tree）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/15/GDBT/" class="archive-article-date">
-  	<time datetime="2018-09-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>​    梯度提升树GDBT（Gradient Boosting Decision Tree），是一种迭代的决策树算法，通过一系列弱分类器叠加起来作为最终的预测结果。GDBT还可以用来进行特征组合（Facebook在2014年提出，用于点击率预估）以提⾼ CTR预估（Click-Through Rate Prediction）的准确性。梯度提升树其实是有很多的回归树叠加拟合的效果，接下来是回归树。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/15/GDBT/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、word2vec"><span class="toc-number">1.</span> <span class="toc-text">一、word2vec</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1为什么不用one-hot"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1为什么不用one-hot</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2跳字模型（skip-gram）"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.2跳字模型（skip-gram）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3连续词袋模型（CBOW）"><span class="toc-number">1.0.3.</span> <span class="toc-text">1.3连续词袋模型（CBOW）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4近似训练法"><span class="toc-number">1.0.4.</span> <span class="toc-text">1.4近似训练法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-1负采样"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">1.4.1负采样</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-2层序-softmax"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">1.4.2层序 softmax</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#二、GloVe"><span class="toc-number">2.</span> <span class="toc-text">二、GloVe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、fastText"><span class="toc-number">3.</span> <span class="toc-text">三、fastText</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、参考文献"><span class="toc-number">4.</span> <span class="toc-text">四、参考文献</span></a></li>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-SVD" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/10/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/10/SVD/" class="archive-article-date">
-  	<time datetime="2018-09-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-SVD算法剧情介绍"><a href="#1-SVD算法剧情介绍" class="headerlink" title="1.SVD算法剧情介绍"></a>1.SVD算法剧情介绍</h4><p>​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/10/SVD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-PCA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/25/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/25/PCA/" class="archive-article-date">
-  	<time datetime="2018-08-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-PCA算法剧情介绍"><a href="#1-PCA算法剧情介绍" class="headerlink" title="1.PCA算法剧情介绍"></a>1.PCA算法剧情介绍</h4><p>​    主成分分析技术可以帮助我们把数据中含有大量维度的特征维度进行降维，比如说，人们在观看球赛的时候电视屏幕有百万的像素，然而人们只关注足球的位置，因此人的大脑会筛选像素呀，就缩小到球大小的维度，这就是达到了降维的效果。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/25/PCA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-FP-growth" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2018-08-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-FP-growth算法剧情介绍"><a href="#1-FP-growth算法剧情介绍" class="headerlink" title="1.FP-growth算法剧情介绍"></a>1.FP-growth算法剧情介绍</h4><p>​    Apriori算法就可以获得频繁项集了，为什么还要用FP-growth呢？因为Apriori算法每次增加项获取频繁项集的时候都需要从新遍历一遍数据集这样效率还不高，FP-growth算法只需要遍历两边就可以获得所有频繁项集。这样在大数据集中会提高很多效率。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/17/FP-growth/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-爬取微信公众号数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/爬取微信公众号数据/">python爬取微信公众号内容</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/25/爬取微信公众号数据/" class="archive-article-date">
-  	<time datetime="2018-07-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h3><p>​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/25/爬取微信公众号数据/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-kMeans" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/15/kMeans/" class="archive-article-date">
-  	<time datetime="2018-07-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-KMeans算法剧情介绍"><a href="#1-KMeans算法剧情介绍" class="headerlink" title="1.KMeans算法剧情介绍"></a>1.KMeans算法剧情介绍</h4><p>​    KMeans是一种无监督学习算法，就是不知道这堆数据分别属于哪个类别，简单说就是没有标签数据，从中进行分堆的算法。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/15/kMeans/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CART" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/05/CART/">CART（Classification And Regression Trees）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/05/CART/" class="archive-article-date">
-  	<time datetime="2018-07-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-CART算法剧情介绍"><a href="#1-CART算法剧情介绍" class="headerlink" title="1.CART算法剧情介绍"></a>1.CART算法剧情介绍</h4><p>​    当我们用一个线性模型去拟合所有样本的时候有时候效果并不好，因为数据的特征之间存在着十分复杂的关系，构建一个全局模型是就很困难，大多数我们遇到的问题都是非线性的，不可能用全局模型来拟合任何数据，因此我们可以将数据进行切分多份进行然后来进行建模。这里我们就可以结合树的划分优势与回归结合来拟合这些非线性的数据。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/05/CART/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Regression" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/21/Regression/">线性回归（Line Regression）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/21/Regression/" class="archive-article-date">
-  	<time datetime="2018-06-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-21</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-线性回归算法剧情分析"><a href="#1-线性回归算法剧情分析" class="headerlink" title="1.线性回归算法剧情分析"></a>1.线性回归算法剧情分析</h4><p>​    线性回归在实际生活中很常见，比如股市预测，某商品价格预测等，其实还有许多有趣的事情，预测名人的离婚率。接下来同样举一个例子来说明。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/21/Regression/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-AdaBoost" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/AdaBoost/">AdaBoost（adaptive boosting）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/AdaBoost/" class="archive-article-date">
-  	<time datetime="2018-06-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-AdaBoost算法剧情介绍"><a href="#1-AdaBoost算法剧情介绍" class="headerlink" title="1.AdaBoost算法剧情介绍"></a>1.AdaBoost算法剧情介绍</h4><p>​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/AdaBoost/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -850,8 +402,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

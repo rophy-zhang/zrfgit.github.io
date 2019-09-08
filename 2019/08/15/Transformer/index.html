@@ -6,18 +6,42 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>飞的博客</title>
+  <title>Transformer | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="知识的积累，随心笔记。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞的博客">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="一、Transformer简介​    Transformer 是 Google 团队在 17 年 6 月提出的 NLP 经典之作，由 Ashish Vaswani 等人在 2017 年发表的论文 《Attention Is All You Need 》中提出。Transformer 在机器翻译任务上的表现超过了 RNN，CNN，只用encoder-decoder 和 attention （参见T">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transformer">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/Transformer/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="知识的积累，随心笔记。">
+<meta property="og:description" content="一、Transformer简介​    Transformer 是 Google 团队在 17 年 6 月提出的 NLP 经典之作，由 Ashish Vaswani 等人在 2017 年发表的论文 《Attention Is All You Need 》中提出。Transformer 在机器翻译任务上的表现超过了 RNN，CNN，只用encoder-decoder 和 attention （参见T">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/transformer-1.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-2.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-3.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-4.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-5.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-6.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-7.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-8.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-9.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-10.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-11.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-12.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-13.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-14.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-15.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-16.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-17.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-18.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-19.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-20.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-21.jpg">
+<meta property="og:image" content="http://yoursite.com/img/transformer-22.jpg">
+<meta property="og:updated_time" content="2019-09-08T01:30:14.051Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞的博客">
-<meta name="twitter:description" content="知识的积累，随心笔记。">
+<meta name="twitter:title" content="Transformer">
+<meta name="twitter:description" content="一、Transformer简介​    Transformer 是 Google 团队在 17 年 6 月提出的 NLP 经典之作，由 Ashish Vaswani 等人在 2017 年发表的论文 《Attention Is All You Need 》中提出。Transformer 在机器翻译任务上的表现超过了 RNN，CNN，只用encoder-decoder 和 attention （参见T">
+<meta name="twitter:image" content="http://yoursite.com/img/transformer-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
@@ -149,36 +173,118 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-MapReduce" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Transformer" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/MapReduce/">MapReduce</a>
+    <h1 class="article-title" itemprop="name">
+      Transformer
     </h1>
   
 
         
-        <a href="/2018/10/02/MapReduce/" class="archive-article-date">
-  	<time datetime="2018-10-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-02</time>
+        <a href="/2019/08/15/Transformer/" class="archive-article-date">
+  	<time datetime="2019-08-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
 </a>
         
         
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、分布式计算思想"><a href="#一、分布式计算思想" class="headerlink" title="一、分布式计算思想"></a>一、分布式计算思想</h3><p>​    随着大量设备的联网，我们能够获取的数据越来越多，通过数据都是需要进行决策处理，但通常这些数据量太庞大了，超出了我们单台机器所能处理的范围。问题会有的，解决方案也会有的，一个开源项目Hadoop，是用Java编写，支持大量机器上分布式处理数据。</p>
-        
+        <h2 id="一、Transformer简介"><a href="#一、Transformer简介" class="headerlink" title="一、Transformer简介"></a>一、Transformer简介</h2><p>​    Transformer 是 Google 团队在 17 年 6 月提出的 NLP 经典之作，由 Ashish Vaswani 等人在 2017 年发表的论文 《Attention Is All You Need 》中提出。Transformer 在机器翻译任务上的表现超过了 RNN，CNN，只用encoder-decoder 和 attention （参见TensorFlow实战（六）/2-3神经网络机器翻译）机制就能达到很好的效果，最大的优点是可以高效地并行化。</p>
+<a id="more"></a>
+<h2 id="二、Self-Attention"><a href="#二、Self-Attention" class="headerlink" title="二、Self-Attention"></a>二、Self-Attention</h2><h4 id="2-1什么是Self-Attention"><a href="#2-1什么是Self-Attention" class="headerlink" title="2.1什么是Self-Attention"></a>2.1什么是Self-Attention</h4><p>​    Self-Attention也称为Intra-Attention，即内部注意力，在一般任务的Encoder-Decoder框架中，Source和Target内容是不一样的，比如对于英-中机器翻译来说，Source是英文句子，Target是对应的翻译出的中文句子，Attention机制发生在Target的元素Query和Source中的所有元素之间。Self-Attention指的不是Target和Source之间的Attention机制，而是Source内部元素之间或者Target内部元素之间发生的Attention机制，也可以理解为Target=Source这种特殊情况下的注意力计算机制。其具体计算过程是一样的，只是计算对象发生了变化。</p>
+<p>​    例如我们要翻译：”The animal didn’t cross the street because it was too tired” 这句话这句话中的“it”是指什么？它指的是 street 还是 animal？这对人类来说是一个简单的问题，但对算法来说并不简单。<strong>而 Self-Attention 让算法知道这里的 it 指的是 animal</strong>。</p>
+<h4 id="2-2Self-Attention作用"><a href="#2-2Self-Attention作用" class="headerlink" title="2.2Self-Attention作用"></a>2.2Self-Attention作用</h4><p>​    当模型在处理每个单词时，self-attention 可以帮助模型查看 input 序列中的其他位置，寻找相关的线索，来达到更好的编码效果。它的作用就是将对其他相关单词的“understanding”融入我们当前正在处理的单词中。</p>
+<p><img src="/img/transformer-1.jpg" alt="transformer-1"></p>
+<p>例如上图中，在第5层时，我们就知道 it 大概指的是 animal 了。</p>
+<p>​    Self-Attention的一大优点就是他可以捕获同一句子中单词之间的一些句法特征或是语义特征。相比于传统的RNN、LSTM，引入Self-Attention后的模型更容易捕获句子中长距离的相互依赖的特征，从而可以有效的利用句子中存在的特征。此外Self-Attention对计算并行性的良好支持，也成为它逐渐取代一般的Attention的重要原因。</p>
+<h2 id="三、Transformer"><a href="#三、Transformer" class="headerlink" title="三、Transformer"></a>三、Transformer</h2><h4 id="3-1Transformer的主体结构图："><a href="#3-1Transformer的主体结构图：" class="headerlink" title="3.1Transformer的主体结构图："></a>3.1Transformer的主体结构图：</h4><p><img src="/img/transformer-2.jpg" alt="transformer-2"></p>
+<h4 id="3-2Transformer介绍"><a href="#3-2Transformer介绍" class="headerlink" title="3.2Transformer介绍"></a>3.2Transformer介绍</h4><p>​    Transformer可以看作为引入了Self-Attention的Seq2Seq模型。目前被广泛使用的LSTM、GRU、SRU，整体来看都是属于RNN架构的模型。如下所示，它的输入是一个序列数据，输出也是一个序列数据。在单向RNN中，每个输出$b^i$都看过$a^1—a^{i-1}$;而在双向的RNN中，每个输出$b^j$看过了整个的输入序列。</p>
+<p><img src="/img/transformer-3.jpg" alt="transformer-3"></p>
+<p>​    RNN结构本身比较简单，也很适合序列建模，但它们明显缺点之一就是无法并行，因此速度较慢，显然不能充分利用如今强大的算力。另外RNN也无法很好地学习到全局的结构信息，因为它本质是一个马尔科夫决策过程。为了避开上述RNN的诸多不足，人们开始尝试改造传统的CNN来实现并行的需求，同时实现易捕捉到一些全局的结构信息。如下所示，我们可以采用多个Fileter来处理输入的序列数据，通过加深网络的层数，理论上也可以实现每个输出都是在看过整个输入的情况下得到的，而且不同的Filter之间彼此独立，也满足并行化的需求。但是，网络层数的加深必然导致了计算负担的增大，又会出现新的问题。</p>
+<p><img src="/img/transformer-4.jpg" alt="transformer-4"></p>
+<p>​    而Google的提供了第三个思路：纯 Attention，单靠注意力就可以。RNN 要逐步递归才能获得全局信息，因此一般要双向 RNN 才比较好；CNN 事实上只能获取局部信息，是通过层叠来增大感受野；Attention 的思路最为粗暴，它一步到位获取了全局信息。每一个输出$b^i$，同样看过了整个的输入序列，而且$b^i$,i=1,2,… 之间可以并行的计算。因此所有用RNN做的东西，理论上都可以用Self-Attention表现的更好。</p>
+<p><img src="/img/transformer-5.jpg" alt="transformer-5"></p>
+<p>​    那Self-Attention内部是如何工作的呢，我们以下图为例进行阐述。假设输入序列为$x^1,x^2,x^3,x^4$，它们分别乘以一个转换矩阵W经计算$a^i=Wx^i$得到$a^1,a^2,a^3,a^4$。然后每个$a^i$再乘以转换矩阵$W^q,W^k,W^v$得到$q^i,k^i,v^i$。</p>
+<p><img src="/img/transformer-6.jpg" alt="transformer-6"></p>
+<p>计算公式为：</p>
+<script type="math/tex; mode=display">
+q^i = W^qa^i</script><script type="math/tex; mode=display">
+k^i = W^ka^i</script><script type="math/tex; mode=display">
+v^i = W^va^i</script><p>其中，q为query，k为key，v为value。接下来就拿每个q去对每个k做Attention的计算，公式为Scaled Dot-Product Attention:$a_{1,i} = q^1\cdot k^i/\sqrt d$其中$\cdot$表示点积（dot product）,d是q和k的维度大小。<br>以$q^1$为例（$q^2,q^3,q^4$都是相同的计算过程），计算如下图所示：</p>
+<p><img src="/img/transformer-7.jpg" alt="transformer-7"></p>
+<p>将得到的$a_{i,j}$经过softmax层计算得到对应的$\hat a _{i,j}$，计算公式$\hat a _{1,j}=exp(a _{1,i}/\sum _{j}exp(a _{1,j}))$。</p>
+<p><img src="/img/transformer-8.jpg" alt="transformer-8"></p>
+<p>接着将每个$\hat a$和每个$v^i$相乘得到的$b^i$，计算公式是$b^1=\sum_{i}\hat a _{1,i}v^i$，最后得到输出序列$b^i，i=1,2,3,4$，每个$b^i$的计算都是并行的。</p>
+<p><img src="/img/transformer-9.jpg" alt="transformer-9"></p>
+<p>如果将$a^1,a^2,a^3,a^4$记为I，将所有的$q^i,k^i,v^i$分别记为Q,K,V,那么根据前面的计算公式，我们就可以将整个的计算过程转换为矩阵相乘的形式，如下所示：</p>
+<p><img src="/img/transformer-10.jpg" alt="transformer-10"></p>
+<p>因此将前面的计算过程用矩阵的形式表示，就变成了如下的形式：</p>
+<p><img src="/img/transformer-11.jpg" alt="transformer-11"></p>
+<p>所有的$q^i$都转成矩阵计算的形式的话，Attention的计算过程可表示为：</p>
+<p><img src="/img/transformer-12.jpg" alt="transformer-12"></p>
+<p>同样的计算输出的过程也可以转换成矩阵相乘的形式。</p>
+<p><img src="/img/transformer-13.jpg" alt="transformer-13"></p>
+<p>最后整体来看，整个的计算过程为下面的样子。</p>
+<p><img src="/img/transformer-14.jpg" alt="transformer-14"></p>
+<p>对于Self-Attention的一个变体就是<strong>Multi-head Self-Attention</strong>，我们以2-head的情况为例说明。所谓的2-head就是将每个$q^i,k^i,v^i$分裂得到$$q^{i,1},q^{i,2},k^{i,1},k^{i,2},v^{i,1},v^{i,2}$,然后按照前面的方法同样做Attention的计算，的到最后的输出序列。</p>
+<p><img src="/img/transformer-15.jpg" alt="transformer-15"></p>
+<p>你可以将得到的每个$b^{i,j}$组合起来，然后乘以某个矩阵$W^o$进行降维得到想要形式的输出$b^i$。</p>
+<p><img src="/img/transformer-16.jpg" alt="transformer-16"></p>
+<p>但是从前面的过程中我们可以看出，Self-Attention的计算并没有考虑输入序列中元素位置的信息，这显然在很多情形下是不合理的。因此在《Attention is all you need》的文章中，作者是另外首设了一个向量$e^i$来表示位置的信息，然后和$a^i$相加再进行后续Attention的计算。</p>
+<p><img src="/img/transformer-17.jpg" alt="transformer-17"></p>
+<p>那为什么这里是相加而不是将其组合起来呢？李宏毅老师给出了一种解释。如果现在有一个one-hot形式的向量$p^i$它取值为1的维度信息就表示了位置信息。然后将它和输入序列中的元素$x^i$组合起来，再乘以一个矩阵W,这里我们将矩阵W分解为两部分$W^I和W^P$分别和$x^i，p^i$相乘得到如下的结果。我们就可以将前一部分记为$a^i$，后一部分记为$e^i$。</p>
+<p><img src="/img/transformer-18.jpg" alt="transformer-18"></p>
+<p>而W可视化的效果就是如下的样子：</p>
+<p><img src="/img/transformer-19.jpg" alt="transformer-19"></p>
+<p>一个传统的Seq2Seq model包括一个Encoder，一个Decoder，如果网络模型是RNN的话，基本结构如下所示：</p>
+<p><img src="/img/transformer-20.jpg" alt="transformer-20"></p>
+<p>将Self-Attention引入到Seq2Seq model中，所有以前RNN可以做的事，现在都可以使用Self-Attention来做，模型如下所示：</p>
+<p><img src="/img/transformer-21.jpg" alt="transformer-21"></p>
+<p>在《Attention is all you need》中的Transformer如下所示，左半部分就是Encoder，右半部分是Decoder：</p>
+<p><img src="/img/transformer-22.jpg" alt="transformer-22"></p>
+<h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p>【1】<a href="https://blog.csdn.net/forlogen/article/details/91351823" target="_blank" rel="noopener">https://blog.csdn.net/forlogen/article/details/91351823</a></p>
+
       
       
       
         <div class="declare" hidden="hidden"></div>
       
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechart.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -187,16 +293,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/02/MapReduce/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/15/Transformer/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/20/极大似然估计与极大后验概率估计/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          极大似然估计与极大后验概率估计
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/01/词向量/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">词向量</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -211,620 +385,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GDBT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/15/GDBT/">GDBT（Gradient Boosting Decision Tree）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/15/GDBT/" class="archive-article-date">
-  	<time datetime="2018-09-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>​    梯度提升树GDBT（Gradient Boosting Decision Tree），是一种迭代的决策树算法，通过一系列弱分类器叠加起来作为最终的预测结果。GDBT还可以用来进行特征组合（Facebook在2014年提出，用于点击率预估）以提⾼ CTR预估（Click-Through Rate Prediction）的准确性。梯度提升树其实是有很多的回归树叠加拟合的效果，接下来是回归树。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/15/GDBT/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Transformer简介"><span class="toc-number">1.</span> <span class="toc-text">一、Transformer简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Self-Attention"><span class="toc-number">2.</span> <span class="toc-text">二、Self-Attention</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1什么是Self-Attention"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1什么是Self-Attention</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2Self-Attention作用"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.2Self-Attention作用</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#三、Transformer"><span class="toc-number">3.</span> <span class="toc-text">三、Transformer</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1Transformer的主体结构图："><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1Transformer的主体结构图：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2Transformer介绍"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2Transformer介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、参考文献"><span class="toc-number">4.</span> <span class="toc-text">四、参考文献</span></a></li>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-SVD" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/10/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/10/SVD/" class="archive-article-date">
-  	<time datetime="2018-09-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-SVD算法剧情介绍"><a href="#1-SVD算法剧情介绍" class="headerlink" title="1.SVD算法剧情介绍"></a>1.SVD算法剧情介绍</h4><p>​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/10/SVD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-PCA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/25/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/25/PCA/" class="archive-article-date">
-  	<time datetime="2018-08-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-PCA算法剧情介绍"><a href="#1-PCA算法剧情介绍" class="headerlink" title="1.PCA算法剧情介绍"></a>1.PCA算法剧情介绍</h4><p>​    主成分分析技术可以帮助我们把数据中含有大量维度的特征维度进行降维，比如说，人们在观看球赛的时候电视屏幕有百万的像素，然而人们只关注足球的位置，因此人的大脑会筛选像素呀，就缩小到球大小的维度，这就是达到了降维的效果。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/25/PCA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-FP-growth" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2018-08-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-FP-growth算法剧情介绍"><a href="#1-FP-growth算法剧情介绍" class="headerlink" title="1.FP-growth算法剧情介绍"></a>1.FP-growth算法剧情介绍</h4><p>​    Apriori算法就可以获得频繁项集了，为什么还要用FP-growth呢？因为Apriori算法每次增加项获取频繁项集的时候都需要从新遍历一遍数据集这样效率还不高，FP-growth算法只需要遍历两边就可以获得所有频繁项集。这样在大数据集中会提高很多效率。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/17/FP-growth/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-爬取微信公众号数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/爬取微信公众号数据/">python爬取微信公众号内容</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/25/爬取微信公众号数据/" class="archive-article-date">
-  	<time datetime="2018-07-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h3><p>​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/25/爬取微信公众号数据/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-kMeans" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/15/kMeans/" class="archive-article-date">
-  	<time datetime="2018-07-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-KMeans算法剧情介绍"><a href="#1-KMeans算法剧情介绍" class="headerlink" title="1.KMeans算法剧情介绍"></a>1.KMeans算法剧情介绍</h4><p>​    KMeans是一种无监督学习算法，就是不知道这堆数据分别属于哪个类别，简单说就是没有标签数据，从中进行分堆的算法。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/15/kMeans/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CART" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/05/CART/">CART（Classification And Regression Trees）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/05/CART/" class="archive-article-date">
-  	<time datetime="2018-07-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-CART算法剧情介绍"><a href="#1-CART算法剧情介绍" class="headerlink" title="1.CART算法剧情介绍"></a>1.CART算法剧情介绍</h4><p>​    当我们用一个线性模型去拟合所有样本的时候有时候效果并不好，因为数据的特征之间存在着十分复杂的关系，构建一个全局模型是就很困难，大多数我们遇到的问题都是非线性的，不可能用全局模型来拟合任何数据，因此我们可以将数据进行切分多份进行然后来进行建模。这里我们就可以结合树的划分优势与回归结合来拟合这些非线性的数据。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/05/CART/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Regression" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/21/Regression/">线性回归（Line Regression）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/21/Regression/" class="archive-article-date">
-  	<time datetime="2018-06-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-21</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-线性回归算法剧情分析"><a href="#1-线性回归算法剧情分析" class="headerlink" title="1.线性回归算法剧情分析"></a>1.线性回归算法剧情分析</h4><p>​    线性回归在实际生活中很常见，比如股市预测，某商品价格预测等，其实还有许多有趣的事情，预测名人的离婚率。接下来同样举一个例子来说明。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/21/Regression/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-AdaBoost" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/AdaBoost/">AdaBoost（adaptive boosting）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/16/AdaBoost/" class="archive-article-date">
-  	<time datetime="2018-06-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-AdaBoost算法剧情介绍"><a href="#1-AdaBoost算法剧情介绍" class="headerlink" title="1.AdaBoost算法剧情介绍"></a>1.AdaBoost算法剧情介绍</h4><p>​    想一下，当我们在做一件重要事情的时候我们就会参考周围朋友们和家人的意见，而不是一个人去做决断。其实这个算法的原理也是这样的，通过对多个弱分类器的集成，观察最后多个弱分类器的分类结果，按照投票法，类别数目最多的就是该样本的类别，输出最后的分类结果。举一个例子来说这个算法更为合适。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/AdaBoost/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -850,8 +436,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
