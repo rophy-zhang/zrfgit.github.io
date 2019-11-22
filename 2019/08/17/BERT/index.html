@@ -6,18 +6,44 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>飞的博客</title>
+  <title>BERT | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="知识的积累，随心笔记。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞的博客">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="一、机器如何理解人类语言1.1 词的表达发展​    最初的做法是每一个人类的词汇当作一个不同的符号，每个符号都用一个独特的编码来表示，采用1-of-N Encoding编码方式，一个词典大小为N，那么设置维度为N的向量，向量的索引对应每个词的位置，并把该位置设置为1，其余位置设置为0。但是这里存在一个缺点，词与词之间的关系无法描述，比如cat和dog是相似类的距离较近，cat和bag是不相似的距">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BERT">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/BERT/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="知识的积累，随心笔记。">
+<meta property="og:description" content="一、机器如何理解人类语言1.1 词的表达发展​    最初的做法是每一个人类的词汇当作一个不同的符号，每个符号都用一个独特的编码来表示，采用1-of-N Encoding编码方式，一个词典大小为N，那么设置维度为N的向量，向量的索引对应每个词的位置，并把该位置设置为1，其余位置设置为0。但是这里存在一个缺点，词与词之间的关系无法描述，比如cat和dog是相似类的距离较近，cat和bag是不相似的距">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/img/BERT-1.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-2.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-3.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-4.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-5.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-6.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-7.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-8.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-9.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-10.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-11.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-12.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-13.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-14.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-15.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-16.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-17.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-18.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-19.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-20.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-21.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-22.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-23.jpg">
+<meta property="og:image" content="http://yoursite.com/img/BERT-24.jpg">
+<meta property="og:updated_time" content="2019-09-12T07:22:03.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞的博客">
-<meta name="twitter:description" content="知识的积累，随心笔记。">
+<meta name="twitter:title" content="BERT">
+<meta name="twitter:description" content="一、机器如何理解人类语言1.1 词的表达发展​    最初的做法是每一个人类的词汇当作一个不同的符号，每个符号都用一个独特的编码来表示，采用1-of-N Encoding编码方式，一个词典大小为N，那么设置维度为N的向量，向量的索引对应每个词的位置，并把该位置设置为1，其余位置设置为0。但是这里存在一个缺点，词与词之间的关系无法描述，比如cat和dog是相似类的距离较近，cat和bag是不相似的距">
+<meta name="twitter:image" content="http://yoursite.com/img/BERT-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
@@ -149,36 +175,119 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-TensorFlow实战（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-BERT" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/TensorFlow实战（一）/">TensorFlow实战（一）</a>
+    <h1 class="article-title" itemprop="name">
+      BERT
     </h1>
   
 
         
-        <a href="/2018/11/02/TensorFlow实战（一）/" class="archive-article-date">
-  	<time datetime="2018-11-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+        <a href="/2019/08/17/BERT/" class="archive-article-date">
+  	<time datetime="2019-08-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-17</time>
 </a>
         
         
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、深度学习简介"><a href="#一、深度学习简介" class="headerlink" title="一、深度学习简介"></a>一、深度学习简介</h2><h4 id="1-1-什么是人工智能、机器学习和深度学习"><a href="#1-1-什么是人工智能、机器学习和深度学习" class="headerlink" title="1.1 什么是人工智能、机器学习和深度学习"></a>1.1 什么是人工智能、机器学习和深度学习</h4><p>​    计算机发明最开始是人们希望它能够帮助甚至替代人类完成重复性劳作，利用巨大的运算速度和存储空间，计算机可以轻易完成一些人类看似困难而对于计算机相对很简单的问题，比如：统计一本书的单词出现次数。但是有些问题是人类通过直觉可以很快解决问题，计算机就很难解决，如：NLP（自然语言处理），CV（计算机视觉）等，这些问题就是需要人工智能去解决。使得计算机像人一样可以听懂说话，理解文本语义和图像视频内容。</p>
-        
+        <h2 id="一、机器如何理解人类语言"><a href="#一、机器如何理解人类语言" class="headerlink" title="一、机器如何理解人类语言"></a>一、机器如何理解人类语言</h2><h4 id="1-1-词的表达发展"><a href="#1-1-词的表达发展" class="headerlink" title="1.1 词的表达发展"></a>1.1 词的表达发展</h4><p>​    最初的做法是每一个人类的词汇当作一个不同的符号，每个符号都用一个独特的编码来表示，采用<strong>1-of-N Encoding</strong>编码方式，一个词典大小为N，那么设置维度为N的向量，向量的索引对应每个词的位置，并把该位置设置为1，其余位置设置为0。但是这里存在一个缺点，词与词之间的关系无法描述，比如cat和dog是相似类的距离较近，cat和bag是不相似的距离较远。使用这种编码无法表达出来每个词之间的距离。</p>
+<a id="more"></a>
+<p>​    后又采用把词汇进行分类就是<strong>word class</strong>，比如动物类，动作类等，但是还存在问题就是类别分的太粗不能表达类别的差异，比如鸟类与哺乳类无法区分。</p>
+<p>​    到后来又出现了<strong>Word Embedding</strong>，根据每个词向量根据词的上下文得到（词向量一篇中有说），每个词汇我们用向量来表示，向量的每个维度就表达了一些词汇里边的潜在意思。语义相近的词汇向量比较接近，反之较远。比如cat与dog之间的距离和bird与dog之间的距离，可以表达距离远近关系。</p>
+<p><img src="/img/BERT-1.jpg" alt="BERT-1">    </p>
+<p>​    比如，在RNN的句子分类中，我们可以给RNN输入Word Embedding，相当于把词嵌入当作特征进行输入，然后输出对应的句子类别。</p>
+<p><img src="/img/BERT-2.jpg" alt="BERT-2"></p>
+<p>​    在过去一般word type一样那么他们的word embedding就是一样的。但是存在word type一样，但是word token不一样，这时候会出现表达不一样的意思。如下图，前两个句子因为前边有money，所以表达银行的意思，而后两个是前边有river，此时bank表达河堤的意思。所以即便word type一样，word token不同，那么词表达的意思也不同。过去一般回去获取这个词有多少意思去训练，比如bank有两个意思，我们可以训练得到两个word embedding，但是这样是不够的，有可能在医院场景中表示血库的意思，意思是很多的，不能单单通过这种方式去表达现有的word embedding。</p>
+<p><img src="/img/BERT-3.jpg" alt="BERT-3"></p>
+<p>那么我们可以通过把每个token都有一个word embedding。这个是<strong>Contextualized Word Embedding</strong>，这里不同的token的word embedding就有不同的含义。</p>
+<p><img src="/img/BERT-4.jpg" alt="BERT-4"></p>
+<p>但是，也可以表达不同token之间的远近，比如用<strong>ELMO（Embeddings from Language Model）</strong>。通过RNN model 来抽取Contextualized Word Embedding。在不同语句中的word token会有不同的 Word Embedding。</p>
+<p><img src="/img/BERT-5.jpg" alt="BERT-5"></p>
+<p>以上只考虑了前向序列训练，而没有考虑后向序列训练，然后可以train一个反向的RNN，然后把正向与逆向的Contextualized Word Embedding连接起来。如下图：</p>
+<p><img src="/img/BERT-6.jpg" alt="BERT-6"></p>
+<p>然后这个RNN也是可以deep训练的，然后会获取多个Contextualized Word Embedding组合，在ELMO中，这些产生的多个word embedding 都要。</p>
+<p><img src="/img/BERT-7.jpg" alt="BERT-7"></p>
+<p>在ELMO每一层都会学习出word embedding，然后把这两个word embedding乘以权重得到输出的word embedding。这两个参数是通过在不同的应用场景中通过模型训练学习得到的。<br><img src="/img/BERT-8.jpg" alt="BERT-8"></p>
+<h2 id="二、BERT"><a href="#二、BERT" class="headerlink" title="二、BERT"></a>二、BERT</h2><h4 id="2-1什么是BERT"><a href="#2-1什么是BERT" class="headerlink" title="2.1什么是BERT"></a>2.1什么是BERT</h4><p>​    BERT(<strong>B</strong>idirectional <strong>E</strong>ncoder <strong>R</strong>epresentations from <strong>T</strong>ransformers)，其实bert就是transformers中的encoder部分，不需要标注的内容，在这部分只需要丢入句子，然后可以得到embedding。但是在中文中尽量不要用词来表示，因为中文的词是很多的，没有办法穷举，但是字是可以穷举的，这样字的one-hot向量会小写在训练输入的时候。</p>
+<p><img src="/img/BERT-9.jpg" alt="BERT-9"></p>
+<h4 id="2-2如何训练BERT"><a href="#2-2如何训练BERT" class="headerlink" title="2.2如何训练BERT"></a>2.2如何训练BERT</h4><p><strong>方法一：Masked LM</strong></p>
+<p>​    我们可以把输入的词以一定概率p随机给用一个【mask】token给盖掉，然后用bert去猜测盖住的词汇到底是哪个词汇。在bert中输入每个词的one-hot向量，然后通过bert每个token都会得到输出的embedding，然后把掩盖住部分哪个token获取到的embedding输入到多类线性分类器中，分类大小为词典大小，然后预测出被mask的词汇是哪一个词。然后再mask的地方如果有词比较相近，那么学习出来的embedding也会相近。</p>
+<p><img src="/img/BERT-10.jpg" alt="BERT-10"></p>
+<p><strong>方法二：Next Sentence Prediction</strong></p>
+<p>​    通过输入给bert两个句子，判断两个句子是不是相接的。比如前边是“醒醒吧”，后边是“你没有妹妹”，可以看出是需要接在一起的，我们就希望bert可以预测出是接在一起的。这里引入了特别的符号【SEP】表示两个句子之间的交界，告诉bert两个句子之间的交界在哪里。bert如何预测两个句子是否相接呢？我们需要一个特殊token【CLS】表示要做分类这件事情。通过这个特殊token输出的embedding，输入到线性二分类器里边判断输出Yes/No，Yes就是相接，No就是不相接。其中这个【CLS】可以放到开头或者结尾都可以，因为bert内部用了self-attention，两个相邻的word和两个距离较远的word是一样的，这是一个天涯若比邻的感觉，不在乎词的远近位置。对于bert来说，给定一堆句子，要判断两个句子之间是不是要连接在一起。比如前边是“醒醒吧”，后边是“眼睛变胀肿”，这两个句子不应该接在一起，classifier应该输出“NO”。其中这个线性分类器与bert架构是一起训练的，通过判断句子之间关系，把bert的参数学习出来。</p>
+<p><img src="/img/BERT-11.jpg" alt="BERT-11"></p>
+<p><img src="/img/BERT-12.jpg" alt="BERT-12"></p>
+<p>其中在bert中同时用方法一与方法二的时候会学习的最好。</p>
+<h4 id="2-2如何用BERT"><a href="#2-2如何用BERT" class="headerlink" title="2.2如何用BERT"></a>2.2如何用BERT</h4><p>​    我们可以把bert看作抽取特征的工具，可以得到词的embedding，然后可以用这些embedding做一些其他的任务。在bert 的paper里是用bert与你要求解的任务一起训练的。在paper中举了四个例子。</p>
+<h5 id="例子一"><a href="#例子一" class="headerlink" title="例子一"></a>例子一</h5><p>​    假如我们要预测一个句子是正面的还是负面的，或者文章是体育类，游戏类等类别。我们可以把这些句子丢给bert，然后再句子的开头加上【CLS】这个特殊标识，这个特殊标识输出的embedding输入到线性分类器中，通过线性分类器可以获得是什么类别。其中这里的线性分类器参数是随机初始化的，与bert的参数是同时训练的，bert只是用原来人家训练好的然后进行微调。</p>
+<p><img src="/img/BERT-13.jpg" alt="BERT-13"></p>
+<h5 id="例子二"><a href="#例子二" class="headerlink" title="例子二"></a>例子二</h5><p>​    假如我们需要对句子中的每个词进行分类，那么我们需要在bert输出的每个词的embedding后面添加一个线性分类器，然后分出每个词对应的类别，这里的分类器的参数是从头开始学习的，而bert的参数是进行了微调。</p>
+<p><img src="/img/BERT-14.jpg" alt="BERT-14"></p>
+<h5 id="例子三"><a href="#例子三" class="headerlink" title="例子三"></a>例子三</h5><p>​    给定两个句子，判断在一个句子的前提下，另一个句子的假设是否正确，两个句子用【SEP】分割开，在【CLS】处输出的embedding输入到线性分类器输出True/False，判断假设是否正确。</p>
+<p><img src="/img/BERT-15.jpg" alt="BERT-15"></p>
+<h5 id="例子四"><a href="#例子四" class="headerlink" title="例子四"></a>例子四</h5><p>​    给定一篇文章，然后给定一个问题，然后输出这个问题的答案，这是一种QA的形式。这里的答案一定是存在文章中的。在模型中，我们给QA模型输入一篇文章（每个词的token表示），然后输入一个问题，这个模型会输出两个数字，表示答案在文章token中的位置，然后把这两个位置区间内的输出作为问题的答案。</p>
+<p><img src="/img/BERT-16.jpg" alt="BERT-16"></p>
+<p>​    如何用bert来解决呢？把问题个文档两个句子用【SEP】分开，然后对bert输出的每一个embedding，我们用两个和embedding一样维度的向量和embedding做 dot product，其中这两个向量是从头开始学习出来的。其中用一个向量和embedding做dot product（类似于attention）后通过softmax输出相应词的概率，然后概率最大的就是答案的开始位置start，然后再用embedding和另一个向量做dot product通过softmax输出相应词的概率，输出概率最大的作为end标识，然后通过文档的token获取到答案。有时后end小于start的时候，我们QA的输出答案为unknow。</p>
+<p><img src="/img/BERT-17.jpg" alt="BERT-17"></p>
+<h4 id="2-3ERNIE"><a href="#2-3ERNIE" class="headerlink" title="2.3ERNIE"></a>2.3ERNIE</h4><p>​    这个是用来训练中文用的，之前bert中训练是采用字来输入bert中，然后预测被mask的字。而在ERNIE中是mask一些词，通过模型来预测这个词是什么。</p>
+<p><img src="/img/BERT-18.jpg" alt="BERT-18"></p>
+<h4 id="2-4BERT每层任务"><a href="#2-4BERT每层任务" class="headerlink" title="2.4BERT每层任务"></a>2.4BERT每层任务</h4><p>​    在自然语言处理的模型中，每层其实是做不同的任务，获取词的不同特征，其中在bert（小型）有24层，可以通过bert每层的输出的Contextualized Word Embedding来获取每层参数权重的大小，代表每个任务中哪层的重要程度，如下：</p>
+<p><img src="/img/BERT-19.jpg" alt="BERT-19"></p>
+<h4 id="2-5Multilingual-BERT"><a href="#2-5Multilingual-BERT" class="headerlink" title="2.5Multilingual BERT"></a>2.5Multilingual BERT</h4><p>​    这个是Google做的，一个bert通过训练104种语言进行训练，bert看过这104种语言后，没有看过这104种语言之间的翻译，但是bert可以学习出不同语言间的对应关系。比如我们要做中文文章的分类，我们只需要学习英文文档和文档的分类结果，然后给bert中文文档，bert就可以直接进行文档分类。</p>
+<p><img src="/img/BERT-20.jpg" alt="BERT-20"></p>
+<h2 id="三、GPT"><a href="#三、GPT" class="headerlink" title="三、GPT"></a>三、GPT</h2><h4 id="3-1GPT-Generative-Pre-Training-简介"><a href="#3-1GPT-Generative-Pre-Training-简介" class="headerlink" title="3.1GPT(Generative Pre-Training)简介"></a>3.1GPT(Generative Pre-Training)简介</h4><p>​    ELMO模型有94 Million个参数，BERT模型有340Million个参数，GPT有1542 Million个参数。其中GPT是Transformer中的decoder部分。</p>
+<p><img src="/img/BERT-21.jpg" alt="BERT-21"></p>
+<p>​    其中在decoder部分如何工作？，比如输入“潮水”，然后分别做attention，然后和v进行操作，输出b2代表“退了”，依次这样操作输出“就”等。</p>
+<p><img src="/img/BERT-22.jpg" alt="BERT-22"></p>
+<h4 id="3-2GPT可以做哪些事情"><a href="#3-2GPT可以做哪些事情" class="headerlink" title="3.2GPT可以做哪些事情"></a>3.2GPT可以做哪些事情</h4><p>​    在bert中需要训练资料来进行以下任务，而在这里GPT不需要训练资料就可以做Reading Comprehension，Summarization，Translation。在阅读理解任务中，给GPT一篇文章D和一个问题Q，接下来输入’A:’，然后就会输出答案。在摘要中，给GPT输入一篇文章，然后输入特殊符号’TL;DR:’，然后就会输出文章摘要。在翻译中，比如给两个英文句子输入等号写入法文的句子，然后第三个输入英文，然后输入等号，最后模型会翻译出法文。其中GPT在阅读理解中表现较好，但在摘要和翻译中效果并不是很好，关键是不需要训练资料。</p>
+<p><img src="/img/BERT-23.jpg" alt="BERT-23"></p>
+<p>​    GPT还可以做机器写作，给出一些词汇句子后，GPT会自己完成后边要写作的内容。</p>
+<p><img src="/img/BERT-24.jpg" alt="BERT-24"></p>
+<p>GPT 自动写作感受：<a href="https://talktotransformer.com/" target="_blank" rel="noopener">https://talktotransformer.com/</a></p>
+<h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p>【1】<a href="https://www.bilibili.com/video/av56235038?from=search&amp;seid=5756214601980081164" target="_blank" rel="noopener">https://www.bilibili.com/video/av56235038?from=search&amp;seid=5756214601980081164</a></p>
+
       
       
       
         <div class="declare" hidden="hidden"></div>
       
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechart.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -187,16 +296,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/TensorFlow实战（一）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/17/BERT/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/20/极大似然估计与极大后验概率估计/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          极大似然估计与极大后验概率估计
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/15/Transformer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Transformer</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -211,621 +388,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python进程和线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2018-10-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、进程与线程简介"><a href="#一、进程与线程简介" class="headerlink" title="一、进程与线程简介"></a>一、进程与线程简介</h3><p>​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/28/python进程和线程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、机器如何理解人类语言"><span class="toc-number">1.</span> <span class="toc-text">一、机器如何理解人类语言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-词的表达发展"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1 词的表达发展</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#二、BERT"><span class="toc-number">2.</span> <span class="toc-text">二、BERT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1什么是BERT"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1什么是BERT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2如何训练BERT"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.2如何训练BERT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2如何用BERT"><span class="toc-number">2.0.3.</span> <span class="toc-text">2.2如何用BERT</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#例子一"><span class="toc-number">2.0.3.1.</span> <span class="toc-text">例子一</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#例子二"><span class="toc-number">2.0.3.2.</span> <span class="toc-text">例子二</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#例子三"><span class="toc-number">2.0.3.3.</span> <span class="toc-text">例子三</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#例子四"><span class="toc-number">2.0.3.4.</span> <span class="toc-text">例子四</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3ERNIE"><span class="toc-number">2.0.4.</span> <span class="toc-text">2.3ERNIE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4BERT每层任务"><span class="toc-number">2.0.5.</span> <span class="toc-text">2.4BERT每层任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5Multilingual-BERT"><span class="toc-number">2.0.6.</span> <span class="toc-text">2.5Multilingual BERT</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、GPT"><span class="toc-number">3.</span> <span class="toc-text">三、GPT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1GPT-Generative-Pre-Training-简介"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1GPT(Generative Pre-Training)简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2GPT可以做哪些事情"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2GPT可以做哪些事情</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、参考文献"><span class="toc-number">4.</span> <span class="toc-text">四、参考文献</span></a></li>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-xgboost" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/05/xgboost/">xgboost（extreme gradient boosting）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/05/xgboost/" class="archive-article-date">
-  	<time datetime="2018-10-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-05</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、xgboost简介</p>
-<p>​    在通常数据建模过程中，经常采用将很多个弱分类器组合起来，成为一个强分类器。模型会不断迭代，每次生成一棵新的树，在数据量很大的时候计算就是一个瓶颈，因此，华盛顿大学的陈天奇博士开发了xgboost，基于C++多线程并行构建，是在原有的GDBT基础上加以改进，从而极大的提升了训练速度与精度。其中在Kaggle的希格斯子信号识别竞赛中，xgboost因效率出众引起了参赛选手的关注，因为效果好，在业界也有很多应用。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/05/xgboost/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MapReduce" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/MapReduce/">MapReduce</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/02/MapReduce/" class="archive-article-date">
-  	<time datetime="2018-10-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-02</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、分布式计算思想"><a href="#一、分布式计算思想" class="headerlink" title="一、分布式计算思想"></a>一、分布式计算思想</h3><p>​    随着大量设备的联网，我们能够获取的数据越来越多，通过数据都是需要进行决策处理，但通常这些数据量太庞大了，超出了我们单台机器所能处理的范围。问题会有的，解决方案也会有的，一个开源项目Hadoop，是用Java编写，支持大量机器上分布式处理数据。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/02/MapReduce/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GDBT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/15/GDBT/">GDBT（Gradient Boosting Decision Tree）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/15/GDBT/" class="archive-article-date">
-  	<time datetime="2018-09-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>​    梯度提升树GDBT（Gradient Boosting Decision Tree），是一种迭代的决策树算法，通过一系列弱分类器叠加起来作为最终的预测结果。GDBT还可以用来进行特征组合（Facebook在2014年提出，用于点击率预估）以提⾼ CTR预估（Click-Through Rate Prediction）的准确性。梯度提升树其实是有很多的回归树叠加拟合的效果，接下来是回归树。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/15/GDBT/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SVD" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/10/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/10/SVD/" class="archive-article-date">
-  	<time datetime="2018-09-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-SVD算法剧情介绍"><a href="#1-SVD算法剧情介绍" class="headerlink" title="1.SVD算法剧情介绍"></a>1.SVD算法剧情介绍</h4><p>​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/10/SVD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-PCA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/25/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/25/PCA/" class="archive-article-date">
-  	<time datetime="2018-08-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-PCA算法剧情介绍"><a href="#1-PCA算法剧情介绍" class="headerlink" title="1.PCA算法剧情介绍"></a>1.PCA算法剧情介绍</h4><p>​    主成分分析技术可以帮助我们把数据中含有大量维度的特征维度进行降维，比如说，人们在观看球赛的时候电视屏幕有百万的像素，然而人们只关注足球的位置，因此人的大脑会筛选像素呀，就缩小到球大小的维度，这就是达到了降维的效果。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/25/PCA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-FP-growth" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2018-08-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-FP-growth算法剧情介绍"><a href="#1-FP-growth算法剧情介绍" class="headerlink" title="1.FP-growth算法剧情介绍"></a>1.FP-growth算法剧情介绍</h4><p>​    Apriori算法就可以获得频繁项集了，为什么还要用FP-growth呢？因为Apriori算法每次增加项获取频繁项集的时候都需要从新遍历一遍数据集这样效率还不高，FP-growth算法只需要遍历两边就可以获得所有频繁项集。这样在大数据集中会提高很多效率。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/17/FP-growth/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-爬取微信公众号数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/爬取微信公众号数据/">python爬取微信公众号内容</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/25/爬取微信公众号数据/" class="archive-article-date">
-  	<time datetime="2018-07-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h3><p>​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/25/爬取微信公众号数据/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-kMeans" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/15/kMeans/" class="archive-article-date">
-  	<time datetime="2018-07-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-KMeans算法剧情介绍"><a href="#1-KMeans算法剧情介绍" class="headerlink" title="1.KMeans算法剧情介绍"></a>1.KMeans算法剧情介绍</h4><p>​    KMeans是一种无监督学习算法，就是不知道这堆数据分别属于哪个类别，简单说就是没有标签数据，从中进行分堆的算法。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/15/kMeans/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -851,8 +439,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

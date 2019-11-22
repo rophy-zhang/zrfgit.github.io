@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>飞的博客</title>
+  <title>数据结构与算法之链表系列 | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="知识的积累，随心笔记。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞的博客">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="一、单链表​    单链表中一个节点含有节点元素域和下一个节点链接域（指向下一个节点），把多个节点链接起来就构成单链表。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法之链表系列">
+<meta property="og:url" content="http://yoursite.com/2019/06/17/数据结构与算法之链表系列/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="知识的积累，随心笔记。">
+<meta property="og:description" content="一、单链表​    单链表中一个节点含有节点元素域和下一个节点链接域（指向下一个节点），把多个节点链接起来就构成单链表。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/dataStructure/list-1.png">
+<meta property="og:image" content="http://yoursite.com/dataStructure/list-3.png">
+<meta property="og:image" content="http://yoursite.com/dataStructure/list-2.png">
+<meta property="og:updated_time" content="2019-09-15T01:59:34.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞的博客">
-<meta name="twitter:description" content="知识的积累，随心笔记。">
+<meta name="twitter:title" content="数据结构与算法之链表系列">
+<meta name="twitter:description" content="一、单链表​    单链表中一个节点含有节点元素域和下一个节点链接域（指向下一个节点），把多个节点链接起来就构成单链表。">
+<meta name="twitter:image" content="http://yoursite.com/dataStructure/list-1.png">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
@@ -149,36 +154,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-TensorFlow实战（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-数据结构与算法之链表系列" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/TensorFlow实战（一）/">TensorFlow实战（一）</a>
+    <h1 class="article-title" itemprop="name">
+      数据结构与算法之链表系列
     </h1>
   
 
         
-        <a href="/2018/11/02/TensorFlow实战（一）/" class="archive-article-date">
-  	<time datetime="2018-11-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+        <a href="/2019/06/17/数据结构与算法之链表系列/" class="archive-article-date">
+  	<time datetime="2019-06-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
 </a>
         
         
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、深度学习简介"><a href="#一、深度学习简介" class="headerlink" title="一、深度学习简介"></a>一、深度学习简介</h2><h4 id="1-1-什么是人工智能、机器学习和深度学习"><a href="#1-1-什么是人工智能、机器学习和深度学习" class="headerlink" title="1.1 什么是人工智能、机器学习和深度学习"></a>1.1 什么是人工智能、机器学习和深度学习</h4><p>​    计算机发明最开始是人们希望它能够帮助甚至替代人类完成重复性劳作，利用巨大的运算速度和存储空间，计算机可以轻易完成一些人类看似困难而对于计算机相对很简单的问题，比如：统计一本书的单词出现次数。但是有些问题是人类通过直觉可以很快解决问题，计算机就很难解决，如：NLP（自然语言处理），CV（计算机视觉）等，这些问题就是需要人工智能去解决。使得计算机像人一样可以听懂说话，理解文本语义和图像视频内容。</p>
-        
+        <h2 id="一、单链表"><a href="#一、单链表" class="headerlink" title="一、单链表"></a>一、单链表</h2><p>​    单链表中一个节点含有节点元素域和下一个节点链接域（指向下一个节点），把多个节点链接起来就构成单链表。</p>
+<a id="more"></a>
+<p><img src="/dataStructure/list-1.png" alt="list-1"></p>
+<h4 id="1-1链表建立"><a href="#1-1链表建立" class="headerlink" title="1.1链表建立"></a>1.1链表建立</h4><p>链表的节点表示用python 中的类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,val)</span>:</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+<h5 id="1-1-1头插法"><a href="#1-1-1头插法" class="headerlink" title="1.1.1头插法"></a>1.1.1头插法</h5><p>没次从头部插入一个节点。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,val)</span>:</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">headCreate</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    head = <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">        node = Node(n)</span><br><span class="line">        node.next = head</span><br><span class="line">        head = node</span><br><span class="line">    <span class="keyword">return</span> head  </span><br><span class="line"></span><br><span class="line">nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">headCreate(nums)</span><br></pre></td></tr></table></figure>
+<h5 id="1-1-2尾插法"><a href="#1-1-2尾插法" class="headerlink" title="1.1.2尾插法"></a>1.1.2尾插法</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,val)</span>:</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tailCreate</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    head = Node(<span class="number">0</span>)</span><br><span class="line">    p = head</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">        node = Node(n)</span><br><span class="line">        p.next = node</span><br><span class="line">        p = node</span><br><span class="line">    <span class="keyword">return</span> head.next  </span><br><span class="line">nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</span><br><span class="line">tailCreate(nums)</span><br></pre></td></tr></table></figure>
+<h4 id="1-2链表操作"><a href="#1-2链表操作" class="headerlink" title="1.2链表操作"></a>1.2链表操作</h4><h5 id="1-2-1链表插入结点"><a href="#1-2-1链表插入结点" class="headerlink" title="1.2.1链表插入结点"></a>1.2.1链表插入结点</h5><p>p指向当前操作结点，往p后边插入一个结点q。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">q = Node(<span class="number">13</span>)</span><br><span class="line">q.next = p.next</span><br><span class="line">p.next = q</span><br></pre></td></tr></table></figure>
+<h5 id="1-2-2链表删除"><a href="#1-2-2链表删除" class="headerlink" title="1.2.2链表删除"></a>1.2.2链表删除</h5><p>q是要删除的结点，p是q前边的一个结点。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p.next = q.next</span><br></pre></td></tr></table></figure>
+<h4 id="1-3单链表习题"><a href="#1-3单链表习题" class="headerlink" title="1.3单链表习题"></a>1.3单链表习题</h4><h5 id="1-3-1链表反转"><a href="#1-3-1链表反转" class="headerlink" title="1.3.1链表反转"></a>1.3.1链表反转</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ReverseList</span><span class="params">(pHead)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> pHead <span class="keyword">or</span> <span class="keyword">not</span> pHead.next:</span><br><span class="line">            <span class="keyword">return</span> pHead</span><br><span class="line">        head = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">while</span> pHead:</span><br><span class="line">            tmp = pHead.next</span><br><span class="line">            pHead.next = head</span><br><span class="line">            head = pHead</span><br><span class="line">            pHead = tmp</span><br><span class="line">        <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-2链表排序"><a href="#1-3-2链表排序" class="headerlink" title="1.3.2链表排序"></a>1.3.2链表排序</h5><p>​    在链表排序中使用归并排序，时间复杂度为O(n)，空间复杂度为O(nlogn)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sortlist</span><span class="params">(head)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    p,q = head,head</span><br><span class="line">    <span class="keyword">while</span> q.next <span class="keyword">and</span> q.next.next:</span><br><span class="line">        p,q = p.next,q.next.next</span><br><span class="line">    mid,p.next = p.next,<span class="keyword">None</span></span><br><span class="line">    left,right = sortlist(head),sortlist(right)</span><br><span class="line">    s = listNode(<span class="number">0</span>)</span><br><span class="line">    m = s</span><br><span class="line">    <span class="keyword">while</span> left <span class="keyword">and</span> right:</span><br><span class="line">		<span class="keyword">if</span> left.val &lt; right.val:</span><br><span class="line">            m.next,left = left,left.next</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            m.next,right = right,right.next</span><br><span class="line">        m = m.next</span><br><span class="line">    m.next = left <span class="keyword">if</span> left <span class="keyword">else</span> right</span><br><span class="line">    <span class="keyword">return</span> s.next</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-3链表是否存在环"><a href="#1-3-3链表是否存在环" class="headerlink" title="1.3.3链表是否存在环"></a>1.3.3链表是否存在环</h5><p>这里采用slow与fast指针，相遇即存在环。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cycle</span><span class="params">(head)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    slow,fast = head,head</span><br><span class="line">    <span class="keyword">while</span> fast <span class="keyword">and</span> fast.next:</span><br><span class="line">        slow,fast = slow.next,fast.next.next</span><br><span class="line">        <span class="keyword">if</span> slow == fast:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<h5 id="1-3-4链表中环的起始节点"><a href="#1-3-4链表中环的起始节点" class="headerlink" title="1.3.4链表中环的起始节点"></a>1.3.4链表中环的起始节点</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cycle</span><span class="params">(head)</span>:</span></span><br><span class="line">    fast, slow = pHead, pHead</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (fast <span class="keyword">and</span> fast.next): </span><br><span class="line">            <span class="keyword">return</span> </span><br><span class="line">        fast, slow = fast.next.next, slow.next</span><br><span class="line">        <span class="keyword">if</span> fast == slow: </span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    fast = pHead</span><br><span class="line">    <span class="keyword">while</span> fast != slow:</span><br><span class="line">        fast, slow = fast.next, slow.next</span><br><span class="line">    <span class="keyword">return</span> fast</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-5从尾到头打印链表"><a href="#1-3-5从尾到头打印链表" class="headerlink" title="1.3.5从尾到头打印链表"></a>1.3.5从尾到头打印链表</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printListFromTailToHead</span><span class="params">(listNode)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> listNode:</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line">    res = []</span><br><span class="line">    <span class="keyword">while</span> listNode:</span><br><span class="line">        res = [listNode.val]+res</span><br><span class="line">        listNode = listNode.next</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-6链表倒数第k个节点"><a href="#1-3-6链表倒数第k个节点" class="headerlink" title="1.3.6链表倒数第k个节点"></a>1.3.6链表倒数第k个节点</h5><p>其中k点存在链表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tailk</span><span class="params">(head,k)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    p = head</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(k):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> p:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        p = p.next</span><br><span class="line">    q = head</span><br><span class="line">    <span class="keyword">while</span> p:</span><br><span class="line">        p,q = p.next,q.next</span><br><span class="line">    <span class="keyword">return</span> q</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-7合并两个排序的链表"><a href="#1-3-7合并两个排序的链表" class="headerlink" title="1.3.7合并两个排序的链表"></a>1.3.7合并两个排序的链表</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Merge</span><span class="params">(pHead1, pHead2)</span>:</span></span><br><span class="line">    head = ListNode(<span class="number">0</span>)</span><br><span class="line">    p = head</span><br><span class="line">    <span class="keyword">while</span> pHead1 <span class="keyword">and</span> pHead2:</span><br><span class="line">        <span class="keyword">if</span> pHead1.val &lt; pHead2.val:</span><br><span class="line">            p.next = pHead1 </span><br><span class="line">            pHead1 = pHead1.next</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            p.next = pHead2</span><br><span class="line">            pHead2 = pHead2.next</span><br><span class="line">        p = p.next</span><br><span class="line">    p.next = pHead1 <span class="keyword">if</span> pHead1 <span class="keyword">else</span> pHead2</span><br><span class="line">    <span class="keyword">return</span> head.next</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-8复杂链表的复制"><a href="#1-3-8复杂链表的复制" class="headerlink" title="1.3.8复杂链表的复制"></a>1.3.8复杂链表的复制</h5><p>递归解法，时间复杂度O（n），空间复杂度O（n）。设置访问节点字典，存储访问过的节点，分别从next指针域与random指针域进行复制，如果节点在复制时候，已经复制过，则直接引用过去即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.visttedHash = &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Clone</span><span class="params">(self, pHead)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> pHead:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">if</span> pHead <span class="keyword">in</span> self.visttedHash:</span><br><span class="line">            <span class="keyword">return</span> self.visttedHash[pHead]</span><br><span class="line">        node = RandomListNode(pHead.label)</span><br><span class="line">        self.visttedHash[pHead] = node</span><br><span class="line">        node.next = self.Clone(pHead.next)</span><br><span class="line">        node.random = self.Clone(pHead.random)</span><br><span class="line">        <span class="keyword">return</span> node</span><br></pre></td></tr></table></figure>
+<p>非递归方法，时间复杂度O（N），空间复杂度O（1）。先克隆每个结点，新的结点连接在老结点的后边，然后再更新random指针域，最后把老链与新链重组，返回新链。其实直接用return copy.deepcopy(head)直接完成，不用写这么多代码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Clone</span><span class="params">(self, pHead)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> pHead:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    <span class="comment"># 先创建新节点并连接</span></span><br><span class="line">    p = pHead</span><br><span class="line">    <span class="keyword">while</span> p:</span><br><span class="line">        node = RandomListNode(p.label)</span><br><span class="line">        node.next = p.next</span><br><span class="line">        p.next = node</span><br><span class="line">        p = node.next</span><br><span class="line">    <span class="comment"># 更新random域</span></span><br><span class="line">    p = pHead</span><br><span class="line">    <span class="keyword">while</span> p:</span><br><span class="line">        p.next.random = p.random.next <span class="keyword">if</span> p.random <span class="keyword">else</span> <span class="keyword">None</span></span><br><span class="line">        p = p.next.next</span><br><span class="line">    <span class="comment"># 断链重组</span></span><br><span class="line">    p = pHead.next</span><br><span class="line">    q = pHead</span><br><span class="line">    new = p</span><br><span class="line">    <span class="keyword">while</span> q:</span><br><span class="line">        q.next = q.next.next</span><br><span class="line">        p.next = p.next.next <span class="keyword">if</span> p.next <span class="keyword">else</span> <span class="keyword">None</span></span><br><span class="line">        p = p.next</span><br><span class="line">        q = q.next</span><br><span class="line">    <span class="keyword">return</span> new</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-9两个链表的第一个公共结点"><a href="#1-3-9两个链表的第一个公共结点" class="headerlink" title="1.3.9两个链表的第一个公共结点"></a>1.3.9两个链表的第一个公共结点</h5><p>方法一：先把第一个链表的节点存储在hashmap中，然后遍历另一个链表，存在hashmap中则是第一个公共结点，否则没有。时间复杂度为O（N），空间复杂度为O（N）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">FindFirstCommonNode</span><span class="params">(pHead1, pHead2)</span>:</span></span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    <span class="keyword">while</span> pHead1:</span><br><span class="line">        d[pHead1] = <span class="number">1</span></span><br><span class="line">        pHead1 = pHead1.next</span><br><span class="line">    <span class="keyword">while</span> pHead2:</span><br><span class="line">        <span class="keyword">if</span> pHead2 <span class="keyword">in</span> d:</span><br><span class="line">            <span class="keyword">return</span> pHead2</span><br><span class="line">        pHead2 = pHead2.next</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+<p>方法二： 分别遍历两个链表，如果有相等输出，否则交换链表继续遍历。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">FindFirstCommonNode</span><span class="params">(pHead1, pHead2)</span>:</span></span><br><span class="line">    p = pHead1</span><br><span class="line">    q = pHead2</span><br><span class="line">    <span class="keyword">while</span> p != q:</span><br><span class="line">        p = p.next <span class="keyword">if</span> p != <span class="keyword">None</span> <span class="keyword">else</span> pHead2</span><br><span class="line">        q = q.next <span class="keyword">if</span> q != <span class="keyword">None</span> <span class="keyword">else</span> pHead1</span><br><span class="line">    <span class="keyword">return</span> p</span><br></pre></td></tr></table></figure>
+<h5 id="1-3-10删除链表中重复的节点"><a href="#1-3-10删除链表中重复的节点" class="headerlink" title="1.3.10删除链表中重复的节点"></a>1.3.10删除链表中重复的节点</h5><p>举例：链表1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5 处理后为 1-&gt;2-&gt;5。</p>
+<p>方法一：采用递归的方式。一个是不重复的前一个节点，另一个是从重复到不重复截止节点，比如上边的2与4节点，直接让2-&gt;4这样可以直接过滤掉重复，我们用head-&gt;next指向递归函数跳过重复值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deleteDuplication</span><span class="params">(head)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    p = head.next</span><br><span class="line">    <span class="keyword">if</span> head.val != p.val:</span><br><span class="line">        head.next = deleteDuplication(p)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">while</span> head.val == p.val <span class="keyword">and</span> p.next:</span><br><span class="line">            p = p.next</span><br><span class="line">        <span class="keyword">if</span> head.val != p.val:</span><br><span class="line">            head = deleteDuplication(p)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+<p>方法二：非递归解法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deleteDuplication</span><span class="params">(head)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.next:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    res = Node(<span class="number">0</span>)</span><br><span class="line">    p = res</span><br><span class="line">    q = head</span><br><span class="line">    <span class="keyword">while</span> q <span class="keyword">and</span> q.next:</span><br><span class="line">        <span class="keyword">if</span> q.val == q.next.val:</span><br><span class="line">            <span class="keyword">while</span> q.next <span class="keyword">and</span> q.val == q.next.val:</span><br><span class="line">                q = q.next</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            p.next = q</span><br><span class="line">            p = p.next</span><br><span class="line">        q = q.next</span><br><span class="line">    p.next = q</span><br><span class="line">    <span class="keyword">return</span> res.next</span><br></pre></td></tr></table></figure>
+<h2 id="二、双向链表"><a href="#二、双向链表" class="headerlink" title="二、双向链表"></a>二、双向链表</h2><p>​    单链表只有一个方向的链接，只能做一个方向的的扫描和逐步操作。如果在前后结点都有指向，那么我们可以供方便的插入和删除操作。</p>
+<h4 id="2-1双向链表操作"><a href="#2-1双向链表操作" class="headerlink" title="2.1双向链表操作"></a>2.1双向链表操作</h4><p>双向链表数据结构。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,val)</span>:</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line">        self.next = <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+<p>链表操作插入与删除：</p>
+<p><img src="/dataStructure/list-3.png" alt="list-3"></p>
+<h5 id="2-1-1插入"><a href="#2-1-1插入" class="headerlink" title="2.1.1插入"></a>2.1.1插入</h5><p>在节点p的后面插入一个13.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node = Node(<span class="number">13</span>)</span><br><span class="line">p.next.pre = node</span><br><span class="line">node.next = p.next</span><br><span class="line">p.next = node</span><br><span class="line">node.pre = p</span><br></pre></td></tr></table></figure>
+<h5 id="2-1-2删除"><a href="#2-1-2删除" class="headerlink" title="2.1.2删除"></a>2.1.2删除</h5><p>删除p结点后边的一个节点</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p.next = p.next.next</span><br><span class="line">p.next.pre = p</span><br></pre></td></tr></table></figure>
+<h2 id="三、循环链表"><a href="#三、循环链表" class="headerlink" title="三、循环链表"></a>三、循环链表</h2><p>在循环链表中，最后结点的next域不是None，而是指向了链表第一个结点。</p>
+<p><img src="/dataStructure/list-2.png" alt="list-2"></p>
+<h4 id="3-1循环链表操作"><a href="#3-1循环链表操作" class="headerlink" title="3.1循环链表操作"></a>3.1循环链表操作</h4><p>​    这里和单链表一样，只不过在最后一个节点插入一个 节点更快。</p>
+<h2 id="四、参考文献"><a href="#四、参考文献" class="headerlink" title="四、参考文献"></a>四、参考文献</h2><p>【1】《数据结构与算法》—裘宗燕</p>
+
       
       
       
         <div class="declare" hidden="hidden"></div>
       
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechart.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -187,16 +268,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/TensorFlow实战（一）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/17/数据结构与算法之链表系列/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/06/20/数据结构与算法之动态规划系列/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据结构与算法之动态规划系列
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/12/数据结构与算法之图系列/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法之图系列</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -211,621 +360,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python进程和线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2018-10-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、进程与线程简介"><a href="#一、进程与线程简介" class="headerlink" title="一、进程与线程简介"></a>一、进程与线程简介</h3><p>​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/28/python进程和线程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、单链表"><span class="toc-number">1.</span> <span class="toc-text">一、单链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1链表建立"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1链表建立</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-1头插法"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">1.1.1头插法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-2尾插法"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">1.1.2尾插法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2链表操作"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.2链表操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-1链表插入结点"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">1.2.1链表插入结点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-2链表删除"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">1.2.2链表删除</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3单链表习题"><span class="toc-number">1.0.3.</span> <span class="toc-text">1.3单链表习题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-1链表反转"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">1.3.1链表反转</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-2链表排序"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">1.3.2链表排序</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-3链表是否存在环"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">1.3.3链表是否存在环</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-4链表中环的起始节点"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">1.3.4链表中环的起始节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-5从尾到头打印链表"><span class="toc-number">1.0.3.5.</span> <span class="toc-text">1.3.5从尾到头打印链表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-6链表倒数第k个节点"><span class="toc-number">1.0.3.6.</span> <span class="toc-text">1.3.6链表倒数第k个节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-7合并两个排序的链表"><span class="toc-number">1.0.3.7.</span> <span class="toc-text">1.3.7合并两个排序的链表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-8复杂链表的复制"><span class="toc-number">1.0.3.8.</span> <span class="toc-text">1.3.8复杂链表的复制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-9两个链表的第一个公共结点"><span class="toc-number">1.0.3.9.</span> <span class="toc-text">1.3.9两个链表的第一个公共结点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-10删除链表中重复的节点"><span class="toc-number">1.0.3.10.</span> <span class="toc-text">1.3.10删除链表中重复的节点</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#二、双向链表"><span class="toc-number">2.</span> <span class="toc-text">二、双向链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1双向链表操作"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1双向链表操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-1插入"><span class="toc-number">2.0.1.1.</span> <span class="toc-text">2.1.1插入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-2删除"><span class="toc-number">2.0.1.2.</span> <span class="toc-text">2.1.2删除</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、循环链表"><span class="toc-number">3.</span> <span class="toc-text">三、循环链表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1循环链表操作"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1循环链表操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、参考文献"><span class="toc-number">4.</span> <span class="toc-text">四、参考文献</span></a></li>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-xgboost" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/05/xgboost/">xgboost（extreme gradient boosting）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/05/xgboost/" class="archive-article-date">
-  	<time datetime="2018-10-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-05</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、xgboost简介</p>
-<p>​    在通常数据建模过程中，经常采用将很多个弱分类器组合起来，成为一个强分类器。模型会不断迭代，每次生成一棵新的树，在数据量很大的时候计算就是一个瓶颈，因此，华盛顿大学的陈天奇博士开发了xgboost，基于C++多线程并行构建，是在原有的GDBT基础上加以改进，从而极大的提升了训练速度与精度。其中在Kaggle的希格斯子信号识别竞赛中，xgboost因效率出众引起了参赛选手的关注，因为效果好，在业界也有很多应用。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/05/xgboost/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MapReduce" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/MapReduce/">MapReduce</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/02/MapReduce/" class="archive-article-date">
-  	<time datetime="2018-10-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-02</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、分布式计算思想"><a href="#一、分布式计算思想" class="headerlink" title="一、分布式计算思想"></a>一、分布式计算思想</h3><p>​    随着大量设备的联网，我们能够获取的数据越来越多，通过数据都是需要进行决策处理，但通常这些数据量太庞大了，超出了我们单台机器所能处理的范围。问题会有的，解决方案也会有的，一个开源项目Hadoop，是用Java编写，支持大量机器上分布式处理数据。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/02/MapReduce/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GDBT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/15/GDBT/">GDBT（Gradient Boosting Decision Tree）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/15/GDBT/" class="archive-article-date">
-  	<time datetime="2018-09-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>​    梯度提升树GDBT（Gradient Boosting Decision Tree），是一种迭代的决策树算法，通过一系列弱分类器叠加起来作为最终的预测结果。GDBT还可以用来进行特征组合（Facebook在2014年提出，用于点击率预估）以提⾼ CTR预估（Click-Through Rate Prediction）的准确性。梯度提升树其实是有很多的回归树叠加拟合的效果，接下来是回归树。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/15/GDBT/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SVD" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/10/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/10/SVD/" class="archive-article-date">
-  	<time datetime="2018-09-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-SVD算法剧情介绍"><a href="#1-SVD算法剧情介绍" class="headerlink" title="1.SVD算法剧情介绍"></a>1.SVD算法剧情介绍</h4><p>​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/10/SVD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-PCA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/25/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/25/PCA/" class="archive-article-date">
-  	<time datetime="2018-08-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-PCA算法剧情介绍"><a href="#1-PCA算法剧情介绍" class="headerlink" title="1.PCA算法剧情介绍"></a>1.PCA算法剧情介绍</h4><p>​    主成分分析技术可以帮助我们把数据中含有大量维度的特征维度进行降维，比如说，人们在观看球赛的时候电视屏幕有百万的像素，然而人们只关注足球的位置，因此人的大脑会筛选像素呀，就缩小到球大小的维度，这就是达到了降维的效果。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/25/PCA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-FP-growth" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2018-08-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-FP-growth算法剧情介绍"><a href="#1-FP-growth算法剧情介绍" class="headerlink" title="1.FP-growth算法剧情介绍"></a>1.FP-growth算法剧情介绍</h4><p>​    Apriori算法就可以获得频繁项集了，为什么还要用FP-growth呢？因为Apriori算法每次增加项获取频繁项集的时候都需要从新遍历一遍数据集这样效率还不高，FP-growth算法只需要遍历两边就可以获得所有频繁项集。这样在大数据集中会提高很多效率。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/17/FP-growth/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-爬取微信公众号数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/爬取微信公众号数据/">python爬取微信公众号内容</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/25/爬取微信公众号数据/" class="archive-article-date">
-  	<time datetime="2018-07-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h3><p>​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/25/爬取微信公众号数据/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-kMeans" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/15/kMeans/" class="archive-article-date">
-  	<time datetime="2018-07-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-KMeans算法剧情介绍"><a href="#1-KMeans算法剧情介绍" class="headerlink" title="1.KMeans算法剧情介绍"></a>1.KMeans算法剧情介绍</h4><p>​    KMeans是一种无监督学习算法，就是不知道这堆数据分别属于哪个类别，简单说就是没有标签数据，从中进行分堆的算法。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/15/kMeans/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -851,8 +411,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>飞的博客</title>
+  <title>数据结构与算法之动态规划系列 | 飞的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="知识的积累，随心笔记。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="飞的博客">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="一、动态规划​    动态规划(dynamic programming)是运筹学的一个分支，是求解决策过程最优化的数学方法。动态规划一般可分为线性动规，区域动规，树形动规，背包动规四类。——《百度百科》">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法之动态规划系列">
+<meta property="og:url" content="http://yoursite.com/2019/06/20/数据结构与算法之动态规划系列/index.html">
 <meta property="og:site_name" content="飞的博客">
-<meta property="og:description" content="知识的积累，随心笔记。">
+<meta property="og:description" content="一、动态规划​    动态规划(dynamic programming)是运筹学的一个分支，是求解决策过程最优化的数学方法。动态规划一般可分为线性动规，区域动规，树形动规，背包动规四类。——《百度百科》">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/dataStructure/DP-1.jpg">
+<meta property="og:image" content="http://yoursite.com/dataStructure/DP-2.jpg">
+<meta property="og:image" content="http://yoursite.com/dataStructure/DP-3.jpg">
+<meta property="og:updated_time" content="2019-09-19T10:07:46.515Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="飞的博客">
-<meta name="twitter:description" content="知识的积累，随心笔记。">
+<meta name="twitter:title" content="数据结构与算法之动态规划系列">
+<meta name="twitter:description" content="一、动态规划​    动态规划(dynamic programming)是运筹学的一个分支，是求解决策过程最优化的数学方法。动态规划一般可分为线性动规，区域动规，树形动规，背包动规四类。——《百度百科》">
+<meta name="twitter:image" content="http://yoursite.com/dataStructure/DP-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="飞的博客" type="application/atom+xml">
   
@@ -149,36 +154,162 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-TensorFlow实战（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-数据结构与算法之动态规划系列" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/02/TensorFlow实战（一）/">TensorFlow实战（一）</a>
+    <h1 class="article-title" itemprop="name">
+      数据结构与算法之动态规划系列
     </h1>
   
 
         
-        <a href="/2018/11/02/TensorFlow实战（一）/" class="archive-article-date">
-  	<time datetime="2018-11-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-02</time>
+        <a href="/2019/06/20/数据结构与算法之动态规划系列/" class="archive-article-date">
+  	<time datetime="2019-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-20</time>
 </a>
         
         
+        <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+        </span>
+    
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、深度学习简介"><a href="#一、深度学习简介" class="headerlink" title="一、深度学习简介"></a>一、深度学习简介</h2><h4 id="1-1-什么是人工智能、机器学习和深度学习"><a href="#1-1-什么是人工智能、机器学习和深度学习" class="headerlink" title="1.1 什么是人工智能、机器学习和深度学习"></a>1.1 什么是人工智能、机器学习和深度学习</h4><p>​    计算机发明最开始是人们希望它能够帮助甚至替代人类完成重复性劳作，利用巨大的运算速度和存储空间，计算机可以轻易完成一些人类看似困难而对于计算机相对很简单的问题，比如：统计一本书的单词出现次数。但是有些问题是人类通过直觉可以很快解决问题，计算机就很难解决，如：NLP（自然语言处理），CV（计算机视觉）等，这些问题就是需要人工智能去解决。使得计算机像人一样可以听懂说话，理解文本语义和图像视频内容。</p>
-        
+        <h2 id="一、动态规划"><a href="#一、动态规划" class="headerlink" title="一、动态规划"></a>一、动态规划</h2><p>​    <strong>动态规划</strong>(dynamic programming)是运筹学的一个分支，是求解决策过程最优化的数学方法。动态规划一般可分为线性动规，区域动规，树形动规，背包动规四类。——《百度百科》</p>
+<a id="more"></a>
+<p>​    20世纪50年代初美国数学家R.E.Bellman等人在研究多阶段决策过程(multistep decision process)的优化问题时，提出了著名的最优化原理(principle of optimality)，把多阶段过程转化为一系列单阶段问题，利用各阶段之间的关系，逐个求解，创立了解决这类过程优化问题的新方法——动态规划。</p>
+<h2 id="二、斐波那契数列"><a href="#二、斐波那契数列" class="headerlink" title="二、斐波那契数列"></a>二、斐波那契数列</h2><h4 id="2-1定义"><a href="#2-1定义" class="headerlink" title="2.1定义"></a>2.1定义</h4><p>​    <strong>斐波那契数列</strong>（Fibonacci sequence），又称黄金分割数列、因数学家列昂纳多·斐波那契（Leonardoda Fibonacci）以兔子繁殖为例子而引入，故又称为“兔子数列”，指的是这样一个数列：1、1、2、3、5、8、13、21、34、……在数学上，斐波那契数列以如下被以递推的方法定义：F(1)=1，F(2)=1, F(n)=F(n-1)+F(n-2)，$n&gt;=3 ,n \in N*$</p>
+<h4 id="2-2实现"><a href="#2-2实现" class="headerlink" title="2.2实现"></a>2.2实现</h4><h5 id="2-2-1递归"><a href="#2-2-1递归" class="headerlink" title="2.2.1递归"></a>2.2.1递归</h5><p>时间复杂度O（$2^n$）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fib(n<span class="number">-1</span>)+fib(n<span class="number">-2</span>)</span><br></pre></td></tr></table></figure>
+<p>在递归实现中，其实存在好多重复的运算，导致耗费大量的时间。我们要优化的话可以把这些计算过的数值存储起来，不进行重复计算。</p>
+<p><img src="/dataStructure/DP-1.jpg" alt="DP-1"></p>
+<h5 id="2-2-2非递归"><a href="#2-2-2非递归" class="headerlink" title="2.2.2非递归"></a>2.2.2非递归</h5><p>这里我们用了n个空间存储计算过的值，使用的时候我们可以直接用。时间复杂度为O(n)，空间复杂度为O(n)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    res = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">    res[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">    res[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n):</span><br><span class="line">        res[i] = res[i<span class="number">-1</span>]+res[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> res[n<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<p>还有非递归改进方案，时间复杂度为O(n)，空间复杂度为O(1)。没必要用那么多存储空间，只用两个存储空间就行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    old = <span class="number">1</span></span><br><span class="line">    new = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n):</span><br><span class="line">        new,old = old+new,new</span><br><span class="line">    <span class="keyword">return</span> new</span><br></pre></td></tr></table></figure>
+<h2 id="三、动态规划练习题目"><a href="#三、动态规划练习题目" class="headerlink" title="三、动态规划练习题目"></a>三、动态规划练习题目</h2><h4 id="3-1最长回文子串"><a href="#3-1最长回文子串" class="headerlink" title="3.1最长回文子串"></a>3.1最长回文子串</h4><p>题目：给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。</p>
+<p>示例1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;babad&quot;</span><br><span class="line">输出: &quot;bab&quot;</span><br><span class="line">注意: &quot;aba&quot; 也是一个有效答案。</span><br></pre></td></tr></table></figure>
+<p>示例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;cbbd&quot;</span><br><span class="line">输出: &quot;bb&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>思路一：</strong>首先对每个子串判断是否是回文字符串，然后存储起来和最大的长度，依次再去进行下边的对比。这种时间复杂度较高O（$n^3$），空间为O（1）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longestPalindrome</span><span class="params">(s)</span>:</span></span><br><span class="line">    maxs,maxstr = <span class="number">0</span>,<span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> isCycle(s[j:i+<span class="number">1</span>]) <span class="keyword">and</span> len(s[j:i+<span class="number">1</span>])&gt;maxs:</span><br><span class="line">                maxs,maxstr = len(s[j:i+<span class="number">1</span>]),s[j:i+<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> maxstr    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isCycle</span><span class="params">(s)</span>:</span></span><br><span class="line">    i,j = <span class="number">0</span>,len(s)<span class="number">-1</span></span><br><span class="line">    <span class="keyword">while</span> i&lt;j:</span><br><span class="line">        <span class="keyword">if</span> s[i] != s[j]:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        i,j = i+<span class="number">1</span>,j<span class="number">-1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<p><strong>思路二：</strong>采用动态规划，我们用dp[l] [r]代表从l位置到r位置之间是否为回文字符串，是的话dp[l] [r] = True，不是的话dp[l] [r] = False。动态方程为dp[l] [r] = （dp[l+1] [r-1] and s[l] == s[r]）表示子串从[l+1，r-1]这个区间内为回文，且l和r位置的字符相等情况下表示l到r为回文，为True，不用总是重复进行计算回文。时间复杂度为O（$n^2$）,空间复杂度为O（$n^2$）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longestPalindrome</span><span class="params">(s)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br><span class="line">    longest,res = <span class="number">1</span>,s[<span class="number">0</span>]</span><br><span class="line">    dp = [[<span class="keyword">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(s))] <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(s))]</span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> range(<span class="number">1</span>,len(s)):</span><br><span class="line">        <span class="keyword">for</span> l <span class="keyword">in</span> range(r):</span><br><span class="line">            <span class="keyword">if</span> s[l]==s[r] <span class="keyword">and</span> (r-l&lt;=<span class="number">2</span> <span class="keyword">or</span> dp[l+<span class="number">1</span>][r<span class="number">-1</span>]):</span><br><span class="line">                dp[l][r] = <span class="keyword">True</span></span><br><span class="line">                <span class="keyword">if</span> r-l+<span class="number">1</span> &gt; longest:</span><br><span class="line">                    longest,res = r-l+<span class="number">1</span>,s[l][r+<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p>其他方法有<strong>中心扩展法</strong>（时间复杂度为O（$n^2$），空间复杂度为O（1）），<strong>Manacher 算法</strong>（时间复杂度为O(n)，空间复杂度为O（n））。</p>
+<h4 id="3-2最大子序和"><a href="#3-2最大子序和" class="headerlink" title="3.2最大子序和"></a>3.2最大子序和</h4><p>题目：给定一个整数数组 nums，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [-2,1,-3,4,-1,2,1,-5,4],</span><br><span class="line">输出: 6</span><br><span class="line">解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。</span><br></pre></td></tr></table></figure>
+<p>解法一：判断当前元素之前的he是否大于0，小于0不会对大于0情况有贡献，当前数大于0时，会对最大子序和有提升，加上之前的数字，然后最后求max获取整个最大子序和。时间复杂度为O（n），空间复杂度为O（1）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    res = nums[<span class="number">0</span>]</span><br><span class="line">    s = nums[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> nums[<span class="number">1</span>:]:</span><br><span class="line">        <span class="keyword">if</span> s &gt; <span class="number">0</span>:</span><br><span class="line">            s += n</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            s = n</span><br><span class="line">        res = max(res,s)</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p>一种更加简洁的写法：其中状态nums[i]表示从0到i，序列最大和。每个位置都存储到当前位置最大序列和，最后求一个max就行了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(nums)):</span><br><span class="line">        nums[i]= nums[i] + max(nums[i<span class="number">-1</span>], <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> max(nums)</span><br></pre></td></tr></table></figure>
+<h4 id="3-3不同路径"><a href="#3-3不同路径" class="headerlink" title="3.3不同路径"></a>3.3不同路径</h4><p>一个机器人位于一个 m x n 网格的左上角 。机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角。问总共有多少条不同的路径？</p>
+<p>示例1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入: m = 3, n = 2</span><br><span class="line">输出: 3</span><br><span class="line">解释:</span><br><span class="line">从左上角开始，总共有 3 条路径可以到达右下角。</span><br><span class="line">1. 向右 -&gt; 向右 -&gt; 向下</span><br><span class="line">2. 向右 -&gt; 向下 -&gt; 向右</span><br><span class="line">3. 向下 -&gt; 向右 -&gt; 向右</span><br></pre></td></tr></table></figure>
+<p>示例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: m = 7, n = 3</span><br><span class="line">输出: 28</span><br></pre></td></tr></table></figure>
+<p><strong>思路：</strong>采用动态规划，其中用dp[i] [j]表示第i行第j列时所要走的不同路径数。动态方程是，上边或者左边两种之和，即dp[i] [j] = dp[i] [j-1] + dp[i-1] [j]。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">uniquePaths</span><span class="params">(m,n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> m <span class="keyword">or</span> <span class="keyword">not</span> n:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    dp = [[<span class="number">1</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(m)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">if</span> i<span class="number">-1</span>&gt;=<span class="number">0</span> <span class="keyword">and</span> j<span class="number">-1</span>&gt;=<span class="number">0</span>:</span><br><span class="line">                dp[i][j] = dp[i<span class="number">-1</span>][j]+dp[i][j<span class="number">-1</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[m<span class="number">-1</span>][n<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+<p><strong>解法二：</strong>还有一种比较简洁的解法，排列组合法。其中有m行n列，则要移动到右下侧，需要移动m+n-2步，其中向下需要m-1步，向右需要n-1步，则通过排列组合我们的输出结果是C（m+n-2，m-1）<em> C（n-1，n-1）或者C（m+n-2，n-1）</em> C（m-1，m-1）。因为 C（m-1，m-1）或 C（n-1，n-1）为1，则结果res = C（m+n-2，m-1）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">uniquePaths</span><span class="params">(m,n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> m <span class="keyword">or</span> <span class="keyword">not</span> n:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> mutil(m+n<span class="number">-2</span>)//(mutil(m<span class="number">-1</span>)*mutil(n<span class="number">-1</span>))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mutil</span><span class="params">(num)</span>:</span></span><br><span class="line">    res = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,num+<span class="number">1</span>):</span><br><span class="line">        res *= i</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<h4 id="3-4最小路径和"><a href="#3-4最小路径和" class="headerlink" title="3.4最小路径和"></a>3.4最小路径和</h4><p>给定一个包含非负整数的 mxn 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。说明：每次只能向下或者向右移动一步。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入:</span><br><span class="line">[</span><br><span class="line">  [1,3,1],</span><br><span class="line">  [1,5,1],</span><br><span class="line">  [4,2,1]</span><br><span class="line">]</span><br><span class="line">输出: 7</span><br><span class="line">解释: 因为路径 1→3→1→1→1 的总和最小。</span><br></pre></td></tr></table></figure>
+<p>动态规划解法，状态dp[i] [j]代表到当前i行j列的时候最小路径和。状态转移方程是，dp[i] [j] = min(dp[i-1] [j],dp[i] [j-1])+dp[i] [j],表示在上一步中我们选择路径和最小的叠加到当前状态，最终我们总选择最小的可以获得全局最小的。时间复杂度O（mn），空间复杂度为O（1）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minPathSum</span><span class="params">(grid)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> grid <span class="keyword">or</span> <span class="keyword">not</span> grid[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    dp = [[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(grid[<span class="number">0</span>]))] <span class="keyword">for</span> _ <span class="keyword">in</span> range(len(grid))]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(grid)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(grid[<span class="number">0</span>])):</span><br><span class="line">            <span class="keyword">if</span> i<span class="number">-1</span>&lt;<span class="number">0</span> <span class="keyword">and</span> j<span class="number">-1</span>&gt;=<span class="number">0</span>:</span><br><span class="line">                grid[i][j] = grid[i][j<span class="number">-1</span>]+grid[i][j]</span><br><span class="line">            <span class="keyword">elif</span> i<span class="number">-1</span>&lt;<span class="number">0</span> <span class="keyword">and</span> j<span class="number">-1</span>&lt;<span class="number">0</span>:</span><br><span class="line">                grid[i][j] = grid[i][j]</span><br><span class="line">            <span class="keyword">elif</span> i<span class="number">-1</span>&gt;=<span class="number">0</span> <span class="keyword">and</span> j<span class="number">-1</span>&lt;<span class="number">0</span>:</span><br><span class="line">                grid[i][j] = grid[i<span class="number">-1</span>][j]+grid[i][j]</span><br><span class="line">            <span class="keyword">elif</span> i<span class="number">-1</span>&gt;=<span class="number">0</span> <span class="keyword">and</span> j<span class="number">-1</span>&gt;=<span class="number">0</span>:</span><br><span class="line">                grid[i][j] = min(grid[i<span class="number">-1</span>][j],grid[i][j<span class="number">-1</span>])+grid[i][j]</span><br><span class="line">    <span class="keyword">return</span> grid[i][j]</span><br></pre></td></tr></table></figure>
+<h4 id="3-5爬楼梯"><a href="#3-5爬楼梯" class="headerlink" title="3.5爬楼梯"></a>3.5爬楼梯</h4><p>题目：假设你正在爬楼梯。需要 <em>n</em> 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>
+<p><strong>思路：</strong>这个和斐波那契数列类似，采用动态规划，定义状态dp[i]表示上到当前i台阶所有可能的种数，当前状态dp[i] = dp[i-1]+dp[i-2]，表示当前台阶i的种类数是前一时刻与前两时刻的种数和，因为每次你可以爬1阶或者两阶，所以当前i阶的种类数是前两步的总和。时间复杂度为O（n），空间复杂度为O（n）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">climbStairs</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    dp = [<span class="number">0</span>]*(n+<span class="number">1</span>)</span><br><span class="line">    dp[<span class="number">0</span>],dp[<span class="number">1</span>] = <span class="number">1</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n+<span class="number">1</span>):</span><br><span class="line">        dp[i] = dp[i<span class="number">-1</span>]+dp[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[i]</span><br></pre></td></tr></table></figure>
+<p>我们可以压缩空间复杂度到O（1）,因为我们动态转移的时候只用到了前两步的状态。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">climbStairs</span><span class="params">(n)</span>:</span></span><br><span class="line">    x,y = <span class="number">1</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n+<span class="number">1</span>):</span><br><span class="line">        y,x = x+y,y</span><br><span class="line">    <span class="keyword">return</span> y</span><br></pre></td></tr></table></figure>
+<h5 id="改进题：跳台阶晋级"><a href="#改进题：跳台阶晋级" class="headerlink" title="改进题：跳台阶晋级"></a><strong>改进题：</strong>跳台阶晋级</h5><p><strong>题目：</strong>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+<p><strong>思路：</strong>其实可以沿用之前的想法，到达第i阶的跳法有从i-1阶到，从i-2阶到等一直可以从0阶到，把所有种类数加起来就是当前第i阶的种数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">climbStairs</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    dp = [<span class="number">0</span>]*(n+<span class="number">1</span>)</span><br><span class="line">    dp[<span class="number">0</span>],dp[<span class="number">1</span>] = <span class="number">1</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n+<span class="number">1</span>):</span><br><span class="line">        dp[i] = sum(dp)</span><br><span class="line">    <span class="keyword">return</span> dp[i]</span><br></pre></td></tr></table></figure>
+<h4 id="3-6编辑距离"><a href="#3-6编辑距离" class="headerlink" title="3.6编辑距离"></a>3.6编辑距离</h4><p>题目：给定两个单词 word1 和 word2，计算出将 word1 转换成 word2 所使用的最少操作数 。你可以对一个单词进行如下三种操作：1.插入一个字符，2.删除一个字符，3.替换一个字符。</p>
+<p>示例1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入: word1 = &quot;horse&quot;, word2 = &quot;ros&quot;</span><br><span class="line">输出: 3</span><br><span class="line">解释: </span><br><span class="line">horse -&gt; rorse (将 &apos;h&apos; 替换为 &apos;r&apos;)</span><br><span class="line">rorse -&gt; rose (删除 &apos;r&apos;)</span><br><span class="line">rose -&gt; ros (删除 &apos;e&apos;)</span><br></pre></td></tr></table></figure>
+<p>示例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">输入: word1 = &quot;intention&quot;, word2 = &quot;execution&quot;</span><br><span class="line">输出: 5</span><br><span class="line">解释: </span><br><span class="line">intention -&gt; inention (删除 &apos;t&apos;)</span><br><span class="line">inention -&gt; enention (将 &apos;i&apos; 替换为 &apos;e&apos;)</span><br><span class="line">enention -&gt; exention (将 &apos;n&apos; 替换为 &apos;x&apos;)</span><br><span class="line">exention -&gt; exection (将 &apos;n&apos; 替换为 &apos;c&apos;)</span><br><span class="line">exection -&gt; execution (插入 &apos;u&apos;)</span><br></pre></td></tr></table></figure>
+<p><strong>思路：</strong>首先定义状态，dp[i] [j]表示word1的前i个字母和word2的前j个字母之间的编辑距离。状态转移可以分情况定义，当word1的第i个字符和word2的第j个字符相等的时候即，word1[i] == word2[j]，dp[i] [j]=min(dp[i-1] [j]+1，dp[i] [j-1]+1，dp[i-1] [j-1])。当word1的第i个字符和word2的第j个字符不相等的时候即，word1[i] != word2[j]，dp[i] [j]=min(dp[i-1] [j]，dp[i] [j-1]，dp[i-1] [j-1])+1。</p>
+<p>比如：</p>
+<p><img src="/dataStructure/DP-2.jpg" alt="DP-2"></p>
+<p>此时word1[i] != word2[j]，因此dp[i] [j]=min(dp[i-1] [j]，dp[i] [j-1]，dp[i-1] [j-1])+1。</p>
+<p>dp[i-1] [j] = 1,这个编辑距离是 HO 与 RO 之间的编辑距离，只需要变换H为R即可。</p>
+<p>dp[i] [j-1] = 2表示 HOR 与 R之间的编辑距离，只需要删除HO即可。</p>
+<p>dp[i-1] [j-1] 表示HO 与 R之间的编辑距离，只需要删除H，O变成R即可。</p>
+<p>得到 dp[i] [j-1]，dp[i-1] [j]，与dp[i-1] [j-1]这三个状态的时候，我们要得到dp[i] [j]这个状态的编辑距离，从dp[i] [j-1] 到 dp[i] [j]这个状态，先获取HOR 与 R 的编辑距离，操作HOR 到 R删除了HO得到dp[i] [j-1]，然后在R添加一个O即得到word1变为RO，就和word2相同，需要3步，得到 dp[i] [j]。从dp[i-1] [j] 到 dp[i] [j]这个状态，先要获取HO 与 RO 之间的编辑距离，只需要变换H为R，然后需要删除word1中最后一个R，此时就获得word1与word2相同，需要2步，得到dp[i] [j]。从dp[i-1] [j-1] 到 dp[i] [j]这个状态，先获取HO 与 R之间的编辑距离，只需要删除H，O变成R，然后需要将word1中第i个字母删除，需要3步，就得到dp[i] [j]。</p>
+<p>然后是对于边界情况，空串和非空串对比的编辑距离，dp[i] [0] = i,dp[0] [j] = j。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minDistance</span><span class="params">(word1,word2)</span>:</span></span><br><span class="line">    m,n = len(word1),len(word2)</span><br><span class="line">    dp = [[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n+<span class="number">1</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(m+<span class="number">1</span>)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m+<span class="number">1</span>):</span><br><span class="line">        dp[i][<span class="number">0</span>] = i </span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">        dp[<span class="number">0</span>][j] = j</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">            <span class="comment"># 因为考虑了空字符串，在第一行与第一列，因此是对word1[i-1]与word2[j-1]对比。</span></span><br><span class="line">            dp[i][j] = min(dp[i<span class="number">-1</span>][j<span class="number">-1</span>]+(<span class="number">0</span> <span class="keyword">if</span> word1[i<span class="number">-1</span>]==word2[j<span class="number">-1</span>] <span class="keyword">else</span> <span class="number">1</span>),dp[i<span class="number">-1</span>][j]+<span class="number">1</span>,dp[i][j<span class="number">-1</span>]+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> dp[m][n]</span><br></pre></td></tr></table></figure>
+<h4 id="3-7不同的二叉搜索树"><a href="#3-7不同的二叉搜索树" class="headerlink" title="3.7不同的二叉搜索树"></a>3.7不同的二叉搜索树</h4><p>题目：给定一个整数 n，求以 1 … n 为节点组成的二叉搜索树有多少种？</p>
+<p><strong>思路：</strong>这个题目可以采用动态规划求解，我们要求得1—n所有数字为根的情况，我们定义G(n)代表这n个数所包含的二叉搜索树种类数，F(i,n)代表选定i为根所含有的二叉搜索树的种类数，其中F(i,n)为左右子树的笛卡尔积，那么$F(i,n) = G(i-1) \dots G(n-i)$那么G(n)与F(i,n)之间的关系是：$G(n) = \sum_{i=1}^{n}G(i-1) \dots G(n-i)$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numTrees</span><span class="params">(n)</span>:</span></span><br><span class="line">    dp = [<span class="number">0</span>]*(n+<span class="number">1</span>)</span><br><span class="line">    dp[<span class="number">0</span>],dp[<span class="number">1</span>] = <span class="number">1</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>,i+<span class="number">1</span>):</span><br><span class="line">            dp[i] += dp[j<span class="number">-1</span>]*dp[i-j]</span><br><span class="line">    <span class="keyword">return</span> dp[n]</span><br></pre></td></tr></table></figure>
+<h4 id="3-8三角形最小路径和"><a href="#3-8三角形最小路径和" class="headerlink" title="3.8三角形最小路径和"></a>3.8三角形最小路径和</h4><p>给定一个三角形，找出自顶向下的最小路径和。每一步只能移动到下一行中相邻的结点上。</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">     [2],</span><br><span class="line">    [3,4],</span><br><span class="line">   [6,5,7],</span><br><span class="line">  [4,1,8,3]</span><br><span class="line">]</span><br><span class="line">自顶向下的最小路径和为 11（即，2 + 3 + 5 + 1 = 11）。</span><br></pre></td></tr></table></figure>
+<p><strong>思路：</strong>可以自低向上，一次使用两层，上层存储和最小值，直到的顶层就是路径最小和。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minimumTotal</span><span class="params">(triangle)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> triangle <span class="keyword">or</span> <span class="keyword">not</span> triangle[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(triangle)<span class="number">-2</span>,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(triangle[i])):</span><br><span class="line">            triangle[i][j] =  min(triangle[i+<span class="number">1</span>][j],triangle[i+<span class="number">1</span>][j+<span class="number">1</span>])+triangle[i][j]</span><br><span class="line">    <span class="keyword">return</span> triangle[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="3-9买股票系列"><a href="#3-9买股票系列" class="headerlink" title="3.9买股票系列"></a>3.9买股票系列</h4><h5 id="3-9-1买股票最佳时机"><a href="#3-9-1买股票最佳时机" class="headerlink" title="3.9.1买股票最佳时机"></a>3.9.1买股票最佳时机</h5><p>给定一个数组，它的第 i个元素是一支给定股票第 i 天的价格。如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。<strong>注意：</strong>你不能在买入股票前卖出股票。</p>
+<p>示例1：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">7</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">4</span>]</span><br><span class="line">输出: <span class="number">5</span></span><br><span class="line">解释: 在第 <span class="number">2</span> 天（股票价格 = <span class="number">1</span>）的时候买入，在第 <span class="number">5</span> 天（股票价格 = <span class="number">6</span>）的时候卖出，最大利润 = <span class="number">6</span><span class="number">-1</span> = <span class="number">5</span> 。</span><br><span class="line">     注意利润不能是 <span class="number">7</span><span class="number">-1</span> = <span class="number">6</span>, 因为卖出价格需要大于买入价格。</span><br></pre></td></tr></table></figure>
+<p>示例2：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [<span class="number">7</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">输出: <span class="number">0</span></span><br><span class="line">解释: 在这种情况下, 没有交易完成, 所以最大利润为 <span class="number">0</span>。</span><br></pre></td></tr></table></figure>
+<p><strong>思路：</strong>暴力求解，两层循环遍历每种情况获取最大利润。时间复杂度为O（$n^2$）,空间复杂度为O（1）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(price)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> price:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    maxprofit = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(price)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span>,len(price)):</span><br><span class="line">            maxprofit = max(price[j]-price[i],maxprofit)</span><br><span class="line">    <span class="keyword">return</span> maxprofit</span><br></pre></td></tr></table></figure>
+<p><strong>快速解法：</strong>我们可以保留当前的最小值，和最大利润，然后去维护这两个值即可。如何维护呢？当遇到比minval小的值的时候更新minval；当发现之前maxprofit比当前的小，那么更新maxprofit。时间复杂度O（n），空间复杂度O（1）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span><span class="params">(price)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> price:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    minval,maxprofit = float(<span class="string">'inf'</span>),<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(price)):</span><br><span class="line">        <span class="keyword">if</span> price[i]&lt;minval:</span><br><span class="line">            minval = price[i]</span><br><span class="line">        <span class="keyword">elif</span> maxprofit&lt;price[i]-minval:</span><br><span class="line">            maxprofit = price[i]-minval</span><br><span class="line">    <span class="keyword">return</span> maxprofit</span><br></pre></td></tr></table></figure>
+<h5 id="3-9-2买股票最佳时机2"><a href="#3-9-2买股票最佳时机2" class="headerlink" title="3.9.2买股票最佳时机2"></a>3.9.2买股票最佳时机2</h5><p>给定一个数组，它的第 i个元素是一支给定股票第 i 天的价格。设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。<strong>注意：</strong>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<p>示例1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [7,1,5,3,6,4]</span><br><span class="line">输出: 7</span><br><span class="line">解释: 在第 2 天（股票价格 = 1）的时候买入，在第 3 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。随后，在第 4 天（股票价格 = 3）的时候买入，在第 5 天（股票价格 = 6）的时候卖出, 这笔交易所能获得利润 = 6-3 = 3 。</span><br></pre></td></tr></table></figure>
+<p>示例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,4,5]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 在第 1 天（股票价格 = 1）的时候买入，在第 5 天 （股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5-1 = 4 。</span><br><span class="line">     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。</span><br><span class="line">     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</span><br></pre></td></tr></table></figure>
+<p>示例3：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [7,6,4,3,1]</span><br><span class="line">输出: 0</span><br><span class="line">解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</span><br></pre></td></tr></table></figure>
+<p><strong>思路：</strong></p>
+<h5 id="3-9-3买股票最佳时机3"><a href="#3-9-3买股票最佳时机3" class="headerlink" title="3.9.3买股票最佳时机3"></a>3.9.3买股票最佳时机3</h5><h5 id="3-9-4买股票最佳时机4"><a href="#3-9-4买股票最佳时机4" class="headerlink" title="3.9.4买股票最佳时机4"></a>3.9.4买股票最佳时机4</h5><h5 id="3-9-5买股票最佳时机含冷冻期"><a href="#3-9-5买股票最佳时机含冷冻期" class="headerlink" title="3.9.5买股票最佳时机含冷冻期"></a>3.9.5买股票最佳时机含冷冻期</h5><h4 id="3-10单词拆分"><a href="#3-10单词拆分" class="headerlink" title="3.10单词拆分"></a>3.10单词拆分</h4><h4 id="3-11乘积最大子序列"><a href="#3-11乘积最大子序列" class="headerlink" title="3.11乘积最大子序列"></a>3.11乘积最大子序列</h4><h4 id="3-12大家劫舍"><a href="#3-12大家劫舍" class="headerlink" title="3.12大家劫舍"></a>3.12大家劫舍</h4><h4 id="3-13最大正方形"><a href="#3-13最大正方形" class="headerlink" title="3.13最大正方形"></a>3.13最大正方形</h4><h4 id="3-14完全平方数"><a href="#3-14完全平方数" class="headerlink" title="3.14完全平方数"></a>3.14完全平方数</h4><h4 id="3-15最长上升子序列"><a href="#3-15最长上升子序列" class="headerlink" title="3.15最长上升子序列"></a>3.15最长上升子序列</h4><h4 id="3-16零钱兑换"><a href="#3-16零钱兑换" class="headerlink" title="3.16零钱兑换"></a>3.16零钱兑换</h4><h4 id="3-17比特位计数"><a href="#3-17比特位计数" class="headerlink" title="3.17比特位计数"></a>3.17比特位计数</h4><h4 id="3-18矩形覆盖"><a href="#3-18矩形覆盖" class="headerlink" title="3.18矩形覆盖"></a>3.18矩形覆盖</h4><p>3.19礼物最大值</p>
+<p>在一个 m*n 的棋盘中的每一个格都放一个礼物，每个礼物都有一定的价值（价值大于0）.你可以从棋盘的左上角开始拿各种里的礼物，并每次向左或者向下移动一格，直到到达棋盘的右下角。给定一个棋盘及上面个的礼物，请计算你最多能拿走多少价值的礼物？比如说现在有一个如下的棋盘：</p>
+<p><img src="/dataStructure/DP-3.jpg" alt="DP-3"></p>
+<p>在这个棋盘中，按照（1，12，5，7，7，16，5）的顺序可以拿到总价值最大的礼物。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxValue</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> nums <span class="keyword">and</span> <span class="keyword">not</span> nums[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    queue = [<span class="number">0</span>]*len(nums[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(nums[<span class="number">0</span>])):</span><br><span class="line">            a,b = <span class="number">0</span>,<span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> i&gt;<span class="number">0</span>:</span><br><span class="line">                a = queue[j]</span><br><span class="line">            <span class="keyword">if</span> j&gt;<span class="number">0</span>:</span><br><span class="line">                b = queue[j<span class="number">-1</span>]</span><br><span class="line">            queue[j] = max(a,b)+nums[i][j]</span><br><span class="line">    <span class="keyword">return</span> queue[j]</span><br></pre></td></tr></table></figure>
+<h2 id="四、参考文献："><a href="#四、参考文献：" class="headerlink" title="四、参考文献："></a>四、参考文献：</h2><p>【1】《剑指offer》——何海涛</p>
+<p>【2】leetcode题目</p>
+
       
       
       
         <div class="declare" hidden="hidden"></div>
       
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechart.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -187,16 +318,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/02/TensorFlow实战（一）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/20/数据结构与算法之动态规划系列/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/06/29/模型评价标准/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          模型评价标准
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/17/数据结构与算法之链表系列/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构与算法之链表系列</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -211,621 +410,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python进程和线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/28/python进程和线程/">Python 进程和线程</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/28/python进程和线程/" class="archive-article-date">
-  	<time datetime="2018-10-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-28</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、进程与线程简介"><a href="#一、进程与线程简介" class="headerlink" title="一、进程与线程简介"></a>一、进程与线程简介</h3><p>​    什么是进程呢？比如我们启动了qq软件，就是开启了一个任务，启动了word办公软件，这又是一个任务，简单举例就是平时我们边写文档，边听音乐，这就是多任务并行进行的，这里的任务就是进程。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/28/python进程和线程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、动态规划"><span class="toc-number">1.</span> <span class="toc-text">一、动态规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、斐波那契数列"><span class="toc-number">2.</span> <span class="toc-text">二、斐波那契数列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1定义"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2实现"><span class="toc-number">2.0.2.</span> <span class="toc-text">2.2实现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-1递归"><span class="toc-number">2.0.2.1.</span> <span class="toc-text">2.2.1递归</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-2非递归"><span class="toc-number">2.0.2.2.</span> <span class="toc-text">2.2.2非递归</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#三、动态规划练习题目"><span class="toc-number">3.</span> <span class="toc-text">三、动态规划练习题目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1最长回文子串"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1最长回文子串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2最大子序和"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2最大子序和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3不同路径"><span class="toc-number">3.0.3.</span> <span class="toc-text">3.3不同路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4最小路径和"><span class="toc-number">3.0.4.</span> <span class="toc-text">3.4最小路径和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5爬楼梯"><span class="toc-number">3.0.5.</span> <span class="toc-text">3.5爬楼梯</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#改进题：跳台阶晋级"><span class="toc-number">3.0.5.1.</span> <span class="toc-text">改进题：跳台阶晋级</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6编辑距离"><span class="toc-number">3.0.6.</span> <span class="toc-text">3.6编辑距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7不同的二叉搜索树"><span class="toc-number">3.0.7.</span> <span class="toc-text">3.7不同的二叉搜索树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-8三角形最小路径和"><span class="toc-number">3.0.8.</span> <span class="toc-text">3.8三角形最小路径和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-9买股票系列"><span class="toc-number">3.0.9.</span> <span class="toc-text">3.9买股票系列</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-9-1买股票最佳时机"><span class="toc-number">3.0.9.1.</span> <span class="toc-text">3.9.1买股票最佳时机</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-9-2买股票最佳时机2"><span class="toc-number">3.0.9.2.</span> <span class="toc-text">3.9.2买股票最佳时机2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-9-3买股票最佳时机3"><span class="toc-number">3.0.9.3.</span> <span class="toc-text">3.9.3买股票最佳时机3</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-9-4买股票最佳时机4"><span class="toc-number">3.0.9.4.</span> <span class="toc-text">3.9.4买股票最佳时机4</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-9-5买股票最佳时机含冷冻期"><span class="toc-number">3.0.9.5.</span> <span class="toc-text">3.9.5买股票最佳时机含冷冻期</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-10单词拆分"><span class="toc-number">3.0.10.</span> <span class="toc-text">3.10单词拆分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-11乘积最大子序列"><span class="toc-number">3.0.11.</span> <span class="toc-text">3.11乘积最大子序列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-12大家劫舍"><span class="toc-number">3.0.12.</span> <span class="toc-text">3.12大家劫舍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-13最大正方形"><span class="toc-number">3.0.13.</span> <span class="toc-text">3.13最大正方形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-14完全平方数"><span class="toc-number">3.0.14.</span> <span class="toc-text">3.14完全平方数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-15最长上升子序列"><span class="toc-number">3.0.15.</span> <span class="toc-text">3.15最长上升子序列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-16零钱兑换"><span class="toc-number">3.0.16.</span> <span class="toc-text">3.16零钱兑换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-17比特位计数"><span class="toc-number">3.0.17.</span> <span class="toc-text">3.17比特位计数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-18矩形覆盖"><span class="toc-number">3.0.18.</span> <span class="toc-text">3.18矩形覆盖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、参考文献："><span class="toc-number">4.</span> <span class="toc-text">四、参考文献：</span></a></li>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-xgboost" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/05/xgboost/">xgboost（extreme gradient boosting）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/05/xgboost/" class="archive-article-date">
-  	<time datetime="2018-10-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-05</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、xgboost简介</p>
-<p>​    在通常数据建模过程中，经常采用将很多个弱分类器组合起来，成为一个强分类器。模型会不断迭代，每次生成一棵新的树，在数据量很大的时候计算就是一个瓶颈，因此，华盛顿大学的陈天奇博士开发了xgboost，基于C++多线程并行构建，是在原有的GDBT基础上加以改进，从而极大的提升了训练速度与精度。其中在Kaggle的希格斯子信号识别竞赛中，xgboost因效率出众引起了参赛选手的关注，因为效果好，在业界也有很多应用。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/05/xgboost/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MapReduce" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/MapReduce/">MapReduce</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/02/MapReduce/" class="archive-article-date">
-  	<time datetime="2018-10-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-02</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、分布式计算思想"><a href="#一、分布式计算思想" class="headerlink" title="一、分布式计算思想"></a>一、分布式计算思想</h3><p>​    随着大量设备的联网，我们能够获取的数据越来越多，通过数据都是需要进行决策处理，但通常这些数据量太庞大了，超出了我们单台机器所能处理的范围。问题会有的，解决方案也会有的，一个开源项目Hadoop，是用Java编写，支持大量机器上分布式处理数据。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/02/MapReduce/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GDBT" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/15/GDBT/">GDBT（Gradient Boosting Decision Tree）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/15/GDBT/" class="archive-article-date">
-  	<time datetime="2018-09-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><p>​    梯度提升树GDBT（Gradient Boosting Decision Tree），是一种迭代的决策树算法，通过一系列弱分类器叠加起来作为最终的预测结果。GDBT还可以用来进行特征组合（Facebook在2014年提出，用于点击率预估）以提⾼ CTR预估（Click-Through Rate Prediction）的准确性。梯度提升树其实是有很多的回归树叠加拟合的效果，接下来是回归树。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/15/GDBT/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SVD" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/10/SVD/">奇异值分解（Singular Value Decomposition）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/10/SVD/" class="archive-article-date">
-  	<time datetime="2018-09-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-10</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-SVD算法剧情介绍"><a href="#1-SVD算法剧情介绍" class="headerlink" title="1.SVD算法剧情介绍"></a>1.SVD算法剧情介绍</h4><p>​    SVD奇异值分解可以把复杂的数据进行分解成简单的数据集来表示原始数据、去除原始数据噪声，提取其中的主要信息，对数据进行压缩，找出其中的影响因素。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/10/SVD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-PCA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/25/PCA/">主成分分析PCA(Principl Component Analysis)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/25/PCA/" class="archive-article-date">
-  	<time datetime="2018-08-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-PCA算法剧情介绍"><a href="#1-PCA算法剧情介绍" class="headerlink" title="1.PCA算法剧情介绍"></a>1.PCA算法剧情介绍</h4><p>​    主成分分析技术可以帮助我们把数据中含有大量维度的特征维度进行降维，比如说，人们在观看球赛的时候电视屏幕有百万的像素，然而人们只关注足球的位置，因此人的大脑会筛选像素呀，就缩小到球大小的维度，这就是达到了降维的效果。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/25/PCA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-FP-growth" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/17/FP-growth/">FP-growth（Frequent Pattern growth）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/17/FP-growth/" class="archive-article-date">
-  	<time datetime="2018-08-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-FP-growth算法剧情介绍"><a href="#1-FP-growth算法剧情介绍" class="headerlink" title="1.FP-growth算法剧情介绍"></a>1.FP-growth算法剧情介绍</h4><p>​    Apriori算法就可以获得频繁项集了，为什么还要用FP-growth呢？因为Apriori算法每次增加项获取频繁项集的时候都需要从新遍历一遍数据集这样效率还不高，FP-growth算法只需要遍历两边就可以获得所有频繁项集。这样在大数据集中会提高很多效率。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/17/FP-growth/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-爬取微信公众号数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/爬取微信公众号数据/">python爬取微信公众号内容</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/25/爬取微信公众号数据/" class="archive-article-date">
-  	<time datetime="2018-07-24T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-25</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h3><p>​    为什么要做这个呢，一个同学需要一个公众号的数据进行数据分析，要有的信息有：发帖日期，发帖标题，点赞数（好看），浏览量，之前做过简单爬虫，爬取过MIT网站的EEG数据集，就尝试做了下这个数据爬虫。刚开始想到去能够获取微信公众号内容的搜狗公众号接口，微信公众平台接口中获取，就选择了微信公众平台的发布信息的接口来进行爬取。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/25/爬取微信公众号数据/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-kMeans" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/15/kMeans/">KMeans</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/15/kMeans/" class="archive-article-date">
-  	<time datetime="2018-07-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-15</time>
-</a>
-        
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、算法理论"><a href="#一、算法理论" class="headerlink" title="一、算法理论"></a>一、算法理论</h3><h4 id="1-KMeans算法剧情介绍"><a href="#1-KMeans算法剧情介绍" class="headerlink" title="1.KMeans算法剧情介绍"></a>1.KMeans算法剧情介绍</h4><p>​    KMeans是一种无监督学习算法，就是不知道这堆数据分别属于哪个类别，简单说就是没有标签数据，从中进行分堆的算法。</p>
-        
-      
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/15/kMeans/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -851,8 +461,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
